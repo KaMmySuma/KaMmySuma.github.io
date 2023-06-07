@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>安卓使用Termux搭建早苗机器人 | 咪啪窝</title>
+        <meta name="author" content="KaMmy" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>咪啪窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;咪啪窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>安卓使用Termux搭建早苗机器人</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/6/2
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #ff7d73">安卓</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Termux/" style="color: #ff7d73">Termux</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/bot/" style="color: #03a9f4">bot</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%97%A9%E8%8B%97/" style="color: #00a596">早苗</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>咱有一个旧手机，食之无味、弃之可惜，想把它利用起来。于是了解到了termux,尝试了一段时间，发现它确实有意思，termux能让我们在安卓手机上跑linux程序</p>
+<span id="more"></span>
+
+<p>于是我想到了利用它来搭建一个QQ机器人，最合适的人选当然是早苗啦，早苗的后端在服务器上，而我们只需要部署一个gocq前端即可。</p>
+<p>请大家多多支持<a target="_blank" rel="noopener" href="https://afdian.net/a/Sanae">早苗开发者小狐狸</a>~</p>
+<hr>
+<p>就在我寻找小狐狸主页的时候，竟然意外发现了XDM大佬发布的教程：</p>
+<h2 id="早苗Bot-部署教程-Termux"><a href="#早苗Bot-部署教程-Termux" class="headerlink" title="早苗Bot 部署教程 Termux"></a><a target="_blank" rel="noopener" href="https://hanxuan.cc/Fox/Termux.html">早苗Bot 部署教程 Termux</a></h2><p>而更新时间…就是今天！</p>
+<p>缘，妙不可言————大佬的方法更简单，推荐使用~</p>
+<p><del>于是本帖到此完结撒花</del>（bushi）</p>
+<h6 id="来都来了，还是写完吧。"><a href="#来都来了，还是写完吧。" class="headerlink" title="来都来了，还是写完吧。"></a>来都来了，还是写完吧。</h6><hr>
+<h1 id="接下来介绍我使用的传统方法"><a href="#接下来介绍我使用的传统方法" class="headerlink" title="接下来介绍我使用的传统方法"></a>接下来介绍我使用的传统方法</h1><blockquote>
+<p>首先你需要准备魔法工具，开启魔法，否则可能会因为网络问题导致无法进行部分流程。</p>
+<p>如果你使用的是Ubuntu系统，也可以跳到第5步，在Ubuntu上直接部署早苗。</p>
+</blockquote>
+<h1 id="1-安装termux"><a href="#1-安装termux" class="headerlink" title="1. 安装termux"></a>1. 安装termux</h1><p>官网：<a target="_blank" rel="noopener" href="https://termux.dev/cn/index.html">https://termux.dev/cn/index.html</a></p>
+<h1 id="2-安装依赖"><a href="#2-安装依赖" class="headerlink" title="2. 安装依赖"></a>2. 安装依赖</h1><p>启动termux，输入指令：</p>
+<pre><code>pkg install proot git python -y
+</code></pre>
+<p>等待完成。</p>
+<blockquote>
+<p>（可跳过）分别输入以下指令以检验依赖是否已正确安装：<br>proot –version<br>git –version<br>python –version<br>如果出现对应版本号即成功安装</p>
+</blockquote>
+<h1 id="3-安装Ubuntu"><a href="#3-安装Ubuntu" class="headerlink" title="3. 安装Ubuntu"></a>3. 安装Ubuntu</h1><p>依次输入下面3个指令：</p>
+<pre><code>git clone https://github.com/sqlsec/termux-install-linux
+</code></pre>
+<pre><code>cd termux-install-linux
+</code></pre>
+<pre><code>python termux-linux-install.py
+</code></pre>
+<p><img src="https://github.com/sqlsec/termux-install-linux/raw/master/imgs/15876443823741.jpg"></p>
+<p>看到这个页面输入： <code>1</code><br>回车<br>等待下载安装完成</p>
+<h1 id="4-启动Ubuntu"><a href="#4-启动Ubuntu" class="headerlink" title="4. 启动Ubuntu"></a>4. 启动Ubuntu</h1><p>依次输入：</p>
+<pre><code>cd ~/Termux-Linux/Ubuntu
+</code></pre>
+<pre><code>./start-ubuntu.sh
+</code></pre>
+<h1 id="5-准备工作"><a href="#5-准备工作" class="headerlink" title="5. 准备工作"></a>5. 准备工作</h1><p>更新软件包：</p>
+<pre><code>apt update
+</code></pre>
+<p>安装vim编辑器：</p>
+<pre><code>apt install vim -y
+</code></pre>
+<h1 id="6-下载gocq"><a href="#6-下载gocq" class="headerlink" title="6. 下载gocq"></a>6. 下载gocq</h1><p>下载压缩包：</p>
+<pre><code>wget https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.1/go-cqhttp_linux_arm64.tar.gz
+</code></pre>
+<p>解压：</p>
+<pre><code>tar -xzvf go-cqhttp_linux_arm64.tar.gz
+</code></pre>
+<p>启动gocq：</p>
+<pre><code>./go-cqhttp
+</code></pre>
+<p><img src="https://img.chkaja.com/80727ce07fdf3ccb.png"></p>
+<p>首次运行会看到选择界面，输入 <code>3</code> 选择反向 Websocket 通信<br>程序将生成配置文件，再次回车程序自动退出。</p>
+<h1 id="7-编辑配置文件"><a href="#7-编辑配置文件" class="headerlink" title="7. 编辑配置文件"></a>7. 编辑配置文件</h1><p>输入指令：</p>
+<pre><code>vim config.yml
+</code></pre>
+<p>进入编辑页面，按键盘 i 进入编辑模式；<br>翻到底部，大约在 101 行位置，找到<br><code>universal: ws://your_websocket_universal.server</code><br>修改为：<br><code>universal: ws://sanae.youngmoe.com:20026</code>  </p>
+<blockquote>
+<p>尾部的20026只是用于例举的早苗端口号，端口号应为200x形式，它并不固定，你可以根据需求自行修改：  </p>
+<ul>
+<li>当1＜x＜51时，bot&#x3D;早苗  </li>
+<li>当51＜x＜71时，bot&#x3D;澪  </li>
+<li>当71＜x＜99时，bot&#x3D;浅羽  <blockquote>
+<p>比如20010是早苗，20055是澪，20076是浅羽</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<p>特别需要注意的是，当你修改 <code>universal</code> 中的内容时，编辑器会为它自动向右换行，例如：</p>
+<pre><code class="bash">    # 注意 设置了此项地址后下面两项将会被忽略
+        universal: ws://sanae.youngmoe.com:20026
+    # 反向WS API 地址
+</code></pre>
+<p>这是非法的格式，这会导致程序在后续启动中报错，你应该修改换行与上下文字对齐，例如：</p>
+<pre><code class="bash">    # 注意 设置了此项地址后下面两项将会被忽略
+    universal: ws://sanae.youngmoe.com:20026
+    # 反向WS API 地址
+</code></pre>
+<p>修改完成后按键盘ESC退出编辑模式，输入 <code>:wq</code> 保存并退出编辑页面。</p>
+<h1 id="8-登录gocq"><a href="#8-登录gocq" class="headerlink" title="8. 登录gocq"></a>8. 登录gocq</h1><p>再次启动gocq：</p>
+<pre><code>./go-cqhttp
+</code></pre>
+<p>这一次启动程序会生成device.json文件，这个文件的作用是将程序伪装成某品牌的手机型号，以登录QQ。</p>
+<p>随后程序自动退出，你应该会看到如下提示：</p>
+<p><code>[WARNING]: 当前协议不支持二维码登录, 请配置账号密码登录</code></p>
+<p>请参考以下步骤 9 配置登录方式。配置完成并成功登录后，以后的启动将直接自动登录，无所再次配置。</p>
+<h1 id="9-配置登录方式"><a href="#9-配置登录方式" class="headerlink" title="9. 配置登录方式"></a>9. 配置登录方式</h1><p>修改device.json文件：</p>
+<pre><code>vim device.json
+</code></pre>
+<p>进入编辑页面后，键盘输入 i 进入编辑模式。<br>考验眼力的时候到了，你需要在这坨数据中找到 <code>&quot;protocol&quot;:6</code> ，这是机器人的登录协议，不同的数字有不同的含义：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>类型</th>
+<th>限制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>安卓手机</td>
+<td>密码登录</td>
+</tr>
+<tr>
+<td>2</td>
+<td>安卓手表</td>
+<td>二维码登录、无法接收戳一戳</td>
+</tr>
+<tr>
+<td>3</td>
+<td>MacOs</td>
+<td>密码登录、无法接收戳一戳</td>
+</tr>
+<tr>
+<td>4</td>
+<td>企业QQ</td>
+<td>企业账号，一般人不考虑</td>
+</tr>
+<tr>
+<td>5</td>
+<td>苹果平板</td>
+<td>密码登录</td>
+</tr>
+<tr>
+<td>6</td>
+<td>安卓平板</td>
+<td>密码登录</td>
+</tr>
+</tbody></table>
+<p>推荐新手修改为 <code>&quot;protocol&quot;:2</code> 使用二维码登录。<br>修改完成后按键盘ESC退出编辑模式，输入 <code>:wq</code> 保存并退出编辑页面。</p>
+<h2 id="9-1-二维码登录"><a href="#9-1-二维码登录" class="headerlink" title="9.1 二维码登录"></a>9.1 二维码登录</h2><p>如果你选择了<code>&quot;protocol&quot;:2</code> 使用二维码登录————</p>
+<p>请双指缩放画面，因为之后生成的二维码字符比较大，一般屏幕容不下。</p>
+<p>调整缩小文字后，启动gocq：</p>
+<pre><code>./go-cqhttp
+</code></pre>
+<p>程序会生成二维码，你只需要用另一台手机登录机器人的qq扫码即可。</p>
+<h2 id="9-2-密码登录"><a href="#9-2-密码登录" class="headerlink" title="9.2 密码登录"></a>9.2 密码登录</h2><p>如果你选择的是其他协议，那么你需要密码登录。</p>
+<p>输入指令：</p>
+<pre><code>vim config.yml
+</code></pre>
+<p>进入编辑页面，按键盘 i 进入编辑模式；<br>找到前几行，配置机器人的账号与密码。注意，密码要填在单引号內<br>修改完成后按键盘ESC退出编辑模式，输入 <code>:wq</code> 保存并退出编辑页面。</p>
+<p>启动gocq：</p>
+<pre><code>./go-cqhttp
+</code></pre>
+<p>新设备进行密码登录需要滑块验证，根据提示，选择 1 进行自动验证 ——<del>其实是半自动</del><br>复制验证链接到浏览器打开，完成滑块验证，验证结果会自动发送到程序。</p>
+<hr>
+<p>终于结束啦！此时，你应该成功登录上了机器人，并连接上了早苗服务器，你可以尝试在群里发送 <code>早苗on</code>，不出意外的话，早苗应该会满怀欣喜地出来迎接主人~</p>
+<p><strong>注意事项：termux需要持续保活，当termux停止运行时，早苗也将停止心跳。</strong></p>
+<hr>
+<p>参考文章：</p>
+<ul>
+<li>用于termux的linux系统安装脚本： <a target="_blank" rel="noopener" href="https://github.com/sqlsec/termux-install-linux">https://github.com/sqlsec/termux-install-linux</a></li>
+<li>早苗文档： <a target="_blank" rel="noopener" href="https://www.yuque.com/km57bt/hlhnxg/kcmy03">https://www.yuque.com/km57bt/hlhnxg/kcmy03</a></li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 咪啪窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;KaMmy
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="KaMmySuma/giscus"
+    data-repo-id="R_kgDOJp-YWg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOJp-YWs4CW34h"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+        
+    </body>
+</html>

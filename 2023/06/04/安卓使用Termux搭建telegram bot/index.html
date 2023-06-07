@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>安卓使用Termux搭建telegram涩图机器人 | 咪啪窝</title>
+        <meta name="author" content="KaMmy" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>咪啪窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;咪啪窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>安卓使用Termux搭建telegram涩图机器人</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/6/4
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #03a9f4">安卓</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Termux/" style="color: #00a596">Termux</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/telegram/" style="color: #00a596">telegram</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%B6%A9%E5%9B%BE/" style="color: #00bcd4">涩图</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/bot/" style="color: #03a9f4">bot</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>书接上回，继续发掘旧手机termux的价值，搭完早苗，我们还可以继续搭建一个telegram涩图机器人。</p>
+<span id="more"></span>
+
+<blockquote>
+<p><em><strong>必要的准备工作</strong></em></p>
+<blockquote>
+<ul>
+<li>魔法上网工具，本文不介绍</li>
+<li>申请一个电报机器人token，网上很多教程，跟着流程很简单，本文不再赘述。</li>
+<li>（可能需要电脑操作）自行获取pixiv的REFRESH_TOKEN，并写入pixiv_token.txt文件中，获取方法参见 <a target="_blank" rel="noopener" href="https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde">https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde</a></li>
+</ul>
+</blockquote>
+</blockquote>
+<h1 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h1><p>启动termux，依次输入指令：</p>
+<p>更新软件包列表：</p>
+<pre><code>pkg update -y 
+</code></pre>
+<pre><code>pkg install vim python -y
+</code></pre>
+<p>过程中如果出现了选项就无脑填 y 回车。</p>
+<h1 id="（可选）安装虚拟环境"><a href="#（可选）安装虚拟环境" class="headerlink" title="（可选）安装虚拟环境"></a>（可选）安装虚拟环境</h1><blockquote>
+<p>直接安装poetry会报错，我经过了以下几步才能正常安装poetry<br><strong>如果你不明白如何使用虚拟环境，请直接跳过这一步</strong></p>
+</blockquote>
+<p>更新软件包：</p>
+<pre><code>pkg upgrade -y
+</code></pre>
+<p>安装 Rust：</p>
+<pre><code>pkg install rust -y
+</code></pre>
+<p>安装 binutils：</p>
+<pre><code>pkg install binutils -y
+</code></pre>
+<p>再执行以下两个命令：</p>
+<pre><code>export RUSTFLAGS+=&quot; -C lto=no&quot;
+</code></pre>
+<pre><code>pip install bcrypt -y
+</code></pre>
+<p>最后就可以安装poetry了：</p>
+<pre><code>pip install poetry
+</code></pre>
+<p>耐心等待安装完成</p>
+<h1 id="配置bot"><a href="#配置bot" class="headerlink" title="配置bot"></a>配置bot</h1><p>克隆bot项目</p>
+<pre><code>git clone https://github.com/KaMmySuma/TGsetuBot.git
+</code></pre>
+<pre><code>cd TGsetuBot
+</code></pre>
+<p>以下两步操作使用vim编辑器完成，如果你不会使用vim，可以自行搜索教程，或者参考我的另一篇termux搭建早苗教程中的步骤 7 ；你也可以在其他地方例如手机储存或者电脑上修改好txt文件后再移入项目中。<br>termux创建储存软链接指令：<code>termux-setup-storage</code></p>
+<ul>
+<li><p>在token.txt文件中直接填入你的机器人token，格式为：<br><code>123456:abcdefgh</code>  </p>
+</li>
+<li><p>（可能需要电脑操作）自行获取pixiv的REFRESH_TOKEN，并直接填入pixiv_token.txt文件中，获取方法参见：<br><a target="_blank" rel="noopener" href="https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde">https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde</a></p>
+</li>
+</ul>
+<h1 id="启动bot"><a href="#启动bot" class="headerlink" title="启动bot"></a>启动bot</h1><p>安装bot依赖：</p>
+<pre><code>pip install -r requirements.txt
+</code></pre>
+<p>启动bot：</p>
+<pre><code>python start.py
+</code></pre>
+<h1 id="使用bot"><a href="#使用bot" class="headerlink" title="使用bot"></a>使用bot</h1><h2 id="Bot指令"><a href="#Bot指令" class="headerlink" title="Bot指令"></a>Bot指令</h2><ul>
+<li>&#x2F;setu -抽取一张随机涩图~。</li>
+<li>&#x2F;setu_r18 -不够涩！抽取一张r18涩图。</li>
+<li>&#x2F;pixiv_ranking -获取p站排行榜前5名的作品；私聊中可添加参数num&#x3D;？自定义数量：例：&#x2F;pixiv_ranking num&#x3D;3。</li>
+<li>&#x2F;pixiv_ranking_r18 -获取p站r18排行榜前5名的作品；私聊中可添加参数num&#x3D;？自定义数量：例：&#x2F;pixiv_ranking_r18 num&#x3D;3。</li>
+</ul>
+<p>为避免刷屏，以下命令私聊可用（注意空格）：</p>
+<ul>
+<li>&#x2F;pixiv_id 插画ID -获取指定pid的全部插画。</li>
+<li>&#x2F;pixiv_search 关键词 -进行关键词搜索，默认获取前5个结果，可添加参数num&#x3D;？自定义数量：例：&#x2F;pixiv_search 猫娘 num&#x3D;3。</li>
+</ul>
+<p><strong>注意事项：termux需要持续保活，当termux停止运行时，bot也将停止运作。</strong></p>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 咪啪窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;KaMmy
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="KaMmySuma/giscus"
+    data-repo-id="R_kgDOJp-YWg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOJp-YWs4CW34h"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+        
+    </body>
+</html>
