@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>安卓使用Termux搭建telegram涩图机器人 | 咪啪窝</title>
+        <title>安卓使用Termux搭建云崽bot | 咪啪窝</title>
         <meta name="author" content="KaMmy" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,14 +147,14 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>安卓使用Termux搭建telegram涩图机器人</h1>
+        <h1>安卓使用Termux搭建云崽bot</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/6/4
+            2023/6/9
         </span>
         
         <span class="category">
@@ -174,27 +174,22 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #ff7d73">安卓</a>
+                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #00bcd4">安卓</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Termux/" style="color: #ffa2c4">Termux</a>
+                <a href="/tags/Termux/" style="color: #03a9f4">Termux</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/telegram/" style="color: #00a596">telegram</a>
+                <a href="/tags/bot/" style="color: #03a9f4">bot</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%B6%A9%E5%9B%BE/" style="color: #ff7d73">涩图</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/bot/" style="color: #ffa2c4">bot</a>
+                <a href="/tags/%E4%BA%91%E5%B4%BD/" style="color: #00bcd4">云崽</a>
             </span>
             
         </span>
@@ -202,77 +197,124 @@
     </div>
     
     <div class="content" v-pre>
-        <p>书接上回，继续发掘旧手机termux的价值，搭完早苗，我们还可以继续搭建一个telegram涩图机器人。</p>
+        <p>安卓Termux机器人系列第三期~</p>
+<p>感兴趣可以翻阅前两期：</p>
+<p><a target="_blank" rel="noopener" href="https://kammysuma.github.io/2023/06/02/%E5%AE%89%E5%8D%93%E4%BD%BF%E7%94%A8Termux%E6%90%AD%E5%BB%BA%E6%97%A9%E8%8B%97%E6%9C%BA%E5%99%A8%E4%BA%BA/">安卓使用Termux搭建早苗机器人</a></p>
+<p><a target="_blank" rel="noopener" href="https://kammysuma.github.io/2023/06/04/%E5%AE%89%E5%8D%93%E4%BD%BF%E7%94%A8Termux%E6%90%AD%E5%BB%BAtelegram%20bot/">安卓使用Termux搭建telegram涩图机器人</a></p>
+<p>这次咱们搭建一个云崽原神bot</p>
+<p><del>不装了我就是OP</del></p>
 <span id="more"></span>
 
 <blockquote>
-<p><em><strong>必要的准备工作</strong></em></p>
+<p>准备工作：</p>
 <blockquote>
 <ul>
-<li>魔法上网工具，本文不介绍</li>
-<li>申请一个电报机器人token，网上很多教程，跟着流程很简单，本文不再赘述。</li>
-<li>（可能需要电脑操作）自行获取pixiv的REFRESH_TOKEN，并写入pixiv_token.txt文件中，获取方法参见 <a target="_blank" rel="noopener" href="https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde">https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde</a></li>
+<li>一个安卓手机（废话），无需root</li>
+<li>魔法上网工具（提升下载速度，你也可以自行换国内源）</li>
+<li>下载安装 <a target="_blank" rel="noopener" href="https://termux.dev/cn/index.html">Termux</a></li>
 </ul>
 </blockquote>
 </blockquote>
-<h1 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h1><p>启动termux，依次输入指令：</p>
-<p>更新软件包列表：</p>
-<pre><code>pkg update -y 
-</code></pre>
-<pre><code>pkg install vim python -y
-</code></pre>
-<p>过程中如果出现了选项就无脑填 y 回车。</p>
-<h1 id="（可选）安装虚拟环境"><a href="#（可选）安装虚拟环境" class="headerlink" title="（可选）安装虚拟环境"></a>（可选）安装虚拟环境</h1><blockquote>
-<p>直接安装poetry会报错，我经过了以下几步才能正常安装poetry<br><strong>如果你不明白如何使用虚拟环境，请直接跳过这一步</strong></p>
-</blockquote>
-<p>更新软件包：</p>
-<pre><code>pkg upgrade -y
-</code></pre>
-<p>安装 Rust：</p>
-<pre><code>pkg install rust -y
-</code></pre>
-<p>安装 binutils：</p>
-<pre><code>pkg install binutils -y
-</code></pre>
-<p>再执行以下两个命令：</p>
-<pre><code>export RUSTFLAGS+=&quot; -C lto=no&quot;
-</code></pre>
-<pre><code>pip install bcrypt -y
-</code></pre>
-<p>最后就可以安装poetry了：</p>
-<pre><code>pip install poetry
-</code></pre>
-<p>耐心等待安装完成</p>
-<h1 id="配置bot"><a href="#配置bot" class="headerlink" title="配置bot"></a>配置bot</h1><p>克隆bot项目</p>
-<pre><code>git clone https://github.com/KaMmySuma/TGsetuBot.git
-</code></pre>
-<pre><code>cd TGsetuBot
-</code></pre>
-<p>以下两步操作使用vim编辑器完成，如果你不会使用vim，可以自行搜索教程，或者参考我的另一篇termux搭建早苗教程中的步骤 7 ；你也可以在其他地方例如手机储存或者电脑上修改好txt文件后再移入项目中。<br>termux创建储存软链接指令：<code>termux-setup-storage</code></p>
-<ul>
-<li><p>在token.txt文件中直接填入你的机器人token，格式为：<br><code>123456:abcdefgh</code>  </p>
+<h1 id="Now-here-we-go"><a href="#Now-here-we-go" class="headerlink" title="Now here we go"></a>Now here we go</h1><ul>
+<li><p>你可以参考云崽的官方文档搭建原版云崽bot:<br><a target="_blank" rel="noopener" href="https://docs.yunzai.org/deploy/android/">https://docs.yunzai.org/deploy/android/</a></p>
 </li>
-<li><p>（可能需要电脑操作）自行获取pixiv的REFRESH_TOKEN，并直接填入pixiv_token.txt文件中，获取方法参见：<br><a target="_blank" rel="noopener" href="https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde">https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde</a></p>
+<li><p>你也可以参考本教程搭建喵版云崽bot，二者的区别可以自行搜索</p>
 </li>
 </ul>
-<h1 id="启动bot"><a href="#启动bot" class="headerlink" title="启动bot"></a>启动bot</h1><p>安装bot依赖：</p>
-<pre><code>pip install -r requirements.txt
+<h1 id="安装-Alpine-Linux"><a href="#安装-Alpine-Linux" class="headerlink" title="安装 Alpine Linux"></a>安装 Alpine Linux</h1><pre><code class="sh">pkg install proot-distro
+proot-distro install alpine
 </code></pre>
-<p>启动bot：</p>
-<pre><code>python start.py
+<p>等待安装完成后启动 Alpine Linux ：</p>
+<pre><code class="sh">proot-distro login alpine
 </code></pre>
-<h1 id="使用bot"><a href="#使用bot" class="headerlink" title="使用bot"></a>使用bot</h1><h2 id="Bot指令"><a href="#Bot指令" class="headerlink" title="Bot指令"></a>Bot指令</h2><ul>
-<li>&#x2F;setu -抽取一张随机涩图~。</li>
-<li>&#x2F;setu_r18 -不够涩！抽取一张r18涩图。</li>
-<li>&#x2F;pixiv_ranking -获取p站排行榜前5名的作品；私聊中可添加参数num&#x3D;？自定义数量：例：&#x2F;pixiv_ranking num&#x3D;3。</li>
-<li>&#x2F;pixiv_ranking_r18 -获取p站r18排行榜前5名的作品；私聊中可添加参数num&#x3D;？自定义数量：例：&#x2F;pixiv_ranking_r18 num&#x3D;3。</li>
-</ul>
-<p>为避免刷屏，以下命令私聊可用（注意空格）：</p>
+<h1 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h1><p>添加软件源：</p>
+<pre><code class="sh">echo &quot;http://dl-cdn.alpinelinux.org/alpine/edge/testing/&quot; &gt;&gt; /etc/apk/repositories
+</code></pre>
+<pre><code class="sh">apk update &amp;&amp; apk upgrade
+</code></pre>
+<p>安装依赖：</p>
+<pre><code class="sh">apk add nodejs npm redis git chromium wqy-zenhei
+</code></pre>
+<h1 id="安装喵崽"><a href="#安装喵崽" class="headerlink" title="安装喵崽"></a>安装喵崽</h1><p>喵仔项目仓库：<br><a target="_blank" rel="noopener" href="https://gitee.com/yoimiya-kokomi/Miao-Yunzai">https://gitee.com/yoimiya-kokomi/Miao-Yunzai</a></p>
 <ul>
-<li>&#x2F;pixiv_id 插画ID -获取指定pid的全部插画。</li>
-<li>&#x2F;pixiv_search 关键词 -进行关键词搜索，默认获取前5个结果，可添加参数num&#x3D;？自定义数量：例：&#x2F;pixiv_search 猫娘 num&#x3D;3。</li>
+<li><p>克隆项目并安装miao-plugin：</p>
+<pre><code class="sh"># 使用 Github 
+git clone --depth=1 https://github.com/yoimiya-kokomi/Miao-Yunzai.git
+cd Miao-Yunzai 
+git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
+
+
+# 使用Gitee
+git clone --depth=1 https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git
+cd Miao-Yunzai 
+git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
+</code></pre>
+<p>  国内建议用 Gitee 速度快些</p>
+</li>
+<li><p>安装pnpm ，已安装的可以跳过</p>
+<pre><code class="sh"># 使用npmjs.org安装
+npm install pnpm -g
+
+# 或者指定国内源npmmirror.com安装
+npm --registry=https://registry.npmmirror.com install pnpm -g
+</code></pre>
+</li>
+<li><p>安装依赖</p>
+<pre><code class="sh"># 直接安装
+pnpm install -P
+
+# 如依赖安装缓慢或失败，可尝试更换国内npm源后再执行install命令
+pnpm config set registry https://registry.npmmirror.com
+pnpm install -P
+</code></pre>
+</li>
+<li><p>运行（首次运行按提示输入登录）</p>
+<pre><code class="sh">node app
+</code></pre>
+</li>
 </ul>
-<p><strong>注意事项：termux需要持续保活，当termux停止运行时，bot也将停止运作。</strong></p>
+<p>你可以自由安装插件，Yunzai-Bot 相关内容索引：<br><a target="_blank" rel="noopener" href="https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index">https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index</a></p>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><ul>
+<li><p>我自己遇到的问题：</p>
+  <details><summary>puppeteer Chromium 启动失败</summary>
+  <details><summary>报错信息：</summary>
+  <pre><code>
+  [MiaoYz][12:40:37.571][MARK] puppeteer Chromium 启动中...
+  获取Mac地址失败 TypeError: Cannot read properties of undefined (reading 'filter')
+
+<p>  Puppeteer old Headless deprecation warning:<br>  In the near feature <code>headless: true</code> will default to the new Headless mode<br>  for Chrome instead of the old Headless implementation. For more<br>  information, please see <a target="_blank" rel="noopener" href="https://developer.chrome.com/articles/new-headless/">https://developer.chrome.com/articles/new-headless/</a>.<br>  Consider opting in early by passing <code>headless: &quot;new&quot;</code> to <code>puppeteer.launch()</code><br>  If you encounter any bugs, please report them to <a target="_blank" rel="noopener" href="https://github.com/puppeteer/puppeteer/issues/new/choose">https://github.com/puppeteer/puppeteer/issues/new/choose</a>.<br>  [MiaoYz][12:40:37.620][ERRO] {}<br>  Error: Failed to launch the browser process! spawn &#x2F;root&#x2F;.cache&#x2F;puppeteer&#x2F;chrome&#x2F;linux-113.0.5672.63&#x2F;chrome-linux64&#x2F;chrome ENOENT</p>
+<p>  TROUBLESHOOTING: <a target="_blank" rel="noopener" href="https://pptr.dev/troubleshooting">https://pptr.dev/troubleshooting</a></p>
+<pre><code>  at ChildProcess.onClose (file:///root/Miao-Yunzai/node_modules/.pnpm/@puppeteer+browsers@1.3.0/node_modules/@puppeteer/browsers/lib/esm/launch.js:253:24)
+  at ChildProcess.emit (node:events:513:28)
+  at ChildProcess._handle.onexit (node:internal/child_process:289:12)
+  at onErrorNT (node:internal/child_process:476:16)
+  at process.processTicksAndRejections (node:internal/process/task_queues:82:21) undefined
+</code></pre>
+<p>  [MiaoYz][12:40:37.627][ERRO] puppeteer Chromium 启动失败<br>  </pre></p>
+  </code>
+  </details>
+  使用 `npm install puppeteer@13.7.0` 命令将puppeteer降级为13.7.0版本即可启动Chrome；
+  <details><summary>此时仍有报错提示：
+  </summary>
+  <pre><code>  
+  [MiaoYz][14:28:55.613][MARK] puppeteer Chromium 启动中...
+  获取Mac地址失败 TypeError: Cannot read properties of undefined (reading 'filter')
+  chromium ws://127.0.0.1:37579/devtools/browser/1bcd7f4a-1228-4492-b020-4d1c0045ebde
+  [MiaoYz][14:28:58.162][MARK] puppeteer Chromium 启动成功
+  </pre>
+  </code>
+  </details>
+  但是程序可以正常启动使用了，无视即可。你也可以自行搜索其他方案
+  </details>
+</li>
+<li><p>仓库文档常见问题：<br><a target="_blank" rel="noopener" href="https://gitee.com/yoimiya-kokomi/Miao-Yunzai#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">https://gitee.com/yoimiya-kokomi/Miao-Yunzai#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98</a></p>
+</li>
+<li><p>Salipet云崽问题合集：<br><a target="_blank" rel="noopener" href="https://www.wolai.com/oA43vuW71aBnv7UsEysn4T">https://www.wolai.com/oA43vuW71aBnv7UsEysn4T</a></p>
+</li>
+</ul>
+<blockquote>
+<p>后知后觉：云崽需要NodeJS版本大于18.0，我前两期bot教程里的环境无法满足，所以只好用 proot-distro 安装新的 linux环境，如果你熟悉linux，你也可以将其它bot统一部署到同一个Linux环境中</p>
+</blockquote>
 
     </div>
     
