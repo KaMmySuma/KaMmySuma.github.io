@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>安卓使用Termux搭建telegram涩图机器人 | 咪啪窝</title>
+        <title>安卓使用Termux搭建微信ChatGPT机器人 | 咪啪窝</title>
         <meta name="author" content="KaMmy" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,14 +147,14 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>安卓使用Termux搭建telegram涩图机器人</h1>
+        <h1>安卓使用Termux搭建微信ChatGPT机器人</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/6/4
+            2023/6/12
         </span>
         
         <span class="category">
@@ -179,22 +179,22 @@
             
             <span class="tag">
                 
-                <a href="/tags/Termux/" style="color: #00a596">Termux</a>
+                <a href="/tags/Termux/" style="color: #ffa2c4">Termux</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/telegram/" style="color: #00bcd4">telegram</a>
+                <a href="/tags/bot/" style="color: #00bcd4">bot</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%B6%A9%E5%9B%BE/" style="color: #00bcd4">涩图</a>
+                <a href="/tags/ChatGPT/" style="color: #03a9f4">ChatGPT</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/bot/" style="color: #ff7d73">bot</a>
+                <a href="/tags/%E5%BE%AE%E4%BF%A1/" style="color: #ffa2c4">微信</a>
             </span>
             
         </span>
@@ -202,77 +202,97 @@
     </div>
     
     <div class="content" v-pre>
-        <p>书接上回，继续发掘旧手机termux的价值，搭完早苗，我们还可以继续搭建一个telegram涩图机器人。</p>
+        <p>安卓Termux机器人系列第四期！</p>
+<p><del>我真没想到Termux这么好玩</del></p>
+<p>这次来搭建一个微信上的ChatGPT机器人</p>
 <span id="more"></span>
 
 <blockquote>
-<p><em><strong>必要的准备工作</strong></em></p>
+<p>准备工作：</p>
 <blockquote>
 <ul>
-<li>魔法上网工具，本文不介绍</li>
-<li>申请一个电报机器人token，网上很多教程，跟着流程很简单，本文不再赘述。</li>
-<li>（可能需要电脑操作）自行获取pixiv的REFRESH_TOKEN，并写入pixiv_token.txt文件中，获取方法参见 <a target="_blank" rel="noopener" href="https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde">https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde</a></li>
+<li>一个安卓手机（废话），无需root</li>
+<li>魔法上网工具（本文不做介绍）</li>
+<li>下载安装 <a href="">Termux</a></li>
+<li>一个微信小号（大号也不是不可以），<strong>必须已实名</strong>，否则无法登陆</li>
+<li>openAI API key（网上很多教程，本文不再介绍）</li>
 </ul>
 </blockquote>
 </blockquote>
-<h1 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h1><p>启动termux，依次输入指令：</p>
-<p>更新软件包列表：</p>
-<pre><code>pkg update -y 
-</code></pre>
-<pre><code>pkg install vim python -y
+<p>我们将使用的bot项目为chatgpt-on-wechat：<br><a target="_blank" rel="noopener" href="https://github.com/zhayujie/chatgpt-on-wechat">https://github.com/zhayujie/chatgpt-on-wechat</a></p>
+<h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><p>启动 Termux ，如果你没有安装过Python和vim，需要先安装它们：</p>
+<pre><code class="sh">pkg install python vim -y
 </code></pre>
 <p>过程中如果出现了选项就无脑填 y 回车。</p>
-<h1 id="（可选）安装虚拟环境"><a href="#（可选）安装虚拟环境" class="headerlink" title="（可选）安装虚拟环境"></a>（可选）安装虚拟环境</h1><blockquote>
-<p>直接安装poetry会报错，我经过了以下几步才能正常安装poetry<br><strong>如果你不明白如何使用虚拟环境，请直接跳过这一步</strong></p>
+<p>为Termux安装pillow准备依赖：</p>
+<pre><code class="sh">pkg install libjpeg-turbo -y
+
+pkg install libpng -y
+
+export LDFLAGS=&quot;-L/system/lib64&quot;
+</code></pre>
+<p>克隆项目代码：</p>
+<pre><code class="sh">git clone https://github.com/zhayujie/chatgpt-on-wechat
+
+cd chatgpt-on-wechat/
+</code></pre>
+<blockquote>
+<ul>
+<li>接下来推荐在虚拟环境中进行，以避免与其他项目产生依赖冲突。  </li>
+<li>你可以参考《<a target="_blank" rel="noopener" href="https://kammysuma.github.io/2023/06/04/%E5%AE%89%E5%8D%93%E4%BD%BF%E7%94%A8Termux%E6%90%AD%E5%BB%BAtelegram%20bot/">安卓使用Termux搭建telegram涩图机器人</a>》 安装poetry。   </li>
+<li>如果你不会使用虚拟环境，可以去群里问我，或者直接继续操作。</li>
+</ul>
 </blockquote>
-<p>更新软件包：</p>
-<pre><code>pkg upgrade -y
+<p>安装核心依赖，能够使用itchat创建机器人，并具有文字交流功能所需的最小依赖集合：</p>
+<pre><code class="sh">pip install -r requirements.txt
 </code></pre>
-<p>安装 Rust：</p>
-<pre><code>pkg install rust -y
+<p>等待安装完成</p>
+<h1 id="部署项目"><a href="#部署项目" class="headerlink" title="部署项目"></a>部署项目</h1><p>创建配置文件：</p>
+<pre><code class="sh">cp config-template.json config.json
 </code></pre>
-<p>安装 binutils：</p>
-<pre><code>pkg install binutils -y
+<p>修改配置文件：</p>
+<pre><code class="sh">vim config.json
 </code></pre>
-<p>再执行以下两个命令：</p>
-<pre><code>export RUSTFLAGS+=&quot; -C lto=no&quot;
+<p>进入vim页面后，键入 i 进入编辑模式，按需求更改配置：</p>
+<pre><code class="json"># config.json文件内容示例
+&#123;
+  &quot;open_ai_api_key&quot;: &quot;YOUR API KEY&quot;,                          # 填入上面创建的 OpenAI API KEY
+  &quot;model&quot;: &quot;gpt-3.5-turbo&quot;,                                   # 模型名称。当use_azure_chatgpt为true时，其名称为Azure上model deployment名称
+  &quot;proxy&quot;: &quot;127.0.0.1:7890&quot;,                                  # 代理客户端的ip和端口
+  &quot;single_chat_prefix&quot;: [&quot;bot&quot;, &quot;@bot&quot;],                      # 私聊时文本需要包含该前缀才能触发机器人回复
+  &quot;single_chat_reply_prefix&quot;: &quot;[bot] &quot;,                       # 私聊时自动回复的前缀，用于区分真人
+  &quot;group_chat_prefix&quot;: [&quot;@bot&quot;],                              # 群聊时包含该前缀则会触发机器人回复
+  &quot;group_name_white_list&quot;: [&quot;ChatGPT测试群&quot;, &quot;ChatGPT测试群2&quot;], # 开启自动回复的群名称列表
+  &quot;group_chat_in_one_session&quot;: [&quot;ChatGPT测试群&quot;],              # 支持会话上下文共享的群名称  
+  &quot;image_create_prefix&quot;: [&quot;画&quot;, &quot;看&quot;, &quot;找&quot;],                   # 开启图片回复的前缀
+  &quot;conversation_max_tokens&quot;: 1000,                            # 支持上下文记忆的最多字符数
+  &quot;speech_recognition&quot;: false,                                # 是否开启语音识别
+  &quot;group_speech_recognition&quot;: false,                          # 是否开启群组语音识别
+  &quot;use_azure_chatgpt&quot;: false,                                 # 是否使用Azure ChatGPT service代替openai ChatGPT service. 当设置为true时需要设置 open_ai_api_base，如 https://xxx.openai.azure.com/
+  &quot;azure_deployment_id&quot;: &quot;&quot;,                                  # 采用Azure ChatGPT时，模型部署名称
+  &quot;character_desc&quot;: &quot;你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。&quot;,  # 人格描述
+  # 订阅消息，公众号和企业微信channel中请填写，当被订阅时会自动回复，可使用特殊占位符。目前支持的占位符有&#123;trigger_prefix&#125;，在程序中它会自动替换成bot的触发词。
+  &quot;subscribe_msg&quot;: &quot;感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持角色扮演和文字冒险等丰富插件。\n输入&#123;trigger_prefix&#125;#help 查看详细指令。&quot;
+&#125;
 </code></pre>
-<pre><code>pip install bcrypt -y
-</code></pre>
-<p>最后就可以安装poetry了：</p>
-<pre><code>pip install poetry
-</code></pre>
-<p>耐心等待安装完成</p>
-<h1 id="配置bot"><a href="#配置bot" class="headerlink" title="配置bot"></a>配置bot</h1><p>克隆bot项目</p>
-<pre><code>git clone https://github.com/KaMmySuma/TGsetuBot.git
-</code></pre>
-<pre><code>cd TGsetuBot
-</code></pre>
-<p>以下两步操作使用vim编辑器完成，如果你不会使用vim，可以自行搜索教程，或者参考我的另一篇termux搭建早苗教程中的步骤 7 ；你也可以在其他地方例如手机储存或者电脑上修改好txt文件后再移入项目中。<br>termux创建储存软链接指令：<code>termux-setup-storage</code></p>
+<p>以下内容必须修改：</p>
 <ul>
-<li><p>在token.txt文件中直接填入你的机器人token，格式为：<br><code>123456:abcdefgh</code>  </p>
-</li>
-<li><p>（可能需要电脑操作）自行获取pixiv的REFRESH_TOKEN，并直接填入pixiv_token.txt文件中，获取方法参见：<br><a target="_blank" rel="noopener" href="https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde">https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde</a></p>
-</li>
+<li>open_ai_api_key：替换为你的key，注意用双引号包裹。</li>
 </ul>
-<h1 id="启动bot"><a href="#启动bot" class="headerlink" title="启动bot"></a>启动bot</h1><p>安装bot依赖：</p>
-<pre><code>pip install -r requirements.txt
+<p>按需修改好你的配置后，键盘按ESC退出编辑模式，键入 <code>:wq</code> 保存并退出vim页面。</p>
+<h1 id="启动程序"><a href="#启动程序" class="headerlink" title="启动程序"></a>启动程序</h1><p><strong>必须开启魔法、必须开启魔法、必须开启魔法</strong></p>
+<pre><code class="sh">python app.py
 </code></pre>
-<p>启动bot：</p>
-<pre><code>python start.py
-</code></pre>
-<h1 id="使用bot"><a href="#使用bot" class="headerlink" title="使用bot"></a>使用bot</h1><h2 id="Bot指令"><a href="#Bot指令" class="headerlink" title="Bot指令"></a>Bot指令</h2><ul>
-<li>&#x2F;setu -抽取一张随机涩图~。</li>
-<li>&#x2F;setu_r18 -不够涩！抽取一张r18涩图。</li>
-<li>&#x2F;pixiv_ranking -获取p站排行榜前5名的作品；私聊中可添加参数num&#x3D;？自定义数量：例：&#x2F;pixiv_ranking num&#x3D;3。</li>
-<li>&#x2F;pixiv_ranking_r18 -获取p站r18排行榜前5名的作品；私聊中可添加参数num&#x3D;？自定义数量：例：&#x2F;pixiv_ranking_r18 num&#x3D;3。</li>
+<p>终端输出二维码后，使用微信进行扫码，当输出 “Start auto replying” 时表示自动回复程序已经成功运行了（注意：用于登录的微信需要在支付处已完成实名认证）。<br>扫码登录后你的账号就成为机器人了，可以在微信手机端通过配置的关键词触发自动回复 (任意好友发送消息给你，或是自己发消息给好友)</p>
+<blockquote>
+<p>ps. 新微信号扫码提示KeyError: ‘wxsid’ 说明账号没有绑定银行卡实名，无法登陆。 </p>
+</blockquote>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ul>
+<li>搭建属于自己的基于ChatGPT的微信聊天机器人：<a target="_blank" rel="noopener" href="https://juejin.cn/post/7223339726140096570">https://juejin.cn/post/7223339726140096570</a></li>
+<li>Termux官方wiki：<a target="_blank" rel="noopener" href="https://wiki.termux.com/wiki/Python">https://wiki.termux.com/wiki/Python</a></li>
+<li>chatgpt-on-wechat：<a target="_blank" rel="noopener" href="https://github.com/zhayujie/chatgpt-on-wechat">https://github.com/zhayujie/chatgpt-on-wechat</a></li>
+<li>Termux官方wiki：<a target="_blank" rel="noopener" href="https://wiki.termux.com/wiki/Python">https://wiki.termux.com/wiki/Python</a></li>
 </ul>
-<p>为避免刷屏，以下命令私聊可用（注意空格）：</p>
-<ul>
-<li>&#x2F;pixiv_id 插画ID -获取指定pid的全部插画。</li>
-<li>&#x2F;pixiv_search 关键词 -进行关键词搜索，默认获取前5个结果，可添加参数num&#x3D;？自定义数量：例：&#x2F;pixiv_search 猫娘 num&#x3D;3。</li>
-</ul>
-<p><strong>注意事项：termux需要持续保活，当termux停止运行时，bot也将停止运作。</strong></p>
 
     </div>
     
