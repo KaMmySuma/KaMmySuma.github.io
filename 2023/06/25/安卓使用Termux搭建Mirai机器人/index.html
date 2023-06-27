@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>tags | 咪啪窝</title>
+        <title>安卓使用Termux搭建Mirai机器人 | 咪啪窝</title>
         <meta name="author" content="KaMmy" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -27,6 +27,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -141,154 +145,173 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div id="archives">
-    
-    <div class="categories-tags">
+                    <div class="article">
+    <div>
+        <h1>安卓使用Termux搭建Mirai机器人</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/6/25
+        </span>
         
-        
-        <span>
-            <a href="/tags/Termux/" style="background: #00a596">
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                Termux
+                教程
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/Mirai/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Mirai
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Termux/" style="color: #00bcd4">Termux</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Mirai/" style="color: #ffa2c4">Mirai</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/bot/" style="color: #ff7d73">bot</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #03a9f4">安卓</a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/bot/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                bot
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%AE%89%E5%8D%93/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                安卓
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%A4%9B%E6%A4%9B/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                椛椛
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/telegram/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                telegram
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%B6%A9%E5%9B%BE/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                涩图
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/ChatGPT/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                ChatGPT
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%BE%AE%E4%BF%A1/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                微信
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Hexo/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Hexo
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%97%A9%E8%8B%97/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                早苗
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E4%BA%91%E5%B4%BD/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                云崽
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/VSCode/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                VSCode
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>安卓Termux机器人系列第五期！</p>
+<p><del>怎么还有</del></p>
+<p>这次来搭建一个 <a target="_blank" rel="noopener" href="https://github.com/mamoe/mirai">mirai</a> 机器人</p>
+<span id="more"></span>
+
+<blockquote>
+<p>准备工作：</p>
+<blockquote>
+<ul>
+<li>一个安卓手机（废话），无需root</li>
+<li>魔法上网工具（本文不做介绍）</li>
+<li>下载安装 <a target="_blank" rel="noopener" href="https://termux.dev/cn/index.html">Termux</a></li>
+</ul>
+</blockquote>
+</blockquote>
+<h1 id="部署MCL"><a href="#部署MCL" class="headerlink" title="部署MCL"></a>部署MCL</h1><p>启动Termux，直接上代码：</p>
+<pre><code class="bash">pkg update &amp;&amp; pkg upgrade  #如果是刚安装, 需要先拉取(查询)最新的包版本信息
+
+pkg install openjdk-17  #安装 Java 17
+
+java -version  #出现 openjdk version &quot;17-internal&quot; ....代表安装成功
+
+pkg install wget  #安装 wget 需要用它下载 MCL
+
+wget https://github.com/iTXTech/mirai-console-loader/releases/download/v2.1.2/mcl-2.1.2.zip  #下载最新版 MCL (现在是 2.1.2)
+
+unzip mcl-2.1.2.zip -d mcl  #解压到文件夹 mcl
+
+cd mcl  #进入下载文件夹,你可以使用 ls -l 查看一下文件夹里目前有那些文件
+
+chmod 777 mcl  #授予脚本运行权限
+
+./mcl -u  #启动 MCL
+
+login qq账号 qq密码 [协议] #用账号密码登陆qq
+#例如：login 123456798 114514 ANDROID_PAD
+</code></pre>
+<p>不同协议之间的区别：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>类型</th>
+<th>限制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ANDROID_PHONE</td>
+<td>安卓手机</td>
+<td>密码登录</td>
+</tr>
+<tr>
+<td>ANDROID_WATCH</td>
+<td>安卓手表</td>
+<td>二维码登录、无法接收戳一戳</td>
+</tr>
+<tr>
+<td>MACOS</td>
+<td>MacOs</td>
+<td>密码登录、无法接收戳一戳</td>
+</tr>
+<tr>
+<td>IPAD</td>
+<td>苹果平板</td>
+<td>密码登录</td>
+</tr>
+<tr>
+<td>ANDROID_PAD</td>
+<td>安卓平板</td>
+<td>密码登录</td>
+</tr>
+</tbody></table>
+<p>如果你的账号遇到登陆问题，请参阅这个帖子：<a target="_blank" rel="noopener" href="https://mirai.mamoe.net/topic/223/%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E7%9A%84%E4%B8%B4%E6%97%B6%E5%A4%84%E7%90%86%E6%96%B9%E6%A1%88">无法登录的临时处理方案</a></p>
+<p>登陆成功即搭建完成，你的QQ已经变成了bot，尽管它还没有安装任何功能，尽管它还什么都没做。</p>
+<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><p>接下来，你可以去社区寻找自己喜欢的插件：<br><a target="_blank" rel="noopener" href="https://mirai.mamoe.net/category/11/%E6%8F%92%E4%BB%B6%E5%8F%91%E5%B8%83">https://mirai.mamoe.net/category/11/%E6%8F%92%E4%BB%B6%E5%8F%91%E5%B8%83</a></p>
+<p>MCL插件目录：~&#x2F;plugins</p>
+<hr>
+<p>MCL安装插件十分简单，只需要在插件目录中用 wget 下载插件的 Java包 即可。</p>
+<p>例如，我要安装 <a target="_blank" rel="noopener" href="https://mirai.mamoe.net/topic/1119/%E6%91%B8%E9%B1%BC%E4%BA%BA%E6%97%A5%E5%8E%86%E6%8F%92%E4%BB%B6%E7%89%88">摸鱼人日历</a>，打开 <a target="_blank" rel="noopener" href="https://github.com/Samarium150/mirai-console-loafers-calendar/releases/tag/1.8.3">项目仓库</a>，复制下载链接：</p>
+<p><img src="https://img.chkaja.com/ce07ed59b6df0db4.png"></p>
+<p>在MCL根目录下运行以下命令：</p>
+<pre><code class="bash">cd plugins #打开MCL插件目录
+
+wget 刚刚复制的链接 #下载插件的Java包
+</code></pre>
+<p>然后重启MCL即可加载插件</p>
+<h1 id="CheatLearning"><a href="#CheatLearning" class="headerlink" title="CheatLearning"></a>CheatLearning</h1><p>特别的，如果你想要安装 <a target="_blank" rel="noopener" href="https://github.com/Nana-Miko/ChatLearning">chatlearning</a> 这个插件</p>
+<pre><code class="bash">pkg install python #先安装Python，已安装的可跳过
+  
+wget https://github.com/Nana-Miko/ChatLearning/releases/download/V3.0.3/ChatLearning.Source.zip 
+#下载源码压缩包
+
+unzip ChatLearning.Source.zip -d chatlearning #解压
+ 
+cd chatleaning/Source #切换到程序目录
+
+pip install -r requirements.txt #安装依赖
+</code></pre>
+<p>如果安装numpy报错，可以根据官方文档安装 python-numpy：</p>
+<pre><code class="bash">pkg install python-numpy
+</code></pre>
+<p>执行<code>pip list</code><br>如果列出的包里有numpy说明安装成功了</p>
+<p>运行程序：<br>python Chatmain.py</p>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
     
 </div>
 
@@ -326,6 +349,29 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="KaMmySuma/giscus"
+    data-repo-id="R_kgDOJp-YWg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOJp-YWs4CW34h"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
         
     </body>
 </html>

@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>安卓使用Termux搭建Zerobot椛椛机器人 | 咪啪窝</title>
+        <meta name="author" content="KaMmy" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>Now Loading...</h2>
+                        <p>加载过慢请开启魔法</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>咪啪窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;咪啪窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>安卓使用Termux搭建Zerobot椛椛机器人</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/6/26
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Termux/" style="color: #03a9f4">Termux</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/bot/" style="color: #00a596">bot</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #ffa2c4">安卓</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%A4%9B%E6%A4%9B/" style="color: #ff7d73">椛椛</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>安卓Termux机器人系列第六期！</p>
+<p><del>没完了是吧</del></p>
+<p>这次来搭建一个 <a target="_blank" rel="noopener" href="https://github.com/FloatTech/ZeroBot-Plugin">ZeroBot</a> 椛椛机器人</p>
+<span id="more"></span>
+
+<blockquote>
+<p>准备工作：</p>
+<blockquote>
+<ul>
+<li>一个安卓手机（废话），无需root</li>
+<li>魔法上网工具（本文不做介绍）</li>
+<li>下载安装 <a target="_blank" rel="noopener" href="https://termux.dev/cn/index.html">Termux</a></li>
+</ul>
+</blockquote>
+</blockquote>
+<h1 id="准备Ubuntu容器"><a href="#准备Ubuntu容器" class="headerlink" title="准备Ubuntu容器"></a>准备Ubuntu容器</h1><p>其它Linux容器也行，这里用Ubuntu示例，已有的可以跳过</p>
+<pre><code class="bash">pkg install proot-distro #安装proot-distro
+
+proot-distro install ubuntu #用proot-distro安装Ubuntu
+
+proot-distro login ubuntu #登陆Ubuntu
+
+apt update &amp;&amp; apt upgrade #更新软件包
+</code></pre>
+<h1 id="安装go-cqhttp"><a href="#安装go-cqhttp" class="headerlink" title="安装go-cqhttp"></a>安装go-cqhttp</h1><p>在<a target="_blank" rel="noopener" href="https://github.com/Mrs4s/go-cqhttp">gocq项目仓库</a>找到最新版本复制下载地址（下载这个后缀的：<code>arm64.tar.gz</code>），用 wget 下载链接即可。写这篇帖子的时候最新版是v1.0.1</p>
+<pre><code class="bash">apt install wget #安装wget
+
+mkdir gocq #创建gocq目录
+
+cd gocq #切换到gocq目录
+
+wget https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.1/go-cqhttp_linux_arm64.tar.gz #下载gocq
+
+tar -xzvf go-cqhttp_linux_arm64.tar.gz #解压
+
+./go-cqhttp #第一次启动gocq
+</code></pre>
+<p><img src="https://img.chkaja.com/80727ce07fdf3ccb.png"></p>
+<p>首次运行会看到选择界面，输入 <code>2</code> 选择正向 Websocket 通信<br>程序将生成配置文件，再次回车程序自动退出。</p>
+<p>接下来编辑配置文件，随意用你熟悉的编辑器即可，这里用vim示例。</p>
+<pre><code class="bash">apt install vim #安装vim
+
+vim config.yml #用vim打开配置文件
+</code></pre>
+<p>进入编辑页面，按键盘 i 进入编辑模式  </p>
+<p>找到以下内容，按照#后面的提示改</p>
+<pre><code class="yaml"># go-cqhttp 默认配置文件
+
+account:
+  uin: 1233456 # 此处填入机器人的QQ号，注意不能和主人是同一个QQ号
+  password: &#39;&#39; # 这里先不要填入密码，第一次先扫码登录
+  encrypt: false
+  status: 0
+  relogin:
+    delay: 3
+    interval: 3
+    max-times: 0 
+</code></pre>
+<p>翻到最后，将这里的8080改为6700</p>
+<pre><code class="bash"># 正向WS设置
+  - ws:
+      # 正向WS服务器监听地址
+      address: 0.0.0.0:8080
+      middlewares:
+        &lt;&lt;: *default # 引用默认中间件
+</code></pre>
+<p>修改完成后按键盘ESC退出编辑模式，输入 <code>:wq</code> 保存并退出编辑页面。</p>
+<p>接下来登陆gocq，你可以参考以下文章来修改登陆协议、配置登陆方式：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://kammysuma.github.io/2023/06/02/%E5%AE%89%E5%8D%93%E4%BD%BF%E7%94%A8Termux%E6%90%AD%E5%BB%BA%E6%97%A9%E8%8B%97%E6%9C%BA%E5%99%A8%E4%BA%BA/">安卓使用Termux搭建早苗机器人</a></li>
+</ul>
+<p>输入 <code>./go-cqhttp</code> 运行程序，按照提示进行登陆，成功登录会有类似下面的界面：</p>
+<pre><code class="cmd">[2022-12-30 14:54:25] [INFO]: 当前版本:v1.0.0-rc3
+[2022-12-30 14:54:25] [INFO]: 将使用 device.json 内的设备信息运行Bot.
+[2022-12-30 14:54:25] [INFO]: Bot将在5秒后登录并开始信息处理, 按 Ctrl+C 取消.
+[2022-12-30 14:54:30] [INFO]: 开始尝试登录并同步消息...
+[2022-12-30 14:54:30] [INFO]: 使用协议: iPad
+[2022-12-30 14:54:31] [INFO]: Protocol -&gt; connect to server: 111.31.205.233:8080
+[2022-12-30 14:54:31] [WARNING]: Protocol -&gt; device lock is disable. http api may fail.
+[2022-12-30 14:54:38] [INFO]: 登录成功 欢迎使用: 椛椛
+[2022-12-30 14:54:38] [INFO]: 开始加载好友列表...
+[2022-12-30 14:54:38] [INFO]: 共加载 42 个好友.
+[2022-12-30 14:54:38] [INFO]: 开始加载群列表...
+[2022-12-30 14:54:38] [INFO]: 共加载 26 个群.
+[2022-12-30 14:54:39] [INFO]: 资源初始化完成, 开始处理信息.
+[2022-12-30 14:54:39] [INFO]: アトリは、高性能ですから!
+[2022-12-30 14:54:39] [INFO]: 正在检查更新.
+[2022-12-30 14:54:39] [INFO]: CQ HTTP 服务器已启动: [::]:8080 #我自己用的是8060的端口
+[2022-12-30 14:54:39] [INFO]: CQ WebSocket 服务器已启动: [::]:8060
+[2022-12-30 14:54:39] [INFO]: 检查更新完成. 当前已运行最新版本.
+[2022-12-30 14:54:39] [INFO]: 开始诊断网络情况
+[2022-12-30 14:54:42] [INFO]: 网络诊断完成. 未发现问题
+</code></pre>
+<h1 id="安装zbp（机器人主体）"><a href="#安装zbp（机器人主体）" class="headerlink" title="安装zbp（机器人主体）"></a>安装zbp（机器人主体）</h1><p>按住手机屏幕左边缘往右滑，选择new session（新建窗口）</p>
+<pre><code class="bash">proot-distro login ubuntu #登陆ubuntu
+
+mkdir zerobot #创建机器人目录
+
+cd zerobot #切换到机器人目录
+</code></pre>
+<p>打开<a target="_blank" rel="noopener" href="https://github.com/FloatTech/ZeroBot-Plugin">椛椛项目仓库</a>，复制最新版本后缀为<code>linux_arm64.deb</code>的下载地址，然后用wget下载即可</p>
+<pre><code class="bash">wget https://github.com/FloatTech/ZeroBot-Plugin/releases/download/v1.7.1/zbp_linux_arm64.deb #下载项目文件
+
+dpkg  -i zbp_linux_arm64.deb #安装zerobot
+
+zbp -s config.json #运行一下，生成配置文件
+
+vim config.json #编辑配置文件
+</code></pre>
+<p>找到下面内容，按照#后面的提示修改 </p>
+<pre><code class="json">&#123;
+    &quot;zero&quot;: &#123;
+        &quot;nickname&quot;: [
+            &quot;椛椛&quot;, #这里的椛椛可以换成你喜欢的名称
+            &quot;ATRI&quot;,
+            &quot;atri&quot;,
+            &quot;亚托莉&quot;,
+            &quot;アトリ&quot;
+        ],
+        &quot;command_prefix&quot;: &quot;/&quot;,
+        &quot;super_users&quot;: [], #在方括号里填入机器人主人的QQ
+        &quot;ring_len&quot;: 4096,
+        &quot;latency&quot;: 233000000,
+        &quot;max_process_time&quot;: 240000000000
+    &#125;,
+    &quot;ws&quot;: [
+        &#123;
+            &quot;Url&quot;: &quot;ws://127.0.0.1:6700&quot;,#看到了吗，这里是6700，这里的数字必须和go-cqhttp中的一样
+            &quot;AccessToken&quot;: &quot;&quot;
+        &#125;
+    ],
+    &quot;wss&quot;: null
+&#125;
+</code></pre>
+<p>修改完成后按键盘ESC退出编辑模式，输入 <code>:wq</code> 保存并退出编辑页面。</p>
+<pre><code class="bash">zbp -c config.json #启动机器人
+</code></pre>
+<p>当你看到这个输出结果就说明成功了</p>
+<pre><code class="cmd">INFO[0001] [web] 本机支持ipv6
+INFO[0001] [file]加载md5数据库...
+INFO[0001] [file]md5数据库已是最新
+
+======================[ZeroBot-Plugin]======================
+* OneBot + ZeroBot + Golang
+* Version v1.6.1-beta3 - 2022-12-26 13:45:09 +0800 CST
+* Copyright © 2020 - 2022 FloatTech. All Rights Reserved.
+* Project: https://github.com/FloatTech/ZeroBot-Plugin
+----------------------[ZeroBot-公告栏]----------------------
+                QQ群:1048452984, 2群:915103207
+            开发群:752669987, 进阶开发群:705749886
+
+                        禁止用于违法用途
+============================================================
+
+INFO[0004] [main] 从 config.json 读取配置文件
+INFO[0004] [ws] 开始尝试连接到Websocket服务器: ws://127.0.0.1:8060
+INFO[0004] [ws] 连接Websocket服务器: ws://127.0.0.1:8060 成功, 账号: xxxxxxxxxx（保密）
+INFO[0005] [job]本地环回初始化完成
+INFO[0005] [thesaurus]加载 116 条kimoi
+INFO[0005] [thesaurus]加载 4775 条傲娇词库 12209 条可爱词库
+</code></pre>
+<p>我们打开主人的QQ账号，对着机器人账号私聊发送&#x2F;全局响应 </p>
+<p><strong>一定要带上 <code>/</code> 机器人回复开始工作之类的话就说明机器人搭建成功了</strong></p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv20859144/">纯小白也能用termux在手机上搭建zerobot的教程</a></li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 咪啪窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;KaMmy
+        </div>
+        <div>
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">
+                别来无恙呀，最近咪啪窝被拜访了<span id="busuanzi_value_site_pv"></span>次；
+            </span>
+            <span id="busuanzi_container_page_pv">
+                这篇文章被阅读了<span id="busuanzi_value_page_pv"></span>次~
+              </span>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="KaMmySuma/giscus"
+    data-repo-id="R_kgDOJp-YWg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOJp-YWs4CW34h"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+        
+    </body>
+</html>
