@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>VSCode方法 | 咪啪窝</title>
+        <title>WinRAR 破解去广告 | 咪啪窝</title>
         <meta name="author" content="KaMmy" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,22 +147,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>VSCode方法</h1>
+        <h1>WinRAR 破解去广告</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/6/4
+            2023/12/15
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%96%B9%E6%B3%95/">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                方法
+                教程
             </a>
         </span>
         
@@ -174,7 +174,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/VSCode/" style="color: #ffa2c4">VSCode</a>
+                <a href="/tags/WinRAR/" style="color: #ff7d73">WinRAR</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%A0%B4%E8%A7%A3/" style="color: #03a9f4">破解</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/" style="color: #ff7d73">去广告</a>
             </span>
             
         </span>
@@ -182,20 +192,38 @@
     </div>
     
     <div class="content" v-pre>
-        <p>记录一些VScode使用方法</p>
+        <p>正版WinRAR去广告 + 注册</p>
 <span id="more"></span>
 
-<h1 id="我自己的常用插件ID"><a href="#我自己的常用插件ID" class="headerlink" title="我自己的常用插件ID"></a>我自己的常用插件ID</h1><ul>
-<li>MS-CEINTL.vscode-language-pack-zh-hans</li>
-<li>wangzy.sneak-mark</li>
-<li>Live Server</li>
-</ul>
-<h1 id="VSCode突出显示中文标点符号而不高亮汉字"><a href="#VSCode突出显示中文标点符号而不高亮汉字" class="headerlink" title="VSCode突出显示中文标点符号而不高亮汉字"></a>VSCode突出显示中文标点符号而不高亮汉字</h1><ul>
-<li>安装插件<code>sneak mark</code></li>
-<li>Windows下的默认插件目录为：<br><code>C:\用户名\.vscode\extensions\wangzy.sneak-mark-0.0.6\out</code></li>
-<li>找到目录下的配置文件<code>extension.js</code></li>
-<li>修改第十四行为：<code>const charCodeRegEx = /(，|。|（|）|：|‘|’|“|”|？|！)/g;</code></li>
-<li>文件-首选项-设置，搜索<code>Non Basic ASCII</code>选择<code>inUntrastedWorkspace</code>（一般默认是它）</li>
+<h1 id="一、官网下载WinRAR"><a href="#一、官网下载WinRAR" class="headerlink" title="一、官网下载WinRAR"></a>一、官网下载WinRAR</h1><p><a target="_blank" rel="noopener" href="https://www.win-rar.com/start.html?&L=7">官网下载WinRAR</a></p>
+<p>正常安装即可</p>
+<h1 id="二、获取软件许可"><a href="#二、获取软件许可" class="headerlink" title="二、获取软件许可"></a>二、获取软件许可</h1><p>在WinRAR的安装目录内新建 <code>rarreg.key</code> 文件，已有该文件则直接修改，用记事本打开，覆盖填入以下内容：</p>
+<pre><code class="shell">RAR registration data
+Federal Agency for Education
+1000000 PC usage license
+UID=b621cca9a84bc5deffbf
+6412612250ffbf533df6db2dfe8ccc3aae5362c06d54762105357d
+5e3b1489e751c76bf6e0640001014be50a52303fed29664b074145
+7e567d04159ad8defc3fb6edf32831fd1966f72c21c0c53c02fbbb
+2f91cfca671d9c482b11b8ac3281cb21378e85606494da349941fa
+e9ee328f12dc73e90b6356b921fbfb8522d6562a6a4b97e8ef6c9f
+fb866be1e3826b5aa126a4d2bfe9336ad63003fc0e71c307fc2c60
+64416495d4c55a0cc82d402110498da970812063934815d81470829275
+</code></pre>
+<p>不出意外的话再次打开WinRAR显示已注册。</p>
+<h1 id="三、用Resource-Hacker去广告"><a href="#三、用Resource-Hacker去广告" class="headerlink" title="三、用Resource Hacker去广告"></a>三、用Resource Hacker去广告</h1><p>下载 <a target="_blank" rel="noopener" href="https://www.angusj.com/resourcehacker/">Resource Hacker</a></p>
+<p>使用<code>Resource Hacker</code>软件打开安装目录下的<code>winrar.exe</code></p>
+<p>进入字串表，找到“80”，删除“1267”和“1277”行</p>
+<p>点击绿色三角形按钮，编译</p>
+<p><img src="https://img.chkaja.com/22e79ffd92ea1654.png"></p>
+<p>然后：文件→另存为，进行保存</p>
+<p><img src="https://img.chkaja.com/2ee72ee289818d38.png"></p>
+<p>然后对源文件：winrar.exe进行替换,注意，要关闭winrar软件</p>
+<p><img src="https://img.chkaja.com/a4629cb4e6203ace.png"></p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ul>
+<li>WinRAR深度去除弹窗广告：<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1143884-1-1.html">https://www.52pojie.cn/thread-1143884-1-1.html</a></li>
+<li>WinRAR去广告：只需六步，教你去除WinRAR的广告：<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_42483341/article/details/110914243">https://blog.csdn.net/sinat_42483341/article/details/110914243</a></li>
+<li>我的WINRAR为什么打开时显示是“评估版本”？：<a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/1894100744805037700.html?qq-pf-to=pcqq.c2c">https://zhidao.baidu.com/question/1894100744805037700.html?qq-pf-to=pcqq.c2c</a></li>
 </ul>
 
     </div>
