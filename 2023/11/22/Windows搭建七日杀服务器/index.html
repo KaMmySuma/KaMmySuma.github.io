@@ -174,17 +174,17 @@
             
             <span class="tag">
                 
+                <a href="/tags/%E4%B8%83%E6%97%A5%E6%9D%80/" style="color: #00bcd4">七日杀</a>
+            </span>
+            
+            <span class="tag">
+                
                 <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="color: #00bcd4">服务器</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%B8%B8%E6%88%8F/" style="color: #03a9f4">游戏</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E4%B8%83%E6%97%A5%E6%9D%80/" style="color: #ffa2c4">七日杀</a>
+                <a href="/tags/%E6%B8%B8%E6%88%8F/" style="color: #ff7d73">游戏</a>
             </span>
             
         </span>
@@ -192,19 +192,31 @@
     </div>
     
     <div class="content" v-pre>
-        <p>一种基于Windows的七日杀服务器搭建教程</p>
+        <blockquote>
+<p>一种基于Windows的七日杀服务器搭建教程</p>
+</blockquote>
 <span id="more"></span>
 
-<h1 id="部署SteamCMD"><a href="#部署SteamCMD" class="headerlink" title="部署SteamCMD"></a>部署SteamCMD</h1><p>下载 <a target="_blank" rel="noopener" href="https://developer.valvesoftware.com/wiki/SteamCMD">SteamCMD</a></p>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E9%83%A8%E7%BD%B2steamcmd">部署SteamCMD</a></li>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E4%B8%83%E6%97%A5%E6%9D%80%E6%9C%8D%E5%8A%A1%E5%99%A8">下载七日杀服务器</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">修改配置文件</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8">启动服务器</a></li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="部署steamcmd">部署SteamCMD</span></h1><p>下载 <a target="_blank" rel="noopener" href="https://developer.valvesoftware.com/wiki/SteamCMD">SteamCMD</a></p>
 <p>找到Windows版，下载后只有一个exe文件，把它放在你喜欢的位置运行，它会在当前目录自动部署。</p>
-<h1 id="下载七日杀服务器"><a href="#下载七日杀服务器" class="headerlink" title="下载七日杀服务器"></a>下载七日杀服务器</h1><p>打开 <code>steamcmd.exe</code> 等待启动ok后，依次输入以下指令并等待完成：</p>
+<h1><span id="下载七日杀服务器">下载七日杀服务器</span></h1><p>打开 <code>steamcmd.exe</code> 等待启动ok后，依次输入以下指令并等待完成：</p>
 <pre><code class="cmd">login anonymous  #登录匿名账户
 
 app_update 294420  #下载七日杀服务端
 </code></pre>
 <p>游戏根目录默认为：<code>SteamCMD文件夹\steamapps\common\7 Days to Die Dedicated Server</code></p>
 <p>你可以通过该目录下的 <code>startdedicated.bat</code> 启动服务器，但是在此之前我们需要进行一些设置</p>
-<h1 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h1><ul>
+<h1><span id="修改配置文件">修改配置文件</span></h1><ul>
 <li><p>打开 <code>platform.cfg</code> ，删除第二行 <code>crossplatform = EOS</code> ，不删可能会跳黄红字报错，详细说明请查看 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41731201/article/details/131095762">这篇文章</a></p>
 </li>
 <li><p>打开 <code>serverconfig.xml</code> 进行各项设置，其中比较重要的设置如下：</p>
@@ -220,7 +232,7 @@ app_update 294420  #下载七日杀服务端
 <li><p>如果你误删或者乱改了配置文件不知如何恢复，可以验证文件游戏完整性以自动下载缺失文件：<code>app_update 294420 validate</code></p>
 </li>
 </ul>
-<h1 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h1><p> 打开 <code>startdedicated.bat</code> 启动服务器，默认端口为26900，TCP协议。</p>
+<h1><span id="启动服务器">启动服务器</span></h1><p> 打开 <code>startdedicated.bat</code> 启动服务器，默认端口为26900，TCP协议。</p>
 
     </div>
     

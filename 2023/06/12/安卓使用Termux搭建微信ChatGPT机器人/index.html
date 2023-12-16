@@ -174,17 +174,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Termux/" style="color: #00bcd4">Termux</a>
+                <a href="/tags/Termux/" style="color: #00a596">Termux</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/bot/" style="color: #03a9f4">bot</a>
+                <a href="/tags/bot/" style="color: #00a596">bot</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #03a9f4">安卓</a>
+                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #ff7d73">安卓</a>
             </span>
             
             <span class="tag">
@@ -194,7 +194,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%BE%AE%E4%BF%A1/" style="color: #ff7d73">微信</a>
+                <a href="/tags/%E5%BE%AE%E4%BF%A1/" style="color: #03a9f4">微信</a>
             </span>
             
         </span>
@@ -207,20 +207,30 @@
 <p>这次来搭建一个微信上的ChatGPT机器人</p>
 <span id="more"></span>
 
+<!-- toc -->
+
+<ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
+<li><a href="#%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE">部署项目</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F">启动程序</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0">参考文章</a></li>
+</ul>
+<!-- tocstop -->
+
 <blockquote>
 <p>准备工作：</p>
 <blockquote>
 <ul>
 <li>一个安卓手机（废话），无需root</li>
 <li>魔法上网工具（本文不做介绍）</li>
-<li>下载安装 <a href="">Termux</a></li>
+<li>下载安装 <a href>Termux</a></li>
 <li>一个微信小号（大号也不是不可以），<strong>必须已实名</strong>，否则无法登陆</li>
 <li>openAI API key（网上很多教程，本文不再介绍）</li>
 </ul>
 </blockquote>
 </blockquote>
 <p>我们将使用的bot项目为chatgpt-on-wechat：<br><a target="_blank" rel="noopener" href="https://github.com/zhayujie/chatgpt-on-wechat">https://github.com/zhayujie/chatgpt-on-wechat</a></p>
-<h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><p>启动 Termux ，如果你没有安装过Python和vim，需要先安装它们：</p>
+<h1><span id="环境准备">环境准备</span></h1><p>启动 Termux ，如果你没有安装过Python和vim，需要先安装它们：</p>
 <pre><code class="sh">pkg install python vim -y
 </code></pre>
 <p>过程中如果出现了选项就无脑填 y 回车。</p>
@@ -247,7 +257,7 @@ cd chatgpt-on-wechat/
 <pre><code class="sh">pip install -r requirements.txt
 </code></pre>
 <p>等待安装完成</p>
-<h1 id="部署项目"><a href="#部署项目" class="headerlink" title="部署项目"></a>部署项目</h1><p>创建配置文件：</p>
+<h1><span id="部署项目">部署项目</span></h1><p>创建配置文件：</p>
 <pre><code class="sh">cp config-template.json config.json
 </code></pre>
 <p>修改配置文件：</p>
@@ -280,14 +290,14 @@ cd chatgpt-on-wechat/
 <li>open_ai_api_key：替换为你的key，注意用双引号包裹。</li>
 </ul>
 <p>按需修改好你的配置后，键盘按ESC退出编辑模式，键入 <code>:wq</code> 保存并退出vim页面。</p>
-<h1 id="启动程序"><a href="#启动程序" class="headerlink" title="启动程序"></a>启动程序</h1><p><strong>必须开启魔法、必须开启魔法、必须开启魔法</strong></p>
+<h1><span id="启动程序">启动程序</span></h1><p><strong>必须开启魔法、必须开启魔法、必须开启魔法</strong></p>
 <pre><code class="sh">python app.py
 </code></pre>
 <p>终端输出二维码后，使用微信进行扫码，当输出 “Start auto replying” 时表示自动回复程序已经成功运行了（注意：用于登录的微信需要在支付处已完成实名认证）。<br>扫码登录后你的账号就成为机器人了，可以在微信手机端通过配置的关键词触发自动回复 (任意好友发送消息给你，或是自己发消息给好友)</p>
 <blockquote>
 <p>ps. 新微信号扫码提示KeyError: ‘wxsid’ 说明账号没有绑定银行卡实名，无法登陆。 </p>
 </blockquote>
-<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ul>
+<h1><span id="参考文章">参考文章</span></h1><ul>
 <li>搭建属于自己的基于ChatGPT的微信聊天机器人：<a target="_blank" rel="noopener" href="https://juejin.cn/post/7223339726140096570">https://juejin.cn/post/7223339726140096570</a></li>
 <li>Termux官方wiki：<a target="_blank" rel="noopener" href="https://wiki.termux.com/wiki/Python">https://wiki.termux.com/wiki/Python</a></li>
 <li>chatgpt-on-wechat：<a target="_blank" rel="noopener" href="https://github.com/zhayujie/chatgpt-on-wechat">https://github.com/zhayujie/chatgpt-on-wechat</a></li>

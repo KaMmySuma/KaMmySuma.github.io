@@ -174,17 +174,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Termux/" style="color: #03a9f4">Termux</a>
+                <a href="/tags/Termux/" style="color: #ff7d73">Termux</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/bot/" style="color: #03a9f4">bot</a>
+                <a href="/tags/bot/" style="color: #00bcd4">bot</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #03a9f4">安卓</a>
+                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #00bcd4">安卓</a>
             </span>
             
             <span class="tag">
@@ -194,7 +194,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%B6%A9%E5%9B%BE/" style="color: #ffa2c4">涩图</a>
+                <a href="/tags/%E6%B6%A9%E5%9B%BE/" style="color: #00a596">涩图</a>
             </span>
             
         </span>
@@ -202,8 +202,24 @@
     </div>
     
     <div class="content" v-pre>
-        <p>书接上回，继续发掘旧手机termux的价值，搭完早苗，我们还可以继续搭建一个telegram涩图机器人。</p>
+        <blockquote>
+<p>书接上回，继续发掘旧手机termux的价值，搭完早苗，我们还可以继续搭建一个telegram涩图机器人。</p>
+</blockquote>
 <span id="more"></span>
+
+<!-- toc -->
+
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96">安装依赖</a></li>
+<li><a href="#%E5%8F%AF%E9%80%89%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83">（可选）安装虚拟环境</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AEbot">配置bot</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8bot">启动bot</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8bot">使用bot</a><ul>
+<li><a href="#bot%E6%8C%87%E4%BB%A4">Bot指令</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 
 <blockquote>
 <p><em><strong>必要的准备工作</strong></em></p>
@@ -215,14 +231,14 @@
 </ul>
 </blockquote>
 </blockquote>
-<h1 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h1><p>启动termux，依次输入指令：</p>
+<h1><span id="安装依赖">安装依赖</span></h1><p>启动termux，依次输入指令：</p>
 <p>更新软件包列表：</p>
 <pre><code>pkg update -y 
 </code></pre>
 <pre><code>pkg install vim python -y
 </code></pre>
 <p>过程中如果出现了选项就无脑填 y 回车。</p>
-<h1 id="（可选）安装虚拟环境"><a href="#（可选）安装虚拟环境" class="headerlink" title="（可选）安装虚拟环境"></a>（可选）安装虚拟环境</h1><blockquote>
+<h1><span id="可选安装虚拟环境">（可选）安装虚拟环境</span></h1><blockquote>
 <p>直接安装poetry会报错，我经过了以下几步才能正常安装poetry<br><strong>如果你不明白如何使用虚拟环境，请直接跳过这一步</strong></p>
 </blockquote>
 <p>更新软件包：</p>
@@ -243,7 +259,7 @@
 <pre><code>pip install poetry
 </code></pre>
 <p>耐心等待安装完成</p>
-<h1 id="配置bot"><a href="#配置bot" class="headerlink" title="配置bot"></a>配置bot</h1><p>克隆bot项目</p>
+<h1><span id="配置bot">配置bot</span></h1><p>克隆bot项目</p>
 <pre><code>git clone https://github.com/KaMmySuma/TGsetuBot.git
 </code></pre>
 <pre><code>cd TGsetuBot
@@ -255,13 +271,13 @@
 <li><p>（可能需要电脑操作）自行获取pixiv的REFRESH_TOKEN，并直接填入pixiv_token.txt文件中，获取方法参见：<br><a target="_blank" rel="noopener" href="https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde">https://gist.github.com/upbit/6edda27cb1644e94183291109b8a5fde</a></p>
 </li>
 </ul>
-<h1 id="启动bot"><a href="#启动bot" class="headerlink" title="启动bot"></a>启动bot</h1><p>安装bot依赖：</p>
+<h1><span id="启动bot">启动bot</span></h1><p>安装bot依赖：</p>
 <pre><code>pip install -r requirements.txt
 </code></pre>
 <p>启动bot：</p>
 <pre><code>python start.py
 </code></pre>
-<h1 id="使用bot"><a href="#使用bot" class="headerlink" title="使用bot"></a>使用bot</h1><h2 id="Bot指令"><a href="#Bot指令" class="headerlink" title="Bot指令"></a>Bot指令</h2><ul>
+<h1><span id="使用bot">使用bot</span></h1><h2><span id="bot指令">Bot指令</span></h2><ul>
 <li>&#x2F;setu -抽取一张随机涩图~。</li>
 <li>&#x2F;setu_r18 -不够涩！抽取一张r18涩图。</li>
 <li>&#x2F;pixiv_ranking -获取p站排行榜前5名的作品；私聊中可添加参数num&#x3D;？自定义数量：例：&#x2F;pixiv_ranking num&#x3D;3。</li>

@@ -174,22 +174,22 @@
             
             <span class="tag">
                 
-                <a href="/tags/Termux/" style="color: #00a596">Termux</a>
+                <a href="/tags/Termux/" style="color: #ffa2c4">Termux</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/bot/" style="color: #ffa2c4">bot</a>
+                <a href="/tags/bot/" style="color: #ff7d73">bot</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #ff7d73">安卓</a>
+                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #00bcd4">安卓</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%97%A9%E8%8B%97/" style="color: #03a9f4">早苗</a>
+                <a href="/tags/%E6%97%A9%E8%8B%97/" style="color: #00a596">早苗</a>
             </span>
             
         </span>
@@ -197,30 +197,53 @@
     </div>
     
     <div class="content" v-pre>
-        <p>咱有一个旧手机，食之无味、弃之可惜，想把它利用起来。于是了解到了termux,尝试了一段时间，发现它确实有意思，termux能让我们在安卓手机上跑linux程序</p>
+        <blockquote>
+<p>咱有一个旧手机，食之无味、弃之可惜，想把它利用起来。于是了解到了termux,尝试了一段时间，发现它确实有意思，termux能让我们在安卓手机上跑linux程序</p>
+</blockquote>
 <span id="more"></span>
+
+<!-- toc -->
+
+<ul>
+<li><a href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E4%BB%8B%E7%BB%8D%E6%88%91%E4%BD%BF%E7%94%A8%E7%9A%84%E4%BC%A0%E7%BB%9F%E6%96%B9%E6%B3%95">接下来介绍我使用的传统方法</a></li>
+<li><a href="#1-%E5%AE%89%E8%A3%85termux">1. 安装termux</a></li>
+<li><a href="#2-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96">2. 安装依赖</a></li>
+<li><a href="#3-%E5%AE%89%E8%A3%85ubuntu">3. 安装Ubuntu</a></li>
+<li><a href="#4-%E5%90%AF%E5%8A%A8ubuntu">4. 启动Ubuntu</a></li>
+<li><a href="#5-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">5. 准备工作</a></li>
+<li><a href="#6-%E4%B8%8B%E8%BD%BDgocq">6. 下载gocq</a></li>
+<li><a href="#7-%E7%BC%96%E8%BE%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">7. 编辑配置文件</a></li>
+<li><a href="#8-%E7%99%BB%E5%BD%95gocq">8. 登录gocq</a></li>
+<li><a href="#9-%E9%85%8D%E7%BD%AE%E7%99%BB%E5%BD%95%E6%96%B9%E5%BC%8F">9. 配置登录方式</a><ul>
+<li><a href="#91-%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%99%BB%E5%BD%95">9.1 二维码登录</a></li>
+<li><a href="#92-%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95">9.2 密码登录</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 
 <p>于是我想到了利用它来搭建一个QQ机器人，最合适的人选当然是早苗啦，早苗的后端在服务器上，而我们只需要部署一个gocq前端即可。</p>
 <p>请大家多多支持<a target="_blank" rel="noopener" href="https://afdian.net/a/Sanae">早苗开发者小狐狸</a>~</p>
 <hr>
 <p>就在我寻找小狐狸主页的时候，竟然意外发现了XDM大佬发布的教程：</p>
-<h2 id="早苗Bot-部署教程-Termux"><a href="#早苗Bot-部署教程-Termux" class="headerlink" title="早苗Bot 部署教程 Termux"></a><a target="_blank" rel="noopener" href="https://hanxuan.cc/Fox/Termux.html">早苗Bot 部署教程 Termux</a></h2><p>而更新时间…就是今天！</p>
+<p><a target="_blank" rel="noopener" href="https://hanxuan.cc/Fox/Termux.html"><strong>早苗Bot 部署教程 Termux</strong></a> </p>
+<p>而更新时间…就是今天！</p>
 <p>缘，妙不可言————大佬的方法更简单，推荐使用~</p>
 <p><del>于是本帖到此完结撒花</del>（bushi）</p>
-<h6 id="来都来了，还是写完吧。"><a href="#来都来了，还是写完吧。" class="headerlink" title="来都来了，还是写完吧。"></a>来都来了，还是写完吧。</h6><hr>
-<h1 id="接下来介绍我使用的传统方法"><a href="#接下来介绍我使用的传统方法" class="headerlink" title="接下来介绍我使用的传统方法"></a>接下来介绍我使用的传统方法</h1><blockquote>
+<h6><span id="来都来了还是写完吧">来都来了，还是写完吧。</span></h6><hr>
+<h1><span id="接下来介绍我使用的传统方法">接下来介绍我使用的传统方法</span></h1><blockquote>
 <p>首先你需要准备魔法工具，开启魔法，否则可能会因为网络问题导致无法进行部分流程。</p>
 <p>如果你使用的是Ubuntu系统，也可以跳到第5步，在Ubuntu上直接部署早苗。</p>
 </blockquote>
-<h1 id="1-安装termux"><a href="#1-安装termux" class="headerlink" title="1. 安装termux"></a>1. 安装termux</h1><p>官网：<a target="_blank" rel="noopener" href="https://termux.dev/cn/index.html">https://termux.dev/cn/index.html</a></p>
-<h1 id="2-安装依赖"><a href="#2-安装依赖" class="headerlink" title="2. 安装依赖"></a>2. 安装依赖</h1><p>启动termux，输入指令：</p>
+<h1><span id="1-安装termux">1. 安装termux</span></h1><p>官网：<a target="_blank" rel="noopener" href="https://termux.dev/cn/index.html">https://termux.dev/cn/index.html</a></p>
+<h1><span id="2-安装依赖">2. 安装依赖</span></h1><p>启动termux，输入指令：</p>
 <pre><code>pkg install proot git python -y
 </code></pre>
 <p>等待完成。</p>
 <blockquote>
 <p>（可跳过）分别输入以下指令以检验依赖是否已正确安装：<br>proot –version<br>git –version<br>python –version<br>如果出现对应版本号即成功安装</p>
 </blockquote>
-<h1 id="3-安装Ubuntu"><a href="#3-安装Ubuntu" class="headerlink" title="3. 安装Ubuntu"></a>3. 安装Ubuntu</h1><p>依次输入下面3个指令：</p>
+<h1><span id="3-安装ubuntu">3. 安装Ubuntu</span></h1><p>依次输入下面3个指令：</p>
 <pre><code>git clone https://github.com/sqlsec/termux-install-linux
 </code></pre>
 <pre><code>cd termux-install-linux
@@ -229,18 +252,18 @@
 </code></pre>
 <p><img src="https://github.com/sqlsec/termux-install-linux/raw/master/imgs/15876443823741.jpg"></p>
 <p>看到这个页面输入： <code>1</code><br>回车<br>等待下载安装完成</p>
-<h1 id="4-启动Ubuntu"><a href="#4-启动Ubuntu" class="headerlink" title="4. 启动Ubuntu"></a>4. 启动Ubuntu</h1><p>依次输入：</p>
+<h1><span id="4-启动ubuntu">4. 启动Ubuntu</span></h1><p>依次输入：</p>
 <pre><code>cd ~/Termux-Linux/Ubuntu
 </code></pre>
 <pre><code>./start-ubuntu.sh
 </code></pre>
-<h1 id="5-准备工作"><a href="#5-准备工作" class="headerlink" title="5. 准备工作"></a>5. 准备工作</h1><p>更新软件包：</p>
+<h1><span id="5-准备工作">5. 准备工作</span></h1><p>更新软件包：</p>
 <pre><code>apt update
 </code></pre>
 <p>安装vim编辑器：</p>
 <pre><code>apt install vim -y
 </code></pre>
-<h1 id="6-下载gocq"><a href="#6-下载gocq" class="headerlink" title="6. 下载gocq"></a>6. 下载gocq</h1><p>下载压缩包：</p>
+<h1><span id="6-下载gocq">6. 下载gocq</span></h1><p>下载压缩包：</p>
 <pre><code>wget https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.1/go-cqhttp_linux_arm64.tar.gz
 </code></pre>
 <p>解压：</p>
@@ -251,7 +274,7 @@
 </code></pre>
 <p><img src="https://img.chkaja.com/80727ce07fdf3ccb.png"></p>
 <p>首次运行会看到选择界面，输入 <code>3</code> 选择反向 Websocket 通信<br>程序将生成配置文件，再次回车程序自动退出。</p>
-<h1 id="7-编辑配置文件"><a href="#7-编辑配置文件" class="headerlink" title="7. 编辑配置文件"></a>7. 编辑配置文件</h1><p>输入指令：</p>
+<h1><span id="7-编辑配置文件">7. 编辑配置文件</span></h1><p>输入指令：</p>
 <pre><code>vim config.yml
 </code></pre>
 <p>进入编辑页面，按键盘 i 进入编辑模式；<br>翻到底部，大约在 101 行位置，找到<br><code>universal: ws://your_websocket_universal.server</code><br>修改为：<br><code>universal: ws://sanae.youngmoe.com:20026</code>  </p>
@@ -277,14 +300,14 @@
     # 反向WS API 地址
 </code></pre>
 <p>修改完成后按键盘ESC退出编辑模式，输入 <code>:wq</code> 保存并退出编辑页面。</p>
-<h1 id="8-登录gocq"><a href="#8-登录gocq" class="headerlink" title="8. 登录gocq"></a>8. 登录gocq</h1><p>再次启动gocq：</p>
+<h1><span id="8-登录gocq">8. 登录gocq</span></h1><p>再次启动gocq：</p>
 <pre><code>./go-cqhttp
 </code></pre>
 <p>这一次启动程序会生成device.json文件，这个文件的作用是将程序伪装成某品牌的手机型号，以登录QQ。</p>
 <p>随后程序自动退出，你应该会看到如下提示：</p>
 <p><code>[WARNING]: 当前协议不支持二维码登录, 请配置账号密码登录</code></p>
 <p>请参考以下步骤 9 配置登录方式。配置完成并成功登录后，以后的启动将直接自动登录，无所再次配置。</p>
-<h1 id="9-配置登录方式"><a href="#9-配置登录方式" class="headerlink" title="9. 配置登录方式"></a>9. 配置登录方式</h1><p>修改device.json文件：</p>
+<h1><span id="9-配置登录方式">9. 配置登录方式</span></h1><p>修改device.json文件：</p>
 <pre><code>vim device.json
 </code></pre>
 <p>进入编辑页面后，键盘输入 i 进入编辑模式。<br>考验眼力的时候到了，你需要在这坨数据中找到 <code>&quot;protocol&quot;:6</code> ，这是机器人的登录协议，不同的数字有不同的含义：</p>
@@ -328,13 +351,13 @@
 </tr>
 </tbody></table>
 <p>推荐新手修改为 <code>&quot;protocol&quot;:2</code> 使用二维码登录。<br>修改完成后按键盘ESC退出编辑模式，输入 <code>:wq</code> 保存并退出编辑页面。</p>
-<h2 id="9-1-二维码登录"><a href="#9-1-二维码登录" class="headerlink" title="9.1 二维码登录"></a>9.1 二维码登录</h2><p>如果你选择了<code>&quot;protocol&quot;:2</code> 使用二维码登录————</p>
+<h2><span id="91-二维码登录">9.1 二维码登录</span></h2><p>如果你选择了<code>&quot;protocol&quot;:2</code> 使用二维码登录————</p>
 <p>请双指缩放画面，因为之后生成的二维码字符比较大，一般屏幕容不下。</p>
 <p>调整缩小文字后，启动gocq：</p>
 <pre><code>./go-cqhttp
 </code></pre>
 <p>程序会生成二维码，你只需要用另一台手机登录机器人的qq扫码即可。</p>
-<h2 id="9-2-密码登录"><a href="#9-2-密码登录" class="headerlink" title="9.2 密码登录"></a>9.2 密码登录</h2><p>如果你选择的是其他协议，那么你需要密码登录。</p>
+<h2><span id="92-密码登录">9.2 密码登录</span></h2><p>如果你选择的是其他协议，那么你需要密码登录。</p>
 <p>输入指令：</p>
 <pre><code>vim config.yml
 </code></pre>

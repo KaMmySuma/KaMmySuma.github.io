@@ -174,7 +174,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Termux/" style="color: #00bcd4">Termux</a>
+                <a href="/tags/Termux/" style="color: #03a9f4">Termux</a>
             </span>
             
             <span class="tag">
@@ -189,7 +189,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #03a9f4">安卓</a>
+                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #00a596">安卓</a>
             </span>
             
         </span>
@@ -202,6 +202,15 @@
 <p>这次来搭建一个 <a target="_blank" rel="noopener" href="https://github.com/mamoe/mirai">mirai</a> 机器人</p>
 <span id="more"></span>
 
+<!-- toc -->
+
+<ul>
+<li><a href="#%E9%83%A8%E7%BD%B2mcl">部署MCL</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6">安装插件</a></li>
+<li><a href="#cheatlearning">CheatLearning</a></li>
+</ul>
+<!-- tocstop -->
+
 <blockquote>
 <p>准备工作：</p>
 <blockquote>
@@ -212,7 +221,7 @@
 </ul>
 </blockquote>
 </blockquote>
-<h1 id="部署MCL"><a href="#部署MCL" class="headerlink" title="部署MCL"></a>部署MCL</h1><p>启动Termux，直接上代码：</p>
+<h1><span id="部署mcl">部署MCL</span></h1><p>启动Termux，直接上代码：</p>
 <pre><code class="bash">pkg update &amp;&amp; pkg upgrade  #如果是刚安装, 需要先拉取(查询)最新的包版本信息
 
 pkg install openjdk-17  #安装 Java 17
@@ -271,7 +280,7 @@ login qq账号 qq密码 [协议] #用账号密码登陆qq
 </tbody></table>
 <p>如果你的账号遇到登陆问题，请参阅这个帖子：<a target="_blank" rel="noopener" href="https://mirai.mamoe.net/topic/223/%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E7%9A%84%E4%B8%B4%E6%97%B6%E5%A4%84%E7%90%86%E6%96%B9%E6%A1%88">无法登录的临时处理方案</a></p>
 <p>登陆成功即搭建完成，你的QQ已经变成了bot，尽管它还没有安装任何功能，尽管它还什么都没做。</p>
-<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><p>接下来，你可以去社区寻找自己喜欢的插件：<br><a target="_blank" rel="noopener" href="https://mirai.mamoe.net/category/11/%E6%8F%92%E4%BB%B6%E5%8F%91%E5%B8%83">https://mirai.mamoe.net/category/11/%E6%8F%92%E4%BB%B6%E5%8F%91%E5%B8%83</a></p>
+<h1><span id="安装插件">安装插件</span></h1><p>接下来，你可以去社区寻找自己喜欢的插件：<br><a target="_blank" rel="noopener" href="https://mirai.mamoe.net/category/11/%E6%8F%92%E4%BB%B6%E5%8F%91%E5%B8%83">https://mirai.mamoe.net/category/11/%E6%8F%92%E4%BB%B6%E5%8F%91%E5%B8%83</a></p>
 <p>MCL插件目录：~&#x2F;plugins</p>
 <hr>
 <p>MCL安装插件十分简单，只需要在插件目录中用 wget 下载插件的 Java包 即可。</p>
@@ -283,7 +292,7 @@ login qq账号 qq密码 [协议] #用账号密码登陆qq
 wget 刚刚复制的链接 #下载插件的Java包
 </code></pre>
 <p>然后重启MCL即可加载插件</p>
-<h1 id="CheatLearning"><a href="#CheatLearning" class="headerlink" title="CheatLearning"></a>CheatLearning</h1><p>特别的，如果你想要安装 <a target="_blank" rel="noopener" href="https://github.com/Nana-Miko/ChatLearning">chatlearning</a> 这个插件</p>
+<h1><span id="cheatlearning">CheatLearning</span></h1><p>特别的，如果你想要安装 <a target="_blank" rel="noopener" href="https://github.com/Nana-Miko/ChatLearning">chatlearning</a> 这个插件</p>
 <pre><code class="bash">pkg install python #先安装Python，已安装的可跳过
   
 wget https://github.com/Nana-Miko/ChatLearning/releases/download/V3.0.3/ChatLearning.Source.zip 

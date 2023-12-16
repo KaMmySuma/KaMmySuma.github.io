@@ -174,17 +174,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/Termux/" style="color: #00bcd4">Termux</a>
+                <a href="/tags/Termux/" style="color: #ff7d73">Termux</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/bot/" style="color: #00a596">bot</a>
+                <a href="/tags/bot/" style="color: #ff7d73">bot</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #00a596">安卓</a>
+                <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #ffa2c4">安卓</a>
             </span>
             
             <span class="tag">
@@ -205,6 +205,17 @@
 <p><del>不装了我就是OP</del></p>
 <span id="more"></span>
 
+<!-- toc -->
+
+<ul>
+<li><a href="#now-here-we-go">Now here we go</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-alpine-linux">安装 Alpine Linux</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96">安装依赖</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%96%B5%E5%B4%BD">安装喵崽</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">常见问题</a></li>
+</ul>
+<!-- tocstop -->
+
 <blockquote>
 <p>准备工作：</p>
 <blockquote>
@@ -215,19 +226,19 @@
 </ul>
 </blockquote>
 </blockquote>
-<h1 id="Now-here-we-go"><a href="#Now-here-we-go" class="headerlink" title="Now here we go"></a>Now here we go</h1><ul>
+<h1><span id="now-here-we-go">Now here we go</span></h1><ul>
 <li><p>你可以参考云崽的官方文档搭建原版云崽bot:<br><a target="_blank" rel="noopener" href="https://docs.yunzai.org/deploy/android/">https://docs.yunzai.org/deploy/android/</a></p>
 </li>
 <li><p>你也可以参考本教程搭建喵版云崽bot，二者的区别可以自行搜索</p>
 </li>
 </ul>
-<h1 id="安装-Alpine-Linux"><a href="#安装-Alpine-Linux" class="headerlink" title="安装 Alpine Linux"></a>安装 Alpine Linux</h1><pre><code class="sh">pkg install proot-distro
+<h1><span id="安装-alpine-linux">安装 Alpine Linux</span></h1><pre><code class="sh">pkg install proot-distro
 proot-distro install alpine
 </code></pre>
 <p>等待安装完成后启动 Alpine Linux ：</p>
 <pre><code class="sh">proot-distro login alpine
 </code></pre>
-<h1 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h1><p>添加软件源：</p>
+<h1><span id="安装依赖">安装依赖</span></h1><p>添加软件源：</p>
 <pre><code class="sh">echo &quot;http://dl-cdn.alpinelinux.org/alpine/edge/testing/&quot; &gt;&gt; /etc/apk/repositories
 </code></pre>
 <pre><code class="sh">apk update &amp;&amp; apk upgrade
@@ -235,7 +246,7 @@ proot-distro install alpine
 <p>安装依赖：</p>
 <pre><code class="sh">apk add nodejs npm redis git chromium wqy-zenhei
 </code></pre>
-<h1 id="安装喵崽"><a href="#安装喵崽" class="headerlink" title="安装喵崽"></a>安装喵崽</h1><p>喵仔项目仓库：<br><a target="_blank" rel="noopener" href="https://gitee.com/yoimiya-kokomi/Miao-Yunzai">https://gitee.com/yoimiya-kokomi/Miao-Yunzai</a></p>
+<h1><span id="安装喵崽">安装喵崽</span></h1><p>喵仔项目仓库：<br><a target="_blank" rel="noopener" href="https://gitee.com/yoimiya-kokomi/Miao-Yunzai">https://gitee.com/yoimiya-kokomi/Miao-Yunzai</a></p>
 <ul>
 <li><p>克隆项目并安装miao-plugin：</p>
 <pre><code class="sh"># 使用 Github 
@@ -274,7 +285,7 @@ pnpm install -P
 </li>
 </ul>
 <p>你可以自由安装插件，Yunzai-Bot 相关内容索引：<br><a target="_blank" rel="noopener" href="https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index">https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index</a></p>
-<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><ul>
+<h1><span id="常见问题">常见问题</span></h1><ul>
 <li><p>我自己遇到的问题：</p>
   <details><summary>puppeteer Chromium 启动失败</summary>
   <details><summary>报错信息：</summary>
@@ -290,8 +301,8 @@ pnpm install -P
   at onErrorNT (node:internal/child_process:476:16)
   at process.processTicksAndRejections (node:internal/process/task_queues:82:21) undefined
 </code></pre>
-<p>  [MiaoYz][12:40:37.627][ERRO] puppeteer Chromium 启动失败<br>  </pre></p>
-  </code>
+<p>  [MiaoYz][12:40:37.627][ERRO] puppeteer Chromium 启动失败<br>  </p></code></pre><p></p>
+  
   </details>
   使用 `npm install puppeteer@13.7.0` 命令将puppeteer降级为13.7.0版本即可启动Chrome；
   <details><summary>此时仍有报错提示：
@@ -301,8 +312,8 @@ pnpm install -P
   获取Mac地址失败 TypeError: Cannot read properties of undefined (reading 'filter')
   chromium ws://127.0.0.1:37579/devtools/browser/1bcd7f4a-1228-4492-b020-4d1c0045ebde
   [MiaoYz][14:28:58.162][MARK] puppeteer Chromium 启动成功
-  </pre>
-  </code>
+  </code></pre>
+  
   </details>
   但是程序可以正常启动使用了，无视即可。你也可以自行搜索其他方案
   </details>
