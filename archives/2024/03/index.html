@@ -1,0 +1,892 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>Archives | 咪啪窝</title>
+        <meta name="author" content="KaMmy" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+<script src="/js/lib/search.js"></script>
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>Now Loading...</h2>
+                        <p>加载过慢请开启魔法</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>咪啪窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;咪啪窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    
+<div id="archives">
+    
+    <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
+    
+    <div id="timeline-wrap" ref="timeline">
+        
+        <div class="timeline" data-title="学习笔记-人文历史科技">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">1899/11/30</div>
+                <a href="/1899/11/30/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%BA%E6%96%87%E5%8E%86%E5%8F%B2%E7%A7%91%E6%8A%80/">
+                    <h3>学习笔记-人文历史科技</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            学习笔记
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="color: #00a596">学习笔记</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="学习笔记-法律">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">1899/11/30</div>
+                <a href="/1899/11/30/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%B3%95%E5%BE%8B/">
+                    <h3>学习笔记-法律</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            学习笔记
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="color: #00a596">学习笔记</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="学习笔记-党史">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">1899/11/30</div>
+                <a href="/1899/11/30/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%85%9A%E5%8F%B2/">
+                    <h3>学习笔记-党史</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            学习笔记
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="color: #ffa2c4">学习笔记</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="hexo+github（加密测试）">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/6/1</div>
+                <a href="/2023/06/01/Hexo%20+%20GitHub%20%EF%BC%88%E5%8A%A0%E5%AF%86%E6%B5%8B%E8%AF%95%EF%BC%89/">
+                    <h3>Hexo + GitHub （加密测试）</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%99%E7%A8%8B/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            教程
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Hexo/" style="color: #00a596">Hexo</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="安卓使用termux搭建早苗机器人">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/6/2</div>
+                <a href="/2023/06/02/%E5%AE%89%E5%8D%93%E4%BD%BF%E7%94%A8Termux%E6%90%AD%E5%BB%BA%E6%97%A9%E8%8B%97%E6%9C%BA%E5%99%A8%E4%BA%BA/">
+                    <h3>安卓使用Termux搭建早苗机器人</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%99%E7%A8%8B/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            教程
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Termux/" style="color: #00bcd4">Termux</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/bot/" style="color: #ff7d73">bot</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #00bcd4">安卓</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%97%A9%E8%8B%97/" style="color: #00bcd4">早苗</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="vscode方法">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/6/4</div>
+                <a href="/2023/06/04/VSCode%E6%96%B9%E6%B3%95/">
+                    <h3>VSCode方法</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%96%B9%E6%B3%95/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            方法
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/VSCode/" style="color: #ff7d73">VSCode</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="安卓使用termux搭建telegram涩图机器人">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/6/4</div>
+                <a href="/2023/06/04/%E5%AE%89%E5%8D%93%E4%BD%BF%E7%94%A8Termux%E6%90%AD%E5%BB%BAtelegram%20bot/">
+                    <h3>安卓使用Termux搭建telegram涩图机器人</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%99%E7%A8%8B/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            教程
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Termux/" style="color: #00a596">Termux</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/bot/" style="color: #00a596">bot</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #00bcd4">安卓</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/telegram/" style="color: #ff7d73">telegram</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%B6%A9%E5%9B%BE/" style="color: #03a9f4">涩图</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="安卓使用termux搭建云崽bot">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/6/9</div>
+                <a href="/2023/06/09/%E5%AE%89%E5%8D%93%E4%BD%BF%E7%94%A8Termux%E6%90%AD%E5%BB%BA%E4%BA%91%E5%B4%BDbot/">
+                    <h3>安卓使用Termux搭建云崽bot</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%99%E7%A8%8B/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            教程
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Termux/" style="color: #00bcd4">Termux</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/bot/" style="color: #00a596">bot</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #03a9f4">安卓</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E4%BA%91%E5%B4%BD/" style="color: #00bcd4">云崽</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="安卓使用termux搭建微信chatgpt机器人">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/6/12</div>
+                <a href="/2023/06/12/%E5%AE%89%E5%8D%93%E4%BD%BF%E7%94%A8Termux%E6%90%AD%E5%BB%BA%E5%BE%AE%E4%BF%A1ChatGPT%E6%9C%BA%E5%99%A8%E4%BA%BA/">
+                    <h3>安卓使用Termux搭建微信ChatGPT机器人</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%99%E7%A8%8B/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            教程
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Termux/" style="color: #ffa2c4">Termux</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/bot/" style="color: #ffa2c4">bot</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #00bcd4">安卓</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/ChatGPT/" style="color: #03a9f4">ChatGPT</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%BE%AE%E4%BF%A1/" style="color: #03a9f4">微信</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="安卓使用termux搭建mirai机器人">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/6/25</div>
+                <a href="/2023/06/25/%E5%AE%89%E5%8D%93%E4%BD%BF%E7%94%A8Termux%E6%90%AD%E5%BB%BAMirai%E6%9C%BA%E5%99%A8%E4%BA%BA/">
+                    <h3>安卓使用Termux搭建Mirai机器人</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%99%E7%A8%8B/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            教程
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Termux/" style="color: #00a596">Termux</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Mirai/" style="color: #03a9f4">Mirai</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/bot/" style="color: #00bcd4">bot</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #ffa2c4">安卓</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="安卓使用termux搭建zerobot椛椛机器人">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/6/26</div>
+                <a href="/2023/06/26/%E5%AE%89%E5%8D%93%E4%BD%BF%E7%94%A8Termux%E6%90%AD%E5%BB%BAZerobot%E6%A4%9B%E6%A4%9B%E6%9C%BA%E5%99%A8%E4%BA%BA/">
+                    <h3>安卓使用Termux搭建Zerobot椛椛机器人</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%99%E7%A8%8B/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            教程
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Termux/" style="color: #00bcd4">Termux</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/bot/" style="color: #03a9f4">bot</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%AE%89%E5%8D%93/" style="color: #03a9f4">安卓</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%A4%9B%E6%A4%9B/" style="color: #00a596">椛椛</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="windows搭建饥荒服务器">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/11/14</div>
+                <a href="/2023/11/14/Windows%E6%90%AD%E5%BB%BA%E9%A5%A5%E8%8D%92%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                    <h3>Windows搭建饥荒服务器</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%99%E7%A8%8B/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            教程
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="color: #ffa2c4">服务器</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%B8%B8%E6%88%8F/" style="color: #ff7d73">游戏</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E9%A5%A5%E8%8D%92/" style="color: #00bcd4">饥荒</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="windows搭建七日杀服务器">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/11/22</div>
+                <a href="/2023/11/22/Windows%E6%90%AD%E5%BB%BA%E4%B8%83%E6%97%A5%E6%9D%80%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                    <h3>Windows搭建七日杀服务器</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%99%E7%A8%8B/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            教程
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E4%B8%83%E6%97%A5%E6%9D%80/" style="color: #ffa2c4">七日杀</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="color: #ff7d73">服务器</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%B8%B8%E6%88%8F/" style="color: #ffa2c4">游戏</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="sunshine+moonlight串流">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/11/30</div>
+                <a href="/2023/11/30/Sunshine%20+%20Moonlight%E4%B8%B2%E6%B5%81/">
+                    <h3>Sunshine + Moonlight串流</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%99%E7%A8%8B/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            教程
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Sunshine/" style="color: #03a9f4">Sunshine</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Moonlight/" style="color: #ff7d73">Moonlight</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E4%B8%B2%E6%B5%81/" style="color: #00bcd4">串流</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="winrar破解去广告">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/12/15</div>
+                <a href="/2023/12/15/WinRAR%20%E7%A0%B4%E8%A7%A3%E5%8E%BB%E5%B9%BF%E5%91%8A/">
+                    <h3>WinRAR 破解去广告</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%99%E7%A8%8B/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            教程
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/WinRAR/" style="color: #03a9f4">WinRAR</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E7%A0%B4%E8%A7%A3/" style="color: #ff7d73">破解</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/" style="color: #03a9f4">去广告</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="clash使用parser添加自定义规则并防止更新覆盖">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2024/3/19</div>
+                <a href="/2024/03/19/Clash%E4%BD%BF%E7%94%A8Parser%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E5%B9%B6%E9%98%B2%E6%AD%A2%E6%9B%B4%E6%96%B0%E8%A6%86%E7%9B%96/">
+                    <h3>Clash使用Parser添加自定义规则并防止更新覆盖</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%99%E7%A8%8B/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            教程
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Clash/" style="color: #03a9f4">Clash</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 咪啪窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;KaMmy
+        </div>
+        <div>
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">
+                别来无恙呀，最近咪啪窝被拜访了<span id="busuanzi_value_site_pv"></span>次；
+            </span>
+            <span id="busuanzi_container_page_pv">
+                这篇文章被阅读了<span id="busuanzi_value_page_pv"></span>次~
+              </span>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+    </body>
+</html>

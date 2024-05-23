@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>Clash使用Parser添加自定义规则并防止更新覆盖 | 咪啪窝</title>
+        <title>学习笔记-党史 | 咪啪窝</title>
         <meta name="author" content="KaMmy" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,22 +147,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Clash使用Parser添加自定义规则并防止更新覆盖</h1>
+        <h1>学习笔记-党史</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/15
+            1899/11/30
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                教程
+                学习笔记
             </a>
         </span>
         
@@ -174,7 +174,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Clash/" style="color: #ff7d73">Clash</a>
+                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="color: #ff7d73">学习笔记</a>
             </span>
             
         </span>
@@ -183,51 +183,20 @@
     
     <div class="content" v-pre>
         <blockquote>
-<p>Clash内置规则会代理steam下载服务器，导致下载速度缓慢，而手动添加的规则会被更新代理后覆盖，受不了了去网上搜集相关资料总结了一个简单的方法。</p>
+<p>菜就多练</p>
 </blockquote>
 <span id="more"></span>
 
-<!-- toc -->
-
-<ul>
-<li><a href="#%E6%96%B9%E6%B3%95">方法</a></li>
-<li><a href="#%E8%A1%A5%E5%85%85">补充</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="方法">方法</span></h1><p>在配置文件页面右键，选择<code>Parsers</code> - <code>Edit Parsers</code></p>
-<p><img src="https://img.chkaja.com/59760537ee24ab0d.png"></p>
-<p>粘贴以下格式文本保存即可：</p>
-<pre><code class="yaml">parsers: # array
-  - url: xxx # 你的机场订阅
-    yaml:
-      prepend-rules: # 代表在原规则前面追加规则
-        # 格式按照：规则,域名,策略
-        - DOMAIN-SUFFIX,store.steampowered.com,DIRECT  
-        - DOMAIN-SUFFIX,steamserver.net,DIRECT  
-</code></pre>
-<h1><span id="补充">补充</span></h1><ul>
-<li><p>为什么这种方法能够防止覆盖呢？原因是Parser功能是配置文件进行预处理，因此，每一次更新都会执行一次Parser，因此自定义规则会永远存在，只要你不删除Parser。</p>
+<h1><span id="毛泽东著作">毛泽东著作</span></h1><p><code>1925年 《中国社会各阶段的分析》</code>——分析了当时中国社会各个阶级的特点，提出分清敌友是革命的首要问题，这篇著作标志的毛泽东思想萌芽的产生。</p>
+<p><code>1928年11月25日 《井冈山的斗争》</code>——是毛泽东思想形成阶段的代表著作，著作分为湘赣边界的割据和八月失败、割据地区的现势两个部分。</p>
+<p><code>1930年5月 《反对本本主义》</code>——是毛泽东为反对当时的红军教条主义思想所做的文章，它是党内第一篇反对教条主义的文章，创作时间为1930年5月，著作当中提出了“没有调查就没有发言权”的论断。</p>
+<p><code>1938年5月 《论持久战》</code>——论述了抗日战争是一场持久战，并且中国军民最终一定会取得胜利，同时驳斥了“中国必亡论”和“中国速胜论”的两种错误观点。</p>
+<h1><span id="未分类">未分类</span></h1><ul>
+<li><p>中共十九大确立了习近平新时代中国特色社会主义思想的历史地位。</p>
 </li>
-<li><p>一般情况我们使用DIRECT，GLOBAL，RULE，REJECT。<br>DIRECT表示不走代理，即不通过代理节点直接连接。<br>GLOBAL则是走全局代理节点。<br>REJECT则表示禁止连接，使用REJECT后，将会屏蔽对应网站。</p>
-</li>
-<li><p>目前Clash支持的规则类型如下:</p>
-<ul>
-<li>DOMAIN-SUFFIX：域名后缀匹配</li>
-<li>DOMAIN：域名匹配</li>
-<li>DOMAIN-KEYWORD：域名关键字匹配</li>
-<li>IP-CIDR：IP段匹配</li>
-<li>SRC-IP-CIDR：源IP段匹配</li>
-<li>GEOIP：GEOIP数据库（国家代码）匹配</li>
-<li>DST-PORT：目标端口匹配</li>
-<li>SRC-PORT：源端口匹配</li>
-<li>PROCESS-NAME：源进程名匹配</li>
-<li>RULE-SET：Rule Provider规则匹配</li>
-<li>MATCH：全匹配</li>
-</ul>
+<li><p>字体演变过程具体为：甲骨文—金文—篆书—隶书—草书—楷书—行书。</p>
 </li>
 </ul>
-<p>更多知识参考ClashWiki: <a target="_blank" rel="noopener" href="https://clash.wiki/">https://clash.wiki/</a></p>
 
     </div>
     
