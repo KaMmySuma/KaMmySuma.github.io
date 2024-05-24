@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>Clash使用Parser添加自定义规则并防止更新覆盖 | 咪啪窝</title>
+        <title>学习笔记-科技科学 | 咪啪窝</title>
         <meta name="author" content="KaMmy" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,22 +147,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Clash使用Parser添加自定义规则并防止更新覆盖</h1>
+        <h1>学习笔记-科技科学</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/3/19
+            1899/11/30
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                教程
+                学习笔记
             </a>
         </span>
         
@@ -174,7 +174,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Clash/" style="color: #00bcd4">Clash</a>
+                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="color: #ff7d73">学习笔记</a>
             </span>
             
         </span>
@@ -182,53 +182,53 @@
     </div>
     
     <div class="content" v-pre>
-        <blockquote>
-<p>Clash内置规则会代理steam下载服务器，导致下载速度缓慢，而手动添加的规则会被更新代理后覆盖，受不了了去网上搜集相关资料总结了一个简单的方法。</p>
+        <meta name="referrer" content="no-referrer">
+
+<blockquote>
+<p>菜就多练</p>
 </blockquote>
 <span id="more"></span>
 
-<!-- toc -->
-
 <ul>
-<li><a href="#%E6%96%B9%E6%B3%95">方法</a></li>
-<li><a href="#%E8%A1%A5%E5%85%85">补充</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="方法">方法</span></h1><p>在配置文件页面右键，选择<code>Parsers</code> - <code>Edit Parsers</code></p>
-<p><img src="https://img.chkaja.com/59760537ee24ab0d.png"></p>
-<p>粘贴以下格式文本保存即可：</p>
-<pre><code class="yaml">parsers: # array
-  - url: xxx # 你的机场订阅
-    yaml:
-      prepend-rules: # 代表在原规则前面追加规则
-        # 格式按照：规则,域名,策略
-        - DOMAIN-SUFFIX,store.steampowered.com,🔰国外流量
-        - DOMAIN-SUFFIX,steamserver.net,DIRECT
-        - DOMAIN-KEYWORD,steamstatic,🔰国外流量
-</code></pre>
-<h1><span id="补充">补充</span></h1><ul>
-<li><p>为什么这种方法能够防止覆盖呢？原因是Parser功能是配置文件进行预处理，因此，每一次更新都会执行一次Parser，因此自定义规则会永远存在，只要你不删除Parser。</p>
-</li>
-<li><p>一般情况我们使用DIRECT，GLOBAL，RULE，REJECT。<br>DIRECT表示不走代理，即不通过代理节点直接连接。<br>GLOBAL则是走全局代理节点。<br>REJECT则表示禁止连接，使用REJECT后，将会屏蔽对应网站。</p>
-</li>
-<li><p>目前Clash支持的规则类型如下:</p>
+<li><p>全球四大卫星导航系统</p>
 <ul>
-<li>DOMAIN-SUFFIX：域名后缀匹配</li>
-<li>DOMAIN：域名匹配</li>
-<li>DOMAIN-KEYWORD：域名关键字匹配</li>
-<li>IP-CIDR：IP段匹配</li>
-<li>SRC-IP-CIDR：源IP段匹配</li>
-<li>GEOIP：GEOIP数据库（国家代码）匹配</li>
-<li>DST-PORT：目标端口匹配</li>
-<li>SRC-PORT：源端口匹配</li>
-<li>PROCESS-NAME：源进程名匹配</li>
-<li>RULE-SET：Rule Provider规则匹配</li>
-<li>MATCH：全匹配</li>
+<li>全球定位系统（Global Positioning System）简称GPS，美国研制，以人造地球卫星为基础的高精度无线电导航的定位系统。</li>
+<li>格洛纳斯（GLOBAL NAVIGATION SATELLITE SYSTEM）简称GLONASS，是苏联&#x2F;俄罗斯研制卫星导航系统。</li>
+<li>北斗卫星导航系统（Beidou Navigation Satellite System）简称BDS。<code>我国研制</code>，是继GPS、GLONASS之后的第三个成熟的卫星导航系统。由空间段、地面段和用户段三部分组成</li>
+<li>伽利略卫星导航系统（Galileo satellite navigation system），是由欧盟研制和建立的全球卫星导航定位系统，该计划于1999年2月由欧洲委员会公布，欧洲委员会和欧空局共同负责，并计划在2019年具备完全操作能力</li>
 </ul>
 </li>
+<li><p>各国战斗机</p>
+<ul>
+<li>幻影2000战斗机，是<code>法国</code>空军一型<code>单发</code>三角翼多用途战斗机，是现存服役战斗机中唯一采用不带前翼的三角翼飞机。</li>
+<li>F-16战斗机，是<code>美国</code>空军一型喷气式多用途战斗机，为单座<code>单发</code>布局，是美国第三代或第三代半战斗机，是世界上最成功的战斗机之一。</li>
+<li>歼-20是一款具备高隐身性、高态势感知、高机动性等能力的隐形第五代制空战斗机，解放军研制的最新一代<code>双发</code>重型隐形战斗机，该机将担负中国空军未来对空、对海的主权维护任务。</li>
+<li>苏霍伊苏-35战斗机，是<code>俄罗斯</code>苏霍伊设计局在苏-27战斗机的基础上研制的深度改进型单座<code>双发</code>、超机动性多用途战斗机，在世界上属于第四代战斗机改进型号，即第四代半战斗机。</li>
 </ul>
-<p>更多知识参考ClashWiki: <a target="_blank" rel="noopener" href="https://clash.wiki/">https://clash.wiki/</a></p>
+</li>
+<li><p>人体内内部平衡感应位于耳朵。平衡感受器位于内耳的前庭和半规管，前庭可感受位置和速度的变化，半规管可感受头部的旋转运动。当前庭和半规管受到刺激时，会引起恶心、呕吐、眩晕等症状，严重时称为晕动病，如晕车、晕船、航空病等。</p>
+</li>
+<li><p>石棉纤维不是植物纤维，是天然纤维状的<code>硅质矿物</code>的泛称，是一种被广泛应用于<code>建材防火板</code>的<code>硅酸盐类矿物纤维</code>，也是<code>唯一的天然矿物纤维</code>。石棉纤维具有良好的耐火隔热性能，适用于各种热设备作保温，隔热材料或加工成其他石棉制品。</p>
+</li>
+<li><p>淡化海水主要两种方法</p>
+<ol>
+<li>蒸馏法（古老）</li>
+<li>反渗透法。反渗透法海水淡化的关键是反渗透膜，它是一种只允许水透过、不允许盐透过的半透膜。反渗透法是世界上最先进和应用最广泛的海水淡化技术。</li>
+</ol>
+</li>
+<li><p>超导材料的应用主要分为两大类，一类叫强电应用，一类叫弱电应用。强电和弱电的区分主要是电压。</p>
+<ol>
+<li>大规模应用（对应强电）。大规模应用就是我们经常在网上能看到的，输电，核磁共振成像（MRI），磁悬浮列车以及对撞机等。</li>
+<li>芯片应用（对应弱电）。医学成像</li>
+</ol>
+</li>
+<li><p>风车的最早用途并不是用来发电，而是<code>用来抽水</code>，不论是古代的中国，还是欧洲的荷兰、丹麦等国家，最先都是将风车用作抽水为主。中国古代采用的是<code>垂直轴阻力型</code>的帆式风车，而欧洲国家采用的是<code>水平轴升力型</code>的桨式风车。</p>
+</li>
+<li><p>1纳米&#x3D;10的负九次方米</p>
+</li>
+<li><p>水体中出现大量的<code>磷</code>，<code>蓝藻</code>会爆发性地增多</p>
+</li>
+</ul>
 
     </div>
     

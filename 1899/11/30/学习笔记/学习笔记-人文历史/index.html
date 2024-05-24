@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>学习笔记-人文历史 | 咪啪窝</title>
+        <meta name="author" content="KaMmy" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>Now Loading...</h2>
+                        <p>加载过慢请开启魔法</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>咪啪窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;咪啪窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>学习笔记-人文历史</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            1899/11/30
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="color: #ffa2c4">学习笔记</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <meta name="referrer" content="no-referrer">
+
+<blockquote>
+<p>菜就多练</p>
+</blockquote>
+<span id="more"></span>
+
+<h1><span id="人文历史">人文历史</span></h1><ul>
+<li><p>字体演变过程具体为：<a target="_blank" rel="noopener" href="https://img1.baidu.com/it/u=2833492711,2031536158&fm=253&fmt=auto&app=120&f=JPEG?w=954&h=800" title="甲骨文">甲骨文</a>—<a target="_blank" rel="noopener" href="https://img1.baidu.com/it/u=3307545764,1084766668&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=679" title="金文">金文</a>—<a target="_blank" rel="noopener" href="https://img2.baidu.com/it/u=890758830,1992440677&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=927" title="篆书">篆书</a>—<a target="_blank" rel="noopener" href="https://img0.baidu.com/it/u=1801258545,2291391868&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=734" title="隶书">隶书</a>—<a target="_blank" rel="noopener" href="https://img1.baidu.com/it/u=551858357,2814549914&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=781" title="草书">草书</a>—<a target="_blank" rel="noopener" href="https://img1.baidu.com/it/u=3043675659,1084645135&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=1527" title="楷书">楷书</a>—<a target="_blank" rel="noopener" href="https://img1.baidu.com/it/u=2686107539,2442397656&fm=253&fmt=auto&app=138&f=JPEG?w=1035&h=500" title="行书">行书</a>。</p>
+<ul>
+<li>甲 金 篆 隶 草 楷 行</li>
+<li>草书形成于汉代，是为了书写简便在隶书基础上演变而来的。其基本内容包括以下三个方面：一是草书是笔画省略，结构简便的书体。二是草书是以点画作为基本符号来代替偏旁和字的某个部分，是最具有符号化特征的书体。三是草书的笔画之间、字与字之间相互连带呼应，是便于快捷书写和便于表达书者情感的书体。</li>
+<li>楷书也叫<code>正书、真书</code>，是由隶书演变形成的十分端庄工整的一种书体。楷是楷模、法式的意思，所谓楷书，就是标准字体。楷书生于后汉，盛行于魏晋南北朝，一直通行到现在。</li>
+<li>行书是介于楷书和草书之间的，行书没有楷书那样规范严肃，也没有草书那样奔放和难以识别，而是优雅欢畅地运笔，字体书写灵活贯通。也是最受大众喜欢、最常用的一种字体。它书写流畅，用笔灵活，据传是汉代刘德升所制，传至今日，仍是我们日常书写所习惯使用的字体。</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%9D%E4%BB%A3/7716136?fr=ge_ala">朝代更替</a>：夏→寒→夏（复辟）商→周[西周、东周（春秋、战国）]→秦→西汉→新→东汉→三国（魏、蜀汉、吴）→西晋→东晋十六国→南北朝（南朝:宋、齐、梁、陈；北朝:北魏、东魏、西魏、北齐、北周）→隋→唐→武周→唐（复辟）→五代十国→宋（北宋、南宋）、辽、西夏、金→元→明→清</p>
+</li>
+<li><p>宋代理学四大家：<code>濂、洛、关、闽</code>，代表人物依次为<code>周敦颐、二程（程颢和程颐）、张载、朱熹</code>。</p>
+<ul>
+<li>宋代理学是宋代哲学的主流，也是儒家哲学的特殊形式。宋代理学主要讨论的内容为义理、性命之学，故称为理学。宋代是理学形成和发展的时期，出现了不同的学术流派和为数众多的理学家。其中濂、洛、关、闽四派的代表人物依次为周敦颐、二程（程颢和程颐）、张载、朱熹。<code>周敦颐</code>是理学的<code>先驱者</code>，<code>二程、张载</code>是理学的<code>奠基者</code>，<code>朱熹</code>是理学的<code>集大成者</code>。</li>
+</ul>
+</li>
+<li><p>史学著作</p>
+<ul>
+<li>先秦诸子百家<ol>
+<li>孔子与《论语》：孔子名丘，字仲尼，春秋末期伟大的思想家、教育家，儒家学派创始人。其思想核心是“仁”。现存《论语》20 篇，记录孔子及其弟子言行的书。是孔子的弟子及其再传弟子根据自己记忆或耳闻传说写的。是语录体著作。<ul>
+<li>儒家重要经典：<ul>
+<li>四书： 《大学》、《中庸》、《论语》、《孟子》</li>
+<li>五经：《诗》、《书》、《礼》、《易》、《春秋》</li>
+<li>六经：《诗》、《书》、《礼》、《易》、《春秋》、《乐》</li>
+<li>六艺：礼、乐、射、御、书、数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>老子与《老子》：老子，姓李，名耳，春秋时期道家学派的创始人，著有《老子》，又名《道德经》。</li>
+<li>孟子与《孟子》：孟子名轲，字子舆，战国时期邹（山东）人，思想家、政治家、教育家，是继孔子之后的儒家大师。后世常“孔孟”并称，元文宗时封他为“亚圣”。其中心思想是“仁义”，主张实行仁政，强调“民贵君轻”，重视民心向背。在人性问题上提出“性善论”论。著有《孟子》一书。</li>
+<li>庄周与《庄子》：战国时期宋国人。著名思想家、哲学家、文学家，道家学派代表人，老子哲学思想继承者发展者，先秦庄子学派创始人。后世将他与老子并称“老庄”。名篇有《逍遥游》、《齐物论》、《养生主》等，《养生主》中“《庖丁解牛》”尤为传诵。</li>
+<li>荀子与《荀子》：荀子名况，尊号“卿”，战国时期赵（河北）人，思想家、教育家，儒家学派代表人物。他针对孟子“性善论”提出“性恶论”。课本选入《劝学》</li>
+</ul>
+</li>
+<li>史学著作<ul>
+<li>《春秋》我国第一部编年体史书。</li>
+<li>《左传》我国第一部叙事详实的编年体史书。原名《左氏春秋》，又称《春秋左氏传》，相传为春秋末年鲁国史官左丘明所著。课本选入《曹刿论战》《烛之武退秦师》。</li>
+<li>《国语》我国最早的国别体史书，相传为春秋末年鲁国史官左丘明所著。</li>
+<li>《战国策》西汉末年刘向编订的一部国别体体史书，课本选入《邹忌讽齐王纳谏》。</li>
+<li>《史记》与司马迁，字子长，西汉史学家、文学家和思想家。著作《史记》是我国第一部纪传体通史，它包括12本纪（帝王传记）、30世家（诸侯传记）、70列传（著名人物传记）、10表、8书，共130篇。它与《汉书》《后汉书》《三国志》合称“四史”。鲁迅称赞《史记》是“史家之绝唱，无韵之离骚”。</li>
+<li>《汉书》与班固： 班固：东汉（朝代）史学家、文学家。《汉书》，又称《前汉书》，班固编撰，中国第一部纪传体断代史，“二十四史”之一，是继《史记》之后我国古代又一部重要史书。课本选入《苏武传》。</li>
+<li>《后汉书》与范晔：南北朝宋时期历史学家，编撰《后汉书》，“二十四史”之一。课本选入《张衡传》。</li>
+<li>《资治通鉴》与司马光：司马光，北宋（朝代）史学家，所编著的《资治通鉴》是最大的一部编年体通史史书。（不属于二十四史）</li>
+<li>《新五代史》与欧阳修：欧阳修，北宋（朝代）史学家，文学家，编著《新五代史》。课本选入《伶官传序》</li>
+</ul>
+</li>
+<li>编年体<ul>
+<li>《春秋》，中国最早的编年体史书，春秋时期孔子编订。<ul>
+<li>“《春秋》三传”：《左传》《公羊传》《谷梁传》</li>
+</ul>
+</li>
+<li>《资治通鉴》，中国第一部编年体通史，北宋司马光。</li>
+</ul>
+</li>
+<li>国别体：<ul>
+<li>《国语》，中国第一部国别体史书。</li>
+<li>《战国策》，西汉刘向。</li>
+</ul>
+</li>
+<li>纪传体：<ul>
+<li>“二十四史”，除《史记》，都是纪传体断代史。</li>
+<li>“前四史”<ul>
+<li>《史记》，中国第一部纪传体通史，西汉司马迁。</li>
+<li>《汉书》，中国第一部纪传体断代史，东汉班固。</li>
+<li>《后汉书》，南北朝宋范晔。</li>
+<li>《三国志》，西晋陈寿。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>历史文化</p>
+<ol>
+<li>仰昭文化<ul>
+<li><code>新石器时代</code>，仰韶文化早期和中期处于<code>母系氏族</code>社会的繁荣阶段，晚期进入<code>父系氏族</code>公社时期。</li>
+<li>因河南省渑池县<code>仰韶村遗址</code>得名，另比较著名的是<code>西南半坡氏族遗址</code></li>
+<li>文物以彩陶工艺</li>
+</ul>
+</li>
+<li><code>半坡遗址</code><ul>
+<li><code>半坡遗址</code>是<code>母系氏族</code>时期最具代表性的文化遗址</li>
+<li>出土<code>陶器、石器、骨器等</code>生产工具和生活工具。</li>
+</ul>
+</li>
+<li>河姆渡文化<ul>
+<li><code>新石器时代</code>，江南地区迄今发现<code>最早的新石器文化</code>，因浙<code>江余姚县河姆渡遗址</code>而得名</li>
+<li>以<code>骨器</code>为主，水稻，养猪、狗等家畜，渔猎采集经济仍占一定比例。住宅盛行<code>“干栏”式房屋建筑</code>。</li>
+<li>出土文物：骨耜&#x2F;sì&#x2F;</li>
+</ul>
+</li>
+<li>红山文化<ul>
+<li><code>北方新石器时代</code>，<code>内蒙古赤峰市红山后遗址</code></li>
+<li>以<code>原始农业</code>为主，辅以渔猎，饲养牛羊猪等家畜。</li>
+<li>以<code>磨制石器</code>为主，有掘土、收割和加工谷物的工具。</li>
+<li>出土文物：玉猪龙</li>
+</ul>
+</li>
+<li>龙山文化<ul>
+<li>新石器时代，城子崖遗址</li>
+<li>出土文物：蛋壳黑陶高柄杯，</li>
+</ul>
+</li>
+<li>磁山文化<ul>
+<li>新石器时代，河北武安磁山</li>
+<li>遗址上发现许多半地穴式房址和窑穴</li>
+<li>以打制石器为主，磨制石器相对粗糙。</li>
+</ul>
+</li>
+<li>良渚文化<ul>
+<li>新石器时代，浙江余杭良渚遗址，主要分布于太湖地区</li>
+<li>出现了犁形器、耘田器等先进工具。手工业制品精巧，在遗址上曾发现了中国最早的苎麻织品实物。</li>
+<li>房屋为干栏式建筑。贫富分化现象明显，私有财产已经出现，有玉琮、玉璧等贵重礼器。</li>
+<li>原始氏族制度瓦解并向文明时代过渡，中期以后可能已经处于中国古代文明的始创时期了。</li>
+</ul>
+</li>
+<li>大汶口文化<ul>
+<li>新石器时代，山东泰安市大汶口遗址，主要分布在泰山周围地区</li>
+<li>以石器为主，另外还有骨器和蚌器。</li>
+<li>氏族内有公共墓地，墓地中晚期出现了男女合葬和随葬品悬殊的现象。大汶口文化已经进入了父系氏族公社时期。</li>
+</ul>
+</li>
+<li>二里头文化<ul>
+<li>河南省偃师县，二里头文化遗存可分为四期，根据碳14测定，都在夏代纪年范围之内或稍微偏晚，有力地推动了探索夏代文化的工作。</li>
+</ul>
+</li>
+<li>三星堆文化<ul>
+<li>是<code>夏人</code>的一支从长江中游经三峡西迁成都平原、征服当地土著文化后形成的</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h1><span id="文物代表">文物代表</span></h1><ul>
+<li><p>玉猪龙 — 红山文化</p>
+</li>
+<li><p>莲鹤青铜方壶 — 河南新郑李家楼春秋郑国国君大墓</p>
+</li>
+</ul>
+<h1><span id="近代中国史">近代中国史</span></h1><ul>
+<li>1971年10月25日，第26届联大通过决议，决定恢复中华人民共和国在联合国的合法席位。</li>
+<li>1971年11月1日，五星红旗第一次在联合国升起。</li>
+<li>1971年11月15日，在第26届联合国大会全体会议上，中国代表团团长乔冠华登台演讲，这是新中国的代表在联合国的第一次正式亮相。</li>
+</ul>
+<h1><span id="地理国情">地理国情</span></h1><ul>
+<li>壮族是我国少数民族人口最多的民族。</li>
+<li>回族是我国少数民族中分布最广的少数民族，分布在全国的31个省和自治区。</li>
+<li>维吾尔族主要聚居在新疆维吾尔自治区，少量分布在湖南省桃源县和河南省渑池县。</li>
+<li>苗语是苗族人的语言，苗族主要分布于中国的黔、湘、鄂、川、滇、桂、琼等省区。</li>
+</ul>
+<h1><span id="未分类">未分类</span></h1><ul>
+<li><p>脸谱含义：</p>
+<ul>
+<li>蓝脸：代表刚强、粗犷、强横、猛烈、暴躁，比如窦尔敦、马武</li>
+<li>红脸：代表忠勇侠义，比如关羽、姜维、常遇春。</li>
+<li>黄脸：代表枭勇凶猛，比如典韦、宇文成都。</li>
+<li>紫脸：代表威严果断，比如专诸。</li>
+</ul>
+</li>
+<li><p>生僻乐器：</p>
+<ul>
+<li>木琴是一种打击乐器，是敲的，不是弹的。木琴的起源甚早，相传非洲、爪哇与印度尼西亚在14世纪时就有木琴。</li>
+</ul>
+<p>  <img src="https://bkimg.cdn.bcebos.com/pic/cefc1e178a82b9019e36da2b708da9773912ef0b?x-bce-process=image/format,f_auto/resize,m_lfit,limit_1,h_295" title="木琴"></p>
+<ul>
+<li>三弦琴：张三根弦，故名“三弦”。北方的三弦一般长122厘米，称为“大三弦”，南方三弦一般长95厘米，称为“小三弦”。</li>
+</ul>
+<p>  <img src="https://bkimg.cdn.bcebos.com/pic/b151f8198618367a6a881c6e29738bd4b31ce504?x-bce-process=image/format,f_auto/resize,m_lfit,limit_1,w_440" title="三弦"></p>
+<ul>
+<li>冬不拉。又名东不拉、东布拉，是中亚地区的传统弹拨乐器，在哈萨克斯坦、吉尔吉斯斯坦以及中国新疆的哈萨克族中尤其流行。早期的冬不拉是各个部落之间表达情感的重要纽带；在当代，冬不拉则是维系中华民族文化的纽带。</li>
+</ul>
+<p>  <img src="https://bkimg.cdn.bcebos.com/pic/a6aed01b951f8ca7af5133c3?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536" title="冬不拉"></p>
+<ul>
+<li>箜篌：又称坎侯或空侯。在古代除宫廷乐使用外，在民间也流传。在古代有卧箜篌、竖箜篌、凤首箜篌三种形制，琴弦一般系在敞开的框架上，用手指拨弹。</li>
+</ul>
+<p>  <img src="https://bkimg.cdn.bcebos.com/pic/c9fcc3cec3fdfc03442725a1d73f8794a4c22648?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536" title="箜篌"></p>
+</li>
+<li><p>寒具指的是咸馓sǎn子，传统油炸面食。古称“寒具”，是寒食节食品。贾思勰的《齐民要术》就详细记载了三国两晋南北朝时期寒具的制作方法。现为日常点心。<br><img src="https://bkimg.cdn.bcebos.com/pic/cefc1e178a82b9011ccf5d6d718da9773912ef0a?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20/resize,m_lfit,limit_1,h_1080" alt="咸馓sǎn子" title="咸馓sǎn子"></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B9%B4%E9%BE%84%E7%A7%B0%E8%B0%93/183093?fromModule=lemma_inlink#4">年龄称谓</a></p>
+<ul>
+<li>汤饼：出生三天，邀亲友吃汤饼</li>
+<li>初度：周岁。《离骚》“皇览揆余初度兮，肇锡余以嘉名”。后称生日为初度。</li>
+<li>总角：总，聚束；角，小髻，意为收发结之，古代儿童将头发分作左右两半，在头顶各扎成一个结，形如两个羊角，故称“总角”。</li>
+<li>垂髫[tiáo]：指童年。古时童子未冠，头发下垂，因而以“垂髫”代指童年。潘岳《藉田赋》：“被褐振裾，垂髫总发。”陶渊明《桃花源记》:“黄发垂髫，并怡然自乐”。</li>
+<li>始龀[chèn]：龀，儿童换牙，即脱去乳牙长出恒牙。按生理常规，男孩八岁、女孩七岁时换牙，「始龀」便成了童年的代称。</li>
+<li>教数：9岁。</li>
+<li>外傅：10岁，出外就学。</li>
+<li>束发：束，捆，结之意。古代男孩成童时束发为髻，因以「束发」为成童的代称，通常年十五岁始称成童。</li>
+<li>舞勺：男子13岁。古代13岁的男孩学习的一种文舞。</li>
+<li>豆蔻：女子13~14岁。源自唐朝诗人杜牧诗《赠别》。“娉[ pīng ]娉袅袅十三余，豆蔻梢头二月初。”</li>
+<li>及笄[jī]：指女子15岁可以盘发插笄的年龄，即成年。</li>
+<li>舞象：男子十五岁～二十岁。是成童的代名词。原本是古武舞名。《礼记·内则》：“成童，舞象，学射御。”《疏》曰：“成童，谓十五以上；舞象，谓舞武也。熊氏云：‘谓用干戈之小舞也。’”</li>
+<li>待年：指女子成年待嫁，又称“待字”。</li>
+<li>弱冠：指男子20岁。古代男子20岁行冠礼，表示已经成年。</li>
+<li>而立：指30岁。称30岁为而立之年</li>
+<li>不惑：指40岁。</li>
+<li>知命：指50岁。</li>
+<li>花甲（耳顺）：指60岁</li>
+<li>古稀：指70岁。称70岁为古稀之年</li>
+<li>耄[mào]耋[dié]：指80~90岁</li>
+<li>黄发：指长寿老人。陶渊明《桃花源记》：“黄发垂髫，并怡然自乐。”</li>
+<li>鲐背：指长寿老人，九十岁</li>
+<li>期颐：指百岁老人。</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B9%B4%E9%BE%84%E7%A7%B0%E8%B0%93/183093?fromModule=lemma_inlink#5">称谓汇总</a></p>
+<ul>
+<li>0岁<ul>
+<li>度：小儿初生之时。</li>
+<li>赤子、襁褓：未满周岁的婴儿。</li>
+<li>汤饼之期：指婴儿出生三日。旧俗小儿出生三日，设筵招待亲友谓之“汤饼筵”，也作“汤饼宴”、“汤饼会”。</li>
+</ul>
+</li>
+<li>1岁<br>  -牙牙：象声词，婴儿学语的声音。如牙牙学语，因亦指小孩过程子开始学话。清袁枚《祭妹文》：“两女牙牙，生汝死后，才周晬耳。”周晬，指婴儿周岁。</li>
+<li>2岁<ul>
+<li>孩提：指初知发笑尚在襁褓中的幼儿。也有写作“孩提包”或“提孩”的，韩愈诗中就有“两家各生子，提孩巧相如”句。孩提：指2——3岁的儿童。</li>
+</ul>
+</li>
+<li>8岁<ul>
+<li>总角：古代幼童把垂发扎成两结于头顶把头发扎成髻，形状如角，因而也用“总角”来代指人的幼童阶段。借指幼年。在这里，“总”就是聚拢束结的意思。总角之交（幼年就相识的好朋友）。总角是八九岁至十三四岁的少年（古代儿童将头发分作左右两半，在头顶各扎成一个结，形如两个羊角，故称“总角”）。</li>
+<li>童龀[chèn]：龀，《说文》中有“男八月生齿、八岁而龀；女七月生齿、七岁而龀”的说法。可以看出，孩子乳牙脱落，长出恒牙，称为“龀”。“童龇”，往往是指人的儿童少年时期。也有说成“髫龀”的，如《后汉书·董卓传》：“其子孙虽在髫龀，男皆封侯，女为邑君。”</li>
+<li>始龀、髫年：女孩七岁。</li>
+<li>始龀、龆年：男孩八岁。说明：根据生理状况，男孩八岁、女孩七岁换牙，脱去乳齿，长出恒牙，这时叫“龀”，“龆年”或“髫年”。</li>
+</ul>
+</li>
+<li>9岁<ul>
+<li>九龄：为9岁。</li>
+<li>黄口：十岁以下。</li>
+<li>指数之年：儿童九岁。</li>
+</ul>
+</li>
+<li>10岁<ul>
+<li>幼学：十岁。（《礼记?曲礼上》：“人生十年曰幼，学。”因为古代文字无标点，人们就截取“幼学”二字作为十岁代称。）</li>
+<li>外傅之年：儿童十岁。</li>
+<li>12岁</li>
+<li>金钗之年：女孩十二岁。</li>
+</ul>
+</li>
+<li>13岁<ul>
+<li>豆蔻：指女子十三岁。源自唐朝诗人杜牧的一首诗——《赠别》。杜牧年轻时曾随丞相牛僧孺在扬州供职，后离开扬州，临行时写了两首七绝给一位女子。“娉[ pīng ]娉袅袅十三余，豆蔻梢头二月初。春风十里扬州路，卷上珠帘总不如。”杜牧用二月初含苞待放的豆蔻花比喻十三岁的少女。</li>
+<li>十三：为13岁。</li>
+<li>舞勺之年：少年十三至十五岁。</li>
+</ul>
+</li>
+<li>15岁<ul>
+<li>及笄：笄[jī]，本来是指古代束发用的簪子。古代女子一般到15岁以后，就把头发盘起来，并用簪子绾住，表示已经成年。“及笄”即年满15岁的女子。及笄：指女子十五岁。</li>
+<li>结发：束发，扎结头发，古人男20岁束发而冠，女子15岁束发而笄，表示成年。男女成年的标志分别为“加冠”、“加笄”。</li>
+<li>志学之年：因为“三十而立，四十而不惑。”（孔子曰：“吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲”。——《论语·为政》），所以后代称15岁为“志学之年”。</li>
+<li>束发：古人以十五岁为成童之年，把头发束起来盘在头顶。束发是男子十五岁（到了十五岁，男子要把原先的总角解散，扎成一束）。</li>
+<li>及笄：女子十五岁。（《礼记?内则》：“女子十有五年而笄。”）</li>
+<li>舞象之年：少年十五至二十岁。</li>
+<li>成童：十五或十五稍上的年岁。郑玄：“成童，十五以上”。</li>
+</ul>
+</li>
+<li>16岁<ul>
+<li>二八：为16岁。</li>
+<li>碧玉年华、破瓜之年：女子十六岁。（旧时文人拆“瓜”字为二八纪年，谓十六岁，多用于女子。）有关碧玉的诗句很多，其中晋人孙绰的《碧玉歌》最为有名。“碧玉破瓜时，郎为情颠倒。芙蓉陵霜荣，秋容故尚好。碧玉小家女，不敢攀贵德。感郎千金意，惭无倾城色。碧玉小家女，不敢贵德攀。感郎意气重，遂得结金兰。碧玉破瓜时，相为情颠倒。感郎不羞郎，回身就郎抱。”写出二八妙龄少女的清新美好。《通俗编·妇女》“宋谢幼盘词‘破瓜年纪小腰身。’按俗以女子破身为破瓜，非也。瓜字破之为二字，言其二八十六岁耳。”</li>
+</ul>
+</li>
+<li>20岁<ul>
+<li>加冠：指二十岁。古时男子二十岁行加冠礼，表示已成年。加冠：指男子二十岁（又“弱冠”）。</li>
+<li>结发：束发，扎结头发，古人男20岁束发而冠，女子15岁束发而笄，表示成年。男女成年的标志分别为“加冠”、“加笄”。</li>
+<li>弱冠：古人二十岁行冠礼，以示成年，但体犹未壮，故称“弱冠”。指刚成年。指二十岁。弱冠：古代男子20岁叫作“弱”，这时就要行“冠礼”，即戴上表示已成人的帽子。“弱冠”即年满20岁的男子。后世泛指男子二十左右的年纪。弱冠是男子二十岁。</li>
+<li>桃李年华：女子二十岁。</li>
+</ul>
+</li>
+<li>24岁<ul>
+<li>花信年华：女子二十四岁。</li>
+</ul>
+</li>
+<li>30岁<ul>
+<li>而立（而立之年）：因为“三十而立，四十而不惑。”（孔子曰：“吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲”。——《论语·为政》），所以后代称30岁为“而立之年”。而立之年：指三十岁。而立是三十岁（立，“立身、立志”之意）。</li>
+<li>始室：三十岁。《礼记·内则》：“三十而有室，始理男事”。</li>
+<li>克壮：正当壮年。古代三十岁为壮。唐魏征《是渐不克终疏》：“贞观之初，时放克壮。”</li>
+<li>半老徐娘：女子三十岁。</li>
+</ul>
+</li>
+<li>40岁<ul>
+<li>不惑（不惑之年）：因为“三十而立，四十而不惑。”（孔子曰：“吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲，不逾矩。”——《论语·为政》），所以后代称40岁为“不惑之年”。不惑之年：指四十岁。不惑是四十岁（不惑，“不迷惑、不糊涂”之意）。</li>
+</ul>
+</li>
+<li>50岁<ul>
+<li>艾：古称五十岁的人为“艾”。《礼记·曲礼上》：“五十曰艾。”艾称年老的。</li>
+<li>半百、知天命、知命之年：知命之年，指五十岁（又“知天命”、“半百”）。</li>
+<li>知命：五十岁（知命，“知天命”之意）。“知命”是“知天命”的缩略语。</li>
+<li>知天命：孔子曰：“吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲”。——《论语·为政》，所以后代称50岁为“知命之年”。</li>
+<li>知命之年：因为“三十而立，四十而不惑。”（孔子曰：“吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲”。——《论语·为政》），所以后代称50岁为“知命之年”。知命之年：指五十岁（又“知天命”、“半百”）。</li>
+</ul>
+</li>
+<li>54岁<ul>
+<li>六九年：即五十四岁。</li>
+</ul>
+</li>
+<li>60岁<ul>
+<li>耳顺、耳顺之年、还历之年、花甲之年：均指60岁。因为“三十而立，四十而不惑。”（孔子曰：“吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲”。——《论语·为政》），所以后代称60岁为“耳顺之年”。</li>
+<li>高龄：敬辞，称老人的年龄，多指六十岁以上。</li>
+<li>花甲：天干地支配合用来纪年，从甲起，六十年成一周，因此称六十岁为花甲。花甲：古代用干支记时间。所谓干支，是天干地支的简称。天干有十，地支十二，十天干和十二地支按照顺序搭配成六十个单位，通常就叫作“六十花甲子”，也称“花甲”。把这种记时间的词语移用到记人的年龄上，就以“年届花甲”或“花甲之年”来指人到60岁了。</li>
+<li>花甲：指六十岁，用干支纪年，错综搭配，六十年周而复始。</li>
+<li>还历之年：指60岁。</li>
+<li>下寿：古人以六十为下寿，下寿：指60岁以上。</li>
+<li>耆[qi]：古称六十岁的人为“耆”。</li>
+<li>耆[qí]艾：古代以六十老人为耆。</li>
+</ul>
+</li>
+<li>61岁<ul>
+<li>还历寿：61岁的寿辰。由于按干支纪年法，60年为一轮，61岁正是新一轮重新算起的时候，故称“还历”。</li>
+</ul>
+</li>
+<li>70岁<ul>
+<li>从心之年：因为“三十而立，四十而不惑。”（孔子曰：“吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲”。——《论语·为政》），所以后代称70岁为“从心之年”。</li>
+<li>古稀：古代人活到70岁，也就很不容易了。杜甫有诗曰：“酒债寻常行处有，人生七十古来稀。”后人就多依此诗，称70岁为“古稀之年”。</li>
+<li>古稀之年、悬车之年、杖围之年：均指70岁。</li>
+<li>耋[dié]：七八十岁的年纪，泛指老年。如：耄[mào]耋[dié]之年。</li>
+<li>杖围之年：指70岁。</li>
+<li>悬车之年：指70岁。</li>
+</ul>
+</li>
+<li>77岁<ul>
+<li>喜寿：指77岁，草书喜字似七十七，故特代指77岁。</li>
+</ul>
+</li>
+<li>80岁<ul>
+<li>朝枚之年、朝枝之年、耄[mao]耋[die]之年：均指八九十岁。</li>
+<li>耄：指八九十岁的年纪，泛指老年，如：老耄、耄耋之年。</li>
+<li>耄耋：耄[mào]，《盐铁论·孝养》中写道：“七十曰耄。”《礼记·曲礼》说：“八十九十曰耋。”耋[dié]，《尔雅·释言》注：“八十为耋。”把上面几种说法合起来，可以看到，“耄耋”是指人的高寿，大约是“七老八十”了。耄[mào]耋[dié]：泛指晚年。耄，八九十岁的年纪。耄，七八十岁的年纪。耄（mao）耋（die）指八九十岁。毛传又云：“耋，老也，八十曰耋。”后人因称八九十岁的老人为“耄耋”。</li>
+<li>中寿：指80岁以上。</li>
+<li>伞寿：80岁寿辰。因“伞”字的草体形似“八十”，故称“伞寿”。</li>
+</ul>
+</li>
+<li>88岁<ul>
+<li>米寿：指88岁。因米字拆开好似八十八，故借指88岁。此外，还含有年事虽高，但食欲旺盛之意。</li>
+</ul>
+</li>
+<li>90岁<ul>
+<li>上寿：九十为上寿。</li>
+<li>鲐背：鲐：一种鱼，背上的斑纹如同老人褶皱的皮肤。。又人到暮年，皮肤上生出老年斑如冻梨之皮，故又称“冻梨”。</li>
+</ul>
+</li>
+<li>99岁<ul>
+<li>白寿：指99岁，百少一为99，故借指99岁。</li>
+</ul>
+</li>
+<li>100岁<ul>
+<li>期颐：指百岁高寿。期颐：期，朱熹讲是“周匝之义”，即转过一圈了，“谓百年已周”。颐，朱熹讲是“谓当养而已”。即生活起居诗人养护。期颐就是指百岁之人。期颐指一百岁。“期颐”是人寿至“百岁”的特称。《礼记·曲礼上》：“百年曰期颐。”郑玄注：“期，犹要也；颐，养也。不知衣服食味，孝子要尽养道而已。”意思是：人至百岁，饮食、居住、动物等各方面都需要孝子照养，所以“百岁”称作“期颐”。</li>
+<li>上寿：百岁</li>
+<li>期颐之年：指百岁。</li>
+</ul>
+</li>
+<li>108岁<ul>
+<li>茶寿：指108岁。茶字上面廿，下面为八十八，二者相加得108岁。</li>
+</ul>
+</li>
+<li>140岁<br>  双稀、双庆——一百四十岁。</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 咪啪窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;KaMmy
+        </div>
+        <div>
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">
+                别来无恙呀，最近咪啪窝被拜访了<span id="busuanzi_value_site_pv"></span>次；
+            </span>
+            <span id="busuanzi_container_page_pv">
+                这篇文章被阅读了<span id="busuanzi_value_page_pv"></span>次~
+              </span>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="KaMmySuma/giscus"
+    data-repo-id="R_kgDOJp-YWg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOJp-YWs4CW34h"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+        
+    </body>
+</html>
