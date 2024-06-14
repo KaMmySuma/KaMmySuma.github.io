@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>学习笔记-古代历史 | 咪啪窝</title>
+        <meta name="author" content="KaMmy" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>Now Loading...</h2>
+                        <p>加载过慢请开启魔法</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>咪啪窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;咪啪窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>学习笔记-古代历史</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            1899/11/30
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="color: #ffa2c4">学习笔记</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <meta name="referrer" content="no-referrer">
+
+<blockquote>
+<p>菜就多练</p>
+</blockquote>
+<span id="more"></span>
+
+<h1><span id="朝代更替"></span></h1><p>夏→寒→夏（复辟）商→周[西周、东周（春秋、战国）]→秦→西汉→新→东汉→三国（魏、蜀汉、吴）→西晋→东晋十六国→南北朝（南朝:宋、齐、梁、陈；北朝:北魏、东魏、西魏、北齐、北周）→隋→唐→武周→唐（复辟）→五代十国→宋（北宋、南宋）、辽、西夏、金→元→明→清</p>
+<p>夏商与西周，东周分两段；<br>春秋和战国，一统秦两汉；<br>三分魏蜀吴，二晋前后延；<br>南北朝并立，隋唐五代传；<br>宋元明清后，皇室至此完。</p>
+<ul>
+<li>奴隶社会时期<ul>
+<li>夏、商、周 (西周、春秋、战国)</li>
+</ul>
+</li>
+<li>分合交替时期<ul>
+<li>秦、汉(合)</li>
+<li>魏、晋、南北朝 (分)</li>
+<li>隋、唐 (合)</li>
+</ul>
+</li>
+<li>民族交汇时期<ul>
+<li>宋、元、明、清</li>
+</ul>
+</li>
+</ul>
+<h1><span id="华夏之祖">华夏之祖</span></h1><ul>
+<li><code>涿鹿之战</code><br>  黄帝（轩辕氏）、炎帝（神农氏），大败蚩尤<ul>
+<li>同期还有巢氏 、燧人氏 、伏羲氏</li>
+</ul>
+</li>
+<li>制度<ul>
+<li>禅让制（公天下）：尧→舜→禹→启</li>
+</ul>
+</li>
+<li>记载<ul>
+<li>制衣、挖井、舟车、<code>养蚕剥丝</code> (黄帝之妻<code>嫘祖</code>)、乐谱</li>
+<li>仓颉造字：已有文字雏形</li>
+</ul>
+</li>
+</ul>
+<h1><span id="夏朝">夏朝</span></h1><ul>
+<li>君主：启（禹奠基，启建朝）——桀  <ul>
+<li>世袭制（家天下）</li>
+<li>都城：阳城</li>
+<li>战争：甘之战(启与有扈氏)（巩固权威）</li>
+</ul>
+</li>
+<li>记载<ol>
+<li>第一个奴隶制国家</li>
+<li>建立了最早的国家机器：监狱、刑法。</li>
+<li>河南洛阳偃师：<code>二里头文化</code></li>
+</ol>
+</li>
+</ul>
+<h1><span id="商朝">商朝</span></h1><ul>
+<li><code>鸣条之战</code>（商汤与夏桀）：桀暴虐，商汤发动<code>鸣条之战</code>推翻统治</li>
+<li>君主：商汤<ul>
+<li>都城：毫(今河南商丘)</li>
+</ul>
+</li>
+<li>君主：盘庚<ul>
+<li><code>盘庚迁都</code><ul>
+<li>毫频繁大水，第十九王盘庚迁都，今河南<code>安阳</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>君主：武丁<ul>
+<li>都城：<code>殷</code>(<code>盘庚迁都</code>，今河南<code>安阳</code>)</li>
+<li><code>武丁盛世</code>：盘庚侄子武丁执政59年间，灭躬方，亡土方，平西羌，定荆襄，扩疆数千里。</li>
+</ul>
+</li>
+<li>君主：商纣王（暴虐）</li>
+<li>记载：<ol>
+<li>后母茂鼎（司母茂鼎）：商朝青铜制作的最高水平</li>
+<li>四羊方尊，湖南宁乡，商朝最精良的青铜器</li>
+<li>甲骨文，成熟文字，用于占卜</li>
+</ol>
+</li>
+</ul>
+<h1><span id="西周">西周</span></h1><ul>
+<li><code>牧野之战</code>：周武王与商纣王，<code>阵前倒戈</code></li>
+<li>君主: 周武王<ul>
+<li>都城:镐(今西安)</li>
+<li>制度:<code>分封制、宗法制</code>、井田制和<code>礼乐制</code></li>
+</ul>
+</li>
+<li>君主：周幽王<ul>
+<li><code>烽火戏诸侯</code> (<code>周幽王</code>与褒姒)</li>
+<li>灭亡：(<code>周幽王</code>与犬戎)</li>
+</ul>
+</li>
+</ul>
+<h1><span id="春秋东周前段">春秋（东周前段）</span></h1><ul>
+<li>君主：周平王<ul>
+<li>都城：洛邑（今洛阳）——老爹把都城定得太靠西被游牧名族杀了，得定东边</li>
+</ul>
+</li>
+<li>春秋五霸<ul>
+<li><code>齐桓公</code>：葵丘会盟，老马识途，管仲改革，<code>尊王攘夷</code><ul>
+<li>齐桓公是春秋第一任霸主</li>
+</ul>
+</li>
+<li><code>晋文公</code>：秦晋之好，寒食节（介子推）<ul>
+<li><code>城濮之战</code>（<code>楚晋</code>之争，<code>退避三舍（晋文公与成得臣）</code>）</li>
+<li><code>秦晋之好：秦穆公与晋文公</code></li>
+</ul>
+</li>
+<li><code>楚庄王</code>：不鸣则已，一呜惊人，<code>问鼎中原</code>，饮马黄河</li>
+<li><code>吴王阖闾</code>[hé lǘ]：孙武（《孙子兵法》，兵圣），伍子胥</li>
+<li><code>越王勾践</code>：<code>卧薪尝胆（吴王阖闾的儿子夫差）</code></li>
+<li>春秋五霸的另一种说法： 齐桓公、宋展公、晋文公、秦穆公、楚庄王 (出自《史记》)</li>
+</ul>
+</li>
+</ul>
+<h1><span id="战国东周后段">战国（东周后段）</span></h1><ul>
+<li>分界线：三家分晋——晋国的三个卿大夫把晋国给瓜分了，并从周天子得到了诸侯王的身份，这象征着周王室对诸侯完全丧失了控制能力</li>
+<li>战国七雄<ul>
+<li>齐、楚、秦、燕、（赵、魏、韩）（三家分晋）（方位：东南西北到中间）</li>
+</ul>
+</li>
+<li><code>桂陵之战</code>（<code>齐国</code>（将军<code>田忌</code>，军师<code>孙膑</code>）+<code>赵国</code>——<code>魏国</code>（将军<code>庞涓</code>））<ul>
+<li><code>围魏救赵</code>：赵国不敌魏国，请求齐国救援，围魏救赵，活捉了匆匆回城的庞涓</li>
+</ul>
+</li>
+<li><code>马陵之战（齐、韩——魏（上一条的原班人马））</code><ul>
+<li><code>减灶诱敌</code>——齐军在马陵伏击魏军并将其歼灭，庞涓死</li>
+</ul>
+</li>
+<li><code>长平之战</code>（秦——赵（白起、赵括））<ul>
+<li><code>纸上谈兵（白起、赵括）</code>——《廉颇润相如传》</li>
+<li>是我国历史上最早、规模最大的包围歼灭战，白起坑杀赵国俘虏45万</li>
+</ul>
+</li>
+<li><code>商鞅变法</code>（得到的是<code>秦孝公赢渠梁</code>的支持）：使秦国强大的关键是经济改革：废除井田制，承认土地私有制，允许土地交易。<ul>
+<li><code>徙木立信</code></li>
+</ul>
+</li>
+</ul>
+<h1><span id="秦朝">秦朝</span></h1><ul>
+<li>君主：嬴政<ul>
+<li>都城：咸阳</li>
+<li>中央集权（郡县制）；三公九卿制（丞相、太尉、御史大夫）</li>
+<li>统一货币：半两钱和度量衡</li>
+<li>统一文字：小篆</li>
+<li>焚书坑儒</li>
+</ul>
+</li>
+<li>陈胜吴广起义：历史上第一次大规模农民起义<ul>
+<li>鸿鹄之志、揭竿而起（王侯将相宁有种乎？）</li>
+<li>没有推翻统治，但是后续起义军如春笋源源不断</li>
+</ul>
+</li>
+<li>巨鹿之战：项羽与王离、章部，著名<code>以少胜多</code>战役<ul>
+<li>破釜沉舟：项羽</li>
+</ul>
+</li>
+</ul>
+<h1><span id="西汉">西汉</span></h1><ul>
+<li>君主：汉高祖刘邦（约法三章）<ul>
+<li>都城：长安（今西安）</li>
+<li>楚汉之争<ul>
+<li>垓下之战（刘邦与项羽）<ul>
+<li>十面埋伏、四面楚歌、霸王别姬</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>汉初三杰：<code>萧何、韩信、张良</code><ul>
+<li>张良（运筹帷幄）</li>
+<li>萧何（萧规曹随）</li>
+<li>韩信（暗度陈仓、背水一战、一饭千金、多多益善）</li>
+</ul>
+</li>
+<li>君主：<code>汉文帝、汉景帝</code><ul>
+<li><code>文景之治</code>：社会经济衰弱，朝廷推崇<code>黄老治术</code>，采取“<code>轻徭薄赋</code>”“<code>与民休息</code>”的政策。</li>
+<li><code>七王之乱</code>（七国之乱）<ul>
+<li><code>汉景帝</code>三年，以吴王<code>刘濞</code>为中心的七个诸侯国因不满削藩而引起的内乱，史称“七国之乱”。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>君主：汉武帝<ul>
+<li>汉武盛世：行<code>推思令、盐铁令</code>，政权、财政权集中于中央；派<code>卫青、霍去病</code>北击匈奴；文化上采用董仲舒的建议，<code>罢黜百家，独尊儒术</code><ul>
+<li>董仲舒：古之天下亦今之天下，今之天下亦古之天下。（形而上学哲学观点）</li>
+</ul>
+</li>
+<li>丝绸之路<ul>
+<li>张骞[qiān]两次出使西域。</li>
+<li>路线：东起<code>长安</code>，经河西走廊，过<code>玉门关、阳关</code>，分南北两路到疏勒(今新疆喀什)会合，北上大宛(中亚)和康居(锡尔河流域)到里海北岸；南下<code>身毒</code>(即度)，西行大月氏(阿姆河流域)，经<code>安息</code>(伊朗)转运到条支(阿拉伯半鸟)和太秦(地中海东岸)，终点<code>罗马</code><ul>
+<li>把中国、印度、阿拉伯、古罗马四个文化圈联系了起来</li>
+</ul>
+</li>
+<li>物产交流：<ul>
+<li>输出：铁器、丝绸、养蚕缫丝、铸铁术、井渠法和造纸术</li>
+<li>输入：佛教、葡萄、石榴、胡豆（兰花豆）、胡瓜（黄瓜）、胡桃（核桃），良马（汗血宝马），苴[jū]霜（牧草）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>海上丝绸之路：起于秦汉，兴于隋唐，盛于宋元，明初达到顶峰，明中叶因海禁而衰落<ul>
+<li>路线：广东沿海港口—印度支那半岛—马六甲海峡—孟加拉沿岸—印度半岛南端。</li>
+<li>起点：<code>泉州</code></li>
+<li>主要港口：宁波、广州、泉州<ul>
+<li>请<code>宁</code>坐船<code>广</code>一<code>泉</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>王莽改制<ul>
+<li>西汉末年，王莽建立新朝，西汉亡。王芥仿照《周礼》的制度推行新政，朝令夕改，导致黄眉、绿林大规模反抗</li>
+<li>新朝仅维持了14年</li>
+</ul>
+</li>
+</ul>
+<h1><span id="东汉">东汉</span></h1><ul>
+<li><code>昆阳之战</code>（王凤、刘秀与王邑，著名<code>以少胜多</code>的战役）</li>
+<li>君主：汉光武帝刘秀<ul>
+<li>都城：洛阳</li>
+<li>光武中兴：光武帝以“柔道”治天下，采取一系列措施，恢复、发展社会生产，缓和西汉末年以来的社会危机。</li>
+</ul>
+</li>
+<li>君主：汉明帝<ul>
+<li>班超平定西域（投笔从戎）（封定远侯）</li>
+</ul>
+</li>
+<li>君主：汉灵帝<ul>
+<li>黄巾起义（张角领导农民起义）：“苍天已死，黄天当立，岁在甲子，天下大吉”</li>
+<li>黄巾起义虽然被镇压下去了，但它却沉重地打击了汉朝地主阶级的统治，使早已腐朽不堪的东汉政权分崩离析，名存实亡。<blockquote>
+<p>在镇压黄巾起义的过程中，各地州郡大吏独揽军政大权，地主豪强也纷纷组织“部曲”（私人武装），占据地盘， 形成大大小小的割据势力，转入争权夺利、互相兼并的长期战争，造成中原地区“白骨露于野、千里无鸡鸣”的凄惨景象。当时的割据势力：主要有冀州的袁绍、河内的张杨、兖豫的曹操、徐州的吕布、扬州的袁术、江东的孙策、荆州的刘表、幽州的公孙瓒、南阳的张绣等，形成群雄并起的局面。在这些割据势力的连年征战中，袁绍、曹操两大集团逐步壮大起来。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>君主：汉献帝刘协<ul>
+<li>官渡之战：公元200年，<code>遭操</code>打败<code>袁绍</code>，北方统一。官渡之战是中国历史上著名的<code>以弱胜强</code>的战役之一.</li>
+<li>赤壁之战：公元208年，<code>孙刘联军</code>打败<code>曹操</code>，三国鼎立格局初步形成。</li>
+<li><code>诸葛亮</code>上任“三把火”：三次火攻曹操<ol>
+<li>第一次<code>火烧博望坡</code>，使夏侯惇统领的十万曹兵所剩无几。</li>
+<li>第二次<code>火烧新野</code>，使曹仁、曹洪的十万人马，几乎全部覆没。</li>
+<li>第三次<code>火烧赤壁</code>，是孙权、刘备联军于建安十三年（208年）在长江赤壁一带大破曹操大军，是一场以少胜多、以弱胜强的著名战役。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>宋代<code>理学</code>四大家：<code>濂、洛、关、闽</code></p>
+<ol>
+<li>濂——<code>周敦颐</code>——<code>先驱者</code></li>
+<li>洛——二程（<code>程颢</code>和<code>程颐</code>）——<code>奠基者</code></li>
+<li>关——<code>张载</code>——<code>奠基者</code></li>
+<li>闽——<code>朱熹</code>——<code>集大成者</code></li>
+</ol>
+</li>
+<li><p>宋代<code>楷书</code>四大家：<code>黄庭坚</code>、<code>苏轼</code>、<code>米芾</code>、<code>蔡襄</code>——合称为“<code>苏黄米蔡</code>”</p>
+</li>
+<li><p>历史著作</p>
+<ul>
+<li>先秦诸子百家<ol>
+<li>孔子：名丘，字仲尼，春秋末期，<code>儒家</code>学派<code>创始人</code>。思想核心是“<code>仁</code>”。现存《论语》20 篇，是<code>语录体</code>著作。<ul>
+<li>儒家重要经典：<ul>
+<li>四书：《大学》、《中庸》、《论语》、《孟子》</li>
+<li>五经：《诗》、《书》、《礼》、《易》、《春秋》</li>
+<li>六经：《诗》、《书》、《礼》、《易》、《春秋》、《乐》</li>
+<li>六艺：礼、乐、射、御、书、数<ul>
+<li>御指驾驶马车，而非骑马</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>老子：姓李，名耳，春秋时<code>道家</code>学派的<code>创始人</code>，著有《老子》，又名《道德经》。</li>
+<li>孟子：名轲，字子舆，<code>战国时期</code>邹（山东）人，是继<code>孔子之后的儒家</code>大师。后世常“<code>孔孟</code>”并称，元文宗时封他为“<code>亚圣</code>”。其中心思想是“<code>仁义</code>”，主张实行<code>“民本”“仁政”</code>，强调“<code>民贵君轻</code>”，重视<code>民心向背</code>。在人性问题上提出“<code>性善论</code>”论。著有《孟子》一书。</li>
+<li>庄子：庄周，<code>战国时期</code>宋国人。<code>道家</code>学派代表人。与老子并称“<code>老庄</code>”。<ul>
+<li>名篇有《逍遥游》、《齐物论》、《养生主》等，《养生主》中“《庖丁解牛》”尤为传诵。</li>
+</ul>
+</li>
+<li>荀子：名况，尊号“卿”，<code>战国时期</code>赵（河北）人，<code>儒家</code>学派代表人物。他针<code>对孟子“性善论”提出“性恶论”</code>。课本选入《劝学》</li>
+</ol>
+</li>
+<li>《春秋》<code>第一部编年体史书</code>。</li>
+<li>《左传》<code>第一部叙事详实的编年体史书</code>。<ul>
+<li>原名《左氏春秋》，又称《春秋左氏传》，相传为<code>春秋末年</code>鲁国史官<code>左丘明</code>所著。课本选入《曹刿论战》《烛之武退秦师》。</li>
+</ul>
+</li>
+<li>《新五代史》：北宋欧阳修</li>
+<li>编年体<ol>
+<li>《春秋》：<code>第一部编年体</code>史书，<code>春秋时期孔子</code>编订。<ul>
+<li>“《春秋》三传”：《左传》《公羊传》《谷梁传》</li>
+</ul>
+</li>
+<li>《资治通鉴》，编年体通史，北宋司马光。（<code>不属于二十四史</code>）</li>
+</ol>
+</li>
+<li>国别体：<ol>
+<li>《国语》，第一部<code>国别体</code>史书。相传为<code>春秋末年</code>鲁国史官<code>左丘明</code>所著。</li>
+<li>《战国策》，西汉刘向。</li>
+</ol>
+</li>
+<li>纪传体：<ol>
+<li>“二十四史”，除《史记》，都是纪传体断代史。</li>
+<li>“前四史”<ul>
+<li><code>《史记》</code>，第一部<code>纪传体通史</code>，西汉司马迁。<code>鲁迅称赞《史记》是“史家之绝唱，无韵之离骚”</code></li>
+<li><code>《汉书》</code>，第一部<code>纪传体断代史</code>，东汉班固。</li>
+<li>《后汉书》，南北朝宋范晔。记载东汉历史从王莽至汉献帝近两百年</li>
+<li>《三国志》，西晋陈寿。是一部断代史，记录三国时期，也是二十四史中评价最高的“前四史”之一</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>《离骚》：中国古代<code>最长的抒情诗</code>，开辟了中国文学浪漫主义的源头</li>
+<li>《儒林外史》是清代<code>吴敬梓</code>创作的长篇小说，代表着中国古代<code>讽刺小说的高峰</code></li>
+<li>《三国演义》是中国文学史上<code>第一部章回小说</code>，“第一才子书”</li>
+<li>《本草纲目》是<code>明朝李时珍</code>所著，被誉为“<code>东方医药巨典</code>”。</li>
+<li>《齐民要术》北魏末年，<code>贾思勰xié</code>，综合性农学著作，是中国现存<code>最早完整农书</code>。</li>
+<li>《农政全书》明代徐光启。“中国古代五大农书”之一。囊括明代农业生产和人民生活的各个方面，而其中又贯穿徐光启的治国治民的“农政”思想。集前人农业科学之大成，总结了清代之前的农业科学技术。</li>
+<li>《天工开物》明朝宋应星。是<code>世界第一部</code>关于农业和手工业生产的<code>综合性著作</code>，外国学者称它为“<code>中国17世纪的工艺百科全书</code>”。</li>
+<li>《九成宫醴lǐ泉铭》唐贞观六年<code>欧阳询</code>，“天下第一楷书”</li>
+<li>《诗经》是中国古代诗歌开端，<code>最早的一部诗歌总集</code>，在内容上分为《风》《雅》《颂》三个部分。<ol>
+<li>《风》是<code>周代各地的歌谣</code>；</li>
+<li>《雅》是<code>周人的正声雅乐</code>，又分《小雅》和《大雅》；</li>
+<li>《颂》是<code>周王庭和贵族宗庙祭祀的乐歌</code>，又分为《周颂》《鲁颂》和《商颂》。</li>
+</ol>
+</li>
+<li>《管子》是先秦时期各学派的言论汇编，战国时代至秦汉时期，内容庞杂，包括法家、儒家、道家、阴阳家、名家、兵家和农家的观点。<code>“礼义廉耻”被视为“国之四维”</code>，“四维”之中的<code>廉耻</code>尤为重要。</li>
+<li>《礼记》：又名《小戴礼记》《小戴记》，西汉<code>戴圣</code>。是典章制度选集。</li>
+<li><code>元曲四大喜剧</code>：关汉卿的《拜月亭》、王实甫的《西厢记》、白朴的《墙头马上》和郑光祖的《倩女离魂》</li>
+<li><code>元曲四大悲剧</code>：关汉卿的《窦娥冤》、马致远的《汉宫秋》、白朴的《梧桐雨》以及纪君祥的《赵氏孤儿》</li>
+</ul>
+</li>
+<li><p>唐宋八大家：唐代<code>柳宗元、韩愈</code>和宋代<code>欧阳修、苏洵、苏轼、苏辙、王安石、曾巩</code>。</p>
+</li>
+<li><p>四大发明</p>
+<ol>
+<li>指南针：北宋发明，南宋广泛用于航海</li>
+<li>火药：产生时间比较早，只是用来炼丹，直到唐朝末年才开始用于军事，到北宋时，政府才设立专门制造火药和火器的机构。</li>
+<li>造纸术：东汉，蔡伦，改进牛逼plus，纪念蔡伦的功绩而命名蔡侯纸</li>
+<li>印刷术<ul>
+<li>拓印，东汉汉灵帝时期</li>
+<li>雕版印刷术，唐朝</li>
+<li>活字印刷术，宋朝宋仁宗时期，毕昇</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>文房四宝：笔、墨、纸、砚yàn</p>
+<ol>
+<li>毛笔在上古时期就已经被发明出来，现在广泛使用的毛笔，相传是由秦朝将军蒙恬改良而成</li>
+<li>纸张最早出现在西汉，使用植物纤维制造。东汉蔡伦改进造纸术，魏晋时期纸张广泛应用。</li>
+<li>四大名砚：山东青州的红丝砚、广东肇庆的端砚、安徽黄山的歙砚shè yàn、甘肃卓尼的洮táo河砚</li>
+</ol>
+</li>
+<li><p>郑和七下西洋：是<code>明代永乐、宣德年间</code>的一场海上远航活动，首次航行始于永乐三年（1405年），末次航行结束于宣德八年（1433年），共计七次。</p>
+<ol>
+<li>在七次航行中，三宝太监郑和率领船队从<code>南京出发</code>，在<code>江苏太仓的刘家港集结</code>，至福建福州长乐太平港驻泊伺风开洋，远航<code>西太平洋</code>和<code>印度洋</code>拜访了30多个国家和地区。</li>
+<li>其中包括爪哇、苏门答腊、苏禄、彭亨、真腊、古里、暹罗、榜葛剌、阿丹、天方、左法尔、忽鲁谟斯、木骨都束等地，目前已知最<code>远到达东非、红海</code>。共经过了<code>台湾海峡、马六甲海峡、孟加拉湾、十度海峡、保克海峡、霍尔木兹海峡以及曼德海峡</code>。</li>
+<li><a target="_blank" rel="noopener" href="https://bkimg.cdn.bcebos.com/pic/34fae6cd7b899e510fb3128eede8ce33c895d143a750?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20/resize,m_lfit,limit_1,h_1080">航行路线</a></li>
+</ol>
+</li>
+<li><p>丝绸之路：由<code>张骞qiān</code>出使西域开辟的以<code>长安（今西安）</code>为起点，经甘肃、新疆，<code>到中亚、西亚</code>，并连接地中海各国的陆上通道。</p>
+</li>
+<li><p>变法</p>
+<ul>
+<li>商鞅变法是商鞅在<code>秦孝公</code>支持下，于前356年在秦国实施的改革，分两次进行，第一次开始于<code>公元前356年</code>，第二次开始于公元前350年。对秦国的崛起发挥了重要的作用。</li>
+<li>王安石变法，是<code>北宋宋神宗</code>时以王安石为首的改革派的一次政治改革。变法自熙宁二年（<code>1069年</code>）开始，至元丰八年（1085年）宋神宗去世结束，故亦称<code>熙宁变法</code>、熙丰变法。</li>
+<li>张居正改革，是指<code>明朝的明神宗时期</code>，内阁首辅<code>张居正</code>为挽救明王朝，缓和社会矛盾，在政治、经济、国防等各方面进行的一场变法革新运动。改革自万历元年（<code>1573年</code>）开始，至万历十年（1582年）张居正去世结束。</li>
+<li>戊戌变法，又称百日维新、维新变法、维新运动，是<code>晚清时期</code>以<code>康有为、梁启超</code>为代表的维新派人士通过<code>光绪帝</code>进行倡导学习西方，提倡科学文化，改革政治、教育制度，发展农、工、商业等的资产阶级改良运动。戊戌变法从<code>1898年6月11</code>日开始实施。</li>
+<li>清末洋务运动。“中学为体，西学为用”是清末洋务派的指导思想。主张以中国伦常经史之学为原本，以西方科技之术为应用。初由<code>冯桂芬</code>提出，后由<code>张之洞</code>在《劝学篇》中系统阐述。</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 咪啪窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;KaMmy
+        </div>
+        <div>
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">
+                别来无恙呀，最近咪啪窝被拜访了<span id="busuanzi_value_site_pv"></span>次；
+            </span>
+            <span id="busuanzi_container_page_pv">
+                这篇文章被阅读了<span id="busuanzi_value_page_pv"></span>次~
+              </span>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="KaMmySuma/giscus"
+    data-repo-id="R_kgDOJp-YWg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOJp-YWs4CW34h"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+        
+    </body>
+</html>
