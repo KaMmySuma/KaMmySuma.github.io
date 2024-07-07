@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>Sunshine + Moonlight串流 | 咪啪窝</title>
+        <title>Word办公方法 | 咪啪窝</title>
         <meta name="author" content="KaMmy" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,22 +147,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Sunshine + Moonlight串流</h1>
+        <h1>Word办公方法</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/11/30
+            2024/7/7
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            <a href="/categories/%E6%96%B9%E6%B3%95/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                教程
+                方法
             </a>
         </span>
         
@@ -174,17 +174,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Sunshine/" style="color: #00a596">Sunshine</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/Moonlight/" style="color: #ff7d73">Moonlight</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E4%B8%B2%E6%B5%81/" style="color: #ff7d73">串流</a>
+                <a href="/tags/Word%E5%8A%9E%E5%85%AC/" style="color: #03a9f4">Word办公</a>
             </span>
             
         </span>
@@ -193,38 +183,28 @@
     
     <div class="content" v-pre>
         <blockquote>
-<p>一种多端低延迟串流方案</p>
+<p>记录一些Word使用方法</p>
 </blockquote>
 <span id="more"></span>
 
 <!-- toc -->
 
 <ul>
-<li><a href="#%E9%83%A8%E7%BD%B2sunshine">部署Sunshine</a></li>
-<li><a href="#%E4%B8%8B%E8%BD%BDmoonlight">下载MoonLight</a></li>
-<li><a href="#%E8%99%9A%E6%8B%9F%E6%98%BE%E7%A4%BA%E5%99%A8-easy-virtual-display">虚拟显示器 Easy-Virtual-Display</a></li>
+<li><a href="#%E8%A1%A8%E6%A0%BC%E7%AD%9B%E9%80%89%E5%90%8E%E8%BF%9E%E7%BB%AD%E6%8E%92%E5%BA%8F">表格筛选后连续排序</a></li>
 </ul>
 <!-- tocstop -->
 
-<h1><span id="部署sunshine">部署Sunshine</span></h1><p>主机上下载 <a target="_blank" rel="noopener" href="https://app.lizardbyte.dev/Sunshine">LizardByte - Sunshine</a></p>
-<p>无脑下一步安装就完事了，打开webUI，默认就能用了，不过还是改一下推流方式为 <code>IPV4+IPV6</code> ，手柄改为 <code>PS4</code> ，据说默认的<code>XBOX360</code>有bug</p>
-<h1><span id="下载moonlight">下载MoonLight</span></h1><p>下载 <a target="_blank" rel="noopener" href="https://moonlight-stream.org/">MoonLight</a></p>
-<p>找到你需要的平台版本安装。</p>
-<p>启动软件，添加网络地址，此时会要求主机发送ping码，在主机的webUI上输入ping码，即可串流玩耍。</p>
-<h1><span id="虚拟显示器-easy-virtual-display">虚拟显示器 Easy-Virtual-Display</span></h1><p>如果主机没有接入显示器，显卡将不会渲染桌面图形，Moonlight只能得到黑屏的串流画面。</p>
-<p>要解决该问题，你可以购买一个显卡欺骗器；</p>
-<p>或者使用 <a target="_blank" rel="noopener" href="https://github.com/KtzeAbyss/Easy-Virtual-Display">Easy-Virtual-Display</a> 开源项目，部署一个虚拟显示器。</p>
-<p><strong>自定义分辨率，以下三者必须一致，缺一不可：</strong></p>
-<ul>
-<li>Sunshine仪表盘内添加分辨率</li>
-<li>Moonlight客户端内添加分辨率</li>
-<li>主机系统桌面分辨率</li>
-</ul>
-<p><strong>Easy-Virtual-Display 添加自定义分辨率：</strong></p>
-<ul>
-<li>当前版本没有集成自定义选项，不过可以通过修改注册表来手动添加分辨率</li>
-<li>参见：<a target="_blank" rel="noopener" href="https://support.parsec.app/hc/en-us/articles/4423615425293">https://support.parsec.app/hc/en-us/articles/4423615425293</a></li>
-</ul>
+<h1><span id="表格筛选后连续排序">表格筛选后连续排序</span></h1><ol>
+<li>例如，从A3开始计数</li>
+<li><img src="https://plus.wps.cn/blog/wp-content/uploads/2019/01/%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0.png"></li>
+<li>在序号列第一行输入如下公式：SUBTOTAL（3，$A$3:A3）</li>
+<li>含义：<ol>
+<li><img src="https://plus.wps.cn/blog/wp-content/uploads/2019/01/SUBTOTAL%E5%87%BD%E6%95%B0.png"></li>
+<li><code>$A$3</code>表示绝对引用，代表计数的起点。</li>
+<li><code>A3</code>是可变引用，变化后序号随之变化。</li>
+</ol>
+</li>
+</ol>
 
     </div>
     
