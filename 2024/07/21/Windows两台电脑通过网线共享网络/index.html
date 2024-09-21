@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>Word办公方法 | 咪啪窝</title>
+        <title>Windows两台电脑通过网线共享网络 | 咪啪窝</title>
         <meta name="author" content="KaMmy" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,22 +147,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Word办公方法</h1>
+        <h1>Windows两台电脑通过网线共享网络</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/7/7
+            2024/7/21
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%96%B9%E6%B3%95/">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                方法
+                教程
             </a>
         </span>
         
@@ -174,7 +174,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Word%E5%8A%9E%E5%85%AC/" style="color: #ff7d73">Word办公</a>
+                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/" style="color: #00bcd4">网络共享</a>
             </span>
             
         </span>
@@ -182,28 +182,56 @@
     </div>
     
     <div class="content" v-pre>
-        <blockquote>
-<p>记录一些Word使用方法</p>
+        <meta name="referrer" content="no-referrer">
+
+<blockquote>
+<p>可以省一个路由器的特殊情况</p>
 </blockquote>
 <span id="more"></span>
 
 <!-- toc -->
 
 <ul>
-<li><a href="#%E8%A1%A8%E6%A0%BC%E7%AD%9B%E9%80%89%E5%90%8E%E8%BF%9E%E7%BB%AD%E6%8E%92%E5%BA%8F">表格筛选后连续排序</a></li>
+<li><a href="#%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF">问题背景</a></li>
+<li><a href="#%E6%96%B9%E6%B3%95%E4%B8%80windows%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB">方法一：Windows网络共享</a></li>
+<li><a href="#%E6%96%B9%E6%B3%95%E4%BA%8C%E7%BD%91%E5%8D%A1%E6%A1%A5%E6%8E%A5">方法二：网卡桥接</a></li>
+<li><a href="#%E5%8F%82%E8%80%83">参考</a></li>
 </ul>
 <!-- tocstop -->
 
-<h1><span id="表格筛选后连续排序">表格筛选后连续排序</span></h1><ol>
-<li>例如，从A3开始计数</li>
-<li><img src="https://plus.wps.cn/blog/wp-content/uploads/2019/01/%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0.png"></li>
-<li>在序号列第一行输入如下公式：SUBTOTAL（3，$A$3:A3）</li>
-<li>含义：<ol>
-<li><img src="https://plus.wps.cn/blog/wp-content/uploads/2019/01/SUBTOTAL%E5%87%BD%E6%95%B0.png"></li>
-<li><code>$A$3</code>表示绝对引用，代表计数的起点。</li>
-<li><code>A3</code>是可变引用，变化后序号随之变化。</li>
+<h1><span id="问题背景">问题背景</span></h1><ol>
+<li>有两台电脑：</li>
 </ol>
-</li>
+<ul>
+<li>电脑A可以上网，并且有空闲网口</li>
+<li>电脑B无法上网，并且有空闲网口</li>
+</ul>
+<ol start="2">
+<li>需求：</li>
+</ol>
+<ul>
+<li>通过一根网线连接两台电脑的空闲网口，并使电脑A的网络共享给B，使得两台电脑都可以正常上网</li>
+<li>B 希望可以通过网线连接 AB 空闲网口的物理方式实现共享 A 的网络</li>
+</ul>
+<h1><span id="方法一windows网络共享">方法一：Windows网络共享</span></h1><p>Windows自带了网络共享功能</p>
+<ol>
+<li>进入电脑 A 的 网络适配器选项 配置界面<br><img src="https://img.chkaja.com/577eaf084306e116.png"></li>
+<li>在上网的网卡上右键 -&gt; 属性，进入共享选项卡</li>
+<li>勾选允许其他用户通过此计算机的Internet 连接来连接<br><img src="https://img.chkaja.com/3db3baf317f7dab9.png"></li>
+<li>此处我当前环境有线网卡只有这一个，如果有多个的话会需要选择分享的目标网卡，这时候就需要选择和B连接的空闲网卡了</li>
+<li>用网线连接 A 和 B</li>
+<li>在电脑B上配置 IP 和 DNS 自动获取即可，如果自己没有动过此设置，一般默认就是自动获取<br><img src="https://img.chkaja.com/9975af6244874596.png"></li>
+<li>顺利的话 B 已经可以上网了</li>
+</ol>
+<h1><span id="方法二网卡桥接">方法二：网卡桥接</span></h1><p>创建一个虚拟网桥，不依赖Windows网络共享。但是有一个问题，创建网桥的电脑无法使用clash。</p>
+<ol>
+<li>进入 A 的 网络适配器选项 配置界面</li>
+<li>同时选中上网网卡和闲置网卡，右键 -&gt;桥接<br><img src="https://img.chkaja.com/52ef6da41b3ad306.png"></li>
+<li>桥接后成为一个网桥，设置 B 的网段与DNS 和上网网卡相同 或 设置 B 的网络自动获取 IP 和DNS 即可</li>
+<li>顺利的话 B 可以上网了，但是 A 无法使用clash</li>
+</ol>
+<h1><span id="参考">参考</span></h1><ol>
+<li><a target="_blank" rel="noopener" href="https://www.zywvvd.com/notes/coding/internet/internet-line-share/internet-line-share/">https://www.zywvvd.com/notes/coding/internet/internet-line-share/internet-line-share/</a></li>
 </ol>
 
     </div>

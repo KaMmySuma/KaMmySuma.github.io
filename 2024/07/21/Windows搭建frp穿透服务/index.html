@@ -174,7 +174,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/frp%E7%A9%BF%E9%80%8F/" style="color: #ffa2c4">frp穿透</a>
+                <a href="/tags/frp%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">frp穿透</a>
             </span>
             
         </span>
@@ -193,6 +193,7 @@
 <li><a href="#%E4%B8%8B%E8%BD%BDfpr">下载fpr</a></li>
 <li><a href="#%E9%85%8D%E7%BD%AE">配置</a></li>
 <li><a href="#%E5%90%AF%E5%8A%A8">启动</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8">设置开机启动</a></li>
 </ul>
 <!-- tocstop -->
 
@@ -258,6 +259,16 @@ customDomains = [&quot;x.x.x.x&quot;]  # 这里填公网地址
 </code></pre>
 <h1><span id="启动">启动</span></h1><p>启动服务器：<code>./frps -c ./frps.toml</code></p>
 <p>启动客户端：<code>./frpc -c ./frpc.toml</code></p>
+<h1><span id="设置开机启动">设置开机启动</span></h1><p>在软件根目录创建.bat文件：</p>
+<pre><code class="bat">@echo off
+:home
+frpc -c frpc.ini
+goto home
+</code></pre>
+<p>将快捷方式放入以下路径：<code>C:\Users\你的电脑用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\</code></p>
+<blockquote>
+<p>释义：<br><code>@echo off</code>：关闭批处理文件的命令回显。这意味着在脚本运行时，不会在命令行窗口中显示每个命令的具体内容，只会显示命令的输出结果。<br><code>:home</code>：这是一个标签，用于标识代码中的位置。你可以使用 goto 命令跳转到这个位置<br><code>goto home</code>：无条件跳转回 :home 标签。这将导致脚本再次执行 frpc -c frpc.ini 命令。这个过程将一直循环，直到你手动关闭命令行窗口或使用 Ctrl+C 中断脚本。</p>
+</blockquote>
 
     </div>
     

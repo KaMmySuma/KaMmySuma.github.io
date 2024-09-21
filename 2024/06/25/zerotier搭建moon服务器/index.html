@@ -174,7 +174,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/zerotier/" style="color: #00bcd4">zerotier</a>
+                <a href="/tags/zerotier/" style="color: #03a9f4">zerotier</a>
             </span>
             
         </span>
@@ -219,7 +219,7 @@
 &#125;
 </code></pre>
 <ol start="4">
-<li>修改配置文件：<code>&quot;id&quot;</code>应该默认为网络中的id；<code>&quot;stableEndpoints&quot;</code>改为公网地址&#x2F;端口，端口默认为9993，。如下：</li>
+<li>修改配置文件如下：<code>&quot;id&quot;</code>应该默认为网络中的id；<code>&quot;stableEndpoints&quot;</code>改为公网地址&#x2F;端口，端口默认为9993。值得注意的是，moon.json编码格式应该为<code>UTF-8</code>，某些系统里默认保存格式为<code>UTF-16 LE</code>，这会导致后续无法正常生成moon文件，如果格式不正确须另存为<code>UTF-8</code>编码。</li>
 </ol>
 <pre><code class="json">&quot;stableEndpoints&quot;: [&quot;1.1.1.1/9993&quot;,&quot;2001:abcd:abcd::1/9993&quot;]
 </code></pre>
