@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>Windows搭建七日杀服务器 | 咪啪窝</title>
+        <title>Windows使用Alist+Rclone挂载网盘映射本地 | 咪啪窝</title>
         <meta name="author" content="KaMmy" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,14 +147,14 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Windows搭建七日杀服务器</h1>
+        <h1>Windows使用Alist+Rclone挂载网盘映射本地</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/11/22
+            2024/9/23
         </span>
         
         <span class="category">
@@ -174,17 +174,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E4%B8%83%E6%97%A5%E6%9D%80/" style="color: #03a9f4">七日杀</a>
+                <a href="/tags/Alist/" style="color: #03a9f4">Alist</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="color: #ffa2c4">服务器</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E6%B8%B8%E6%88%8F/" style="color: #00a596">游戏</a>
+                <a href="/tags/%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98/" style="color: #ff7d73">挂载网盘</a>
             </span>
             
         </span>
@@ -193,46 +188,173 @@
     
     <div class="content" v-pre>
         <blockquote>
-<p>一种基于Windows的七日杀服务器搭建教程</p>
+<p>整合挂载散乱的网盘账号，并映射到本地磁盘</p>
 </blockquote>
 <span id="more"></span>
 
 <!-- toc -->
 
 <ul>
-<li><a href="#%E9%83%A8%E7%BD%B2steamcmd">部署SteamCMD</a></li>
-<li><a href="#%E4%B8%8B%E8%BD%BD%E4%B8%83%E6%97%A5%E6%9D%80%E6%9C%8D%E5%8A%A1%E5%99%A8">下载七日杀服务器</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">修改配置文件</a></li>
-<li><a href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8">启动服务器</a></li>
+<li><a href="#%E4%B8%80-%E9%9C%80%E8%A6%81%E7%94%A8%E7%9A%84%E9%A1%B9%E7%9B%AE">一、需要用的项目</a></li>
+<li><a href="#%E4%BA%8C-alist-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98">二、Alist 挂载网盘</a><ul>
+<li><a href="#1-%E9%83%A8%E7%BD%B2alist">1、部署Alist</a></li>
+<li><a href="#2-%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98">2、添加百度网盘</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89-rclone-%E6%98%A0%E5%B0%84%E6%9C%AC%E5%9C%B0">三、Rclone 映射本地</a><ul>
+<li><a href="#1-%E9%85%8D%E7%BD%AErclone">1、配置Rclone</a></li>
+<li><a href="#2-%E8%BF%90%E8%A1%8Crclone">2、运行Rclone</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9B%9B-%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">四、参考资料</a></li>
 </ul>
 <!-- tocstop -->
 
-<h1><span id="部署steamcmd">部署SteamCMD</span></h1><p>下载 <a target="_blank" rel="noopener" href="https://developer.valvesoftware.com/wiki/SteamCMD">SteamCMD</a></p>
-<p>找到Windows版，下载后只有一个exe文件，把它放在你喜欢的位置运行，它会在当前目录自动部署。</p>
-<h1><span id="下载七日杀服务器">下载七日杀服务器</span></h1><p>打开 <code>steamcmd.exe</code> 等待启动ok后，依次输入以下指令并等待完成：</p>
-<pre><code class="cmd">login anonymous  #登录匿名账户
-
-app_update 294420  #下载七日杀服务端
+<h1><span id="一-需要用的项目">一、需要用的项目</span></h1><ol>
+<li>Alist：<a target="_blank" rel="noopener" href="https://github.com/alist-org/alist/">https://github.com/alist-org/alist/</a><ul>
+<li>用于挂载网盘账号到webdav</li>
+<li>文档：<a target="_blank" rel="noopener" href="https://alist.nn.ci/zh/">https://alist.nn.ci/zh/</a></li>
+</ul>
+</li>
+<li>Rclone：<a target="_blank" rel="noopener" href="https://rclone.org/downloads/">https://rclone.org/downloads/</a><ul>
+<li>用于映射webdav到本地磁盘</li>
+</ul>
+</li>
+<li>Winfsp：<a target="_blank" rel="noopener" href="https://winfsp.dev/">https://winfsp.dev/</a><ul>
+<li>是Rclone所需的环境依赖，需要添加环境变量或者直接下载安装版</li>
+</ul>
+</li>
+</ol>
+<h1><span id="二-alist-挂载网盘">二、Alist 挂载网盘</span></h1><h3><span id="1-部署alist">1、部署Alist</span></h3><p>下载windows_amd64构建版本，解压得到一个exe文件。<br>在命令行中运行：</p>
+<pre><code class="cmd">.\alist.exe server
 </code></pre>
-<p>游戏根目录默认为：<code>SteamCMD文件夹\steamapps\common\7 Days to Die Dedicated Server</code></p>
-<p>你可以通过该目录下的 <code>startdedicated.bat</code> 启动服务器，但是在此之前我们需要进行一些设置</p>
-<h1><span id="修改配置文件">修改配置文件</span></h1><ul>
-<li><p>打开 <code>platform.cfg</code> ，删除第二行 <code>crossplatform = EOS</code> ，不删可能会跳黄红字报错，详细说明请查看 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41731201/article/details/131095762">这篇文章</a></p>
-</li>
-<li><p>打开 <code>serverconfig.xml</code> 进行各项设置，其中比较重要的设置如下：</p>
+<p>这样就部署完成了（没开玩笑）<br>检查输出信息：<code>start HTTP server @ 0.0.0.0:5244</code><br>接下来通过本地5244端口进行设置即可，第一次登录：</p>
 <ul>
-<li>删掉前后注释，自定义数据目录：<code>&lt;property name=&quot;UserDataFolder&quot;    value=&quot;C:\Users\Documents\7D&quot; /&gt;</code></li>
-<li>删掉前后注释，自定义存档目录：<code>&lt;property name=&quot;SaveGameFolder&quot;    value=&quot;C:\Users\Documents\7D&quot; /&gt;</code></li>
-<li>关闭EAC <code>&lt;property name=&quot;EACEnabled&quot;  value=&quot;false&quot;/&gt;</code></li>
-<li>设置地图 <code>&lt;property name=&quot;GameWorld&quot;  value=&quot;&quot;/&gt;</code>，这里的值可以填<code>\7 Days to Die Dedicated Server\Data\Worlds</code>目录下官方预设地图文件夹名，也可以填 <code>RWG</code> 以种子等设置来生成随机地图</li>
+<li>默认用户名：admin</li>
+<li>随意输入想设置的密码，面板中随时㐓修改</li>
 </ul>
-</li>
-<li><p>MOD直接放进根目录下<code>Mods</code>文件夹中，<code>\7 Days to Die Dedicated Server\Mods</code>，里面可能有几个官方示例mod，可以删掉。</p>
-</li>
-<li><p>如果你误删或者乱改了配置文件不知如何恢复，可以验证文件游戏完整性以自动下载缺失文件：<code>app_update 294420 validate</code></p>
-</li>
+<h3><span id="2-添加百度网盘">2、添加百度网盘</span></h3><p>储存-添加，按指引添加百度网盘即可：  </p>
+<ul>
+<li>挂载路径随意，可理解为域名后的路径，以便web访问</li>
+<li>需要打开web代理，并修改webdav策略为本地代理。否则下载文件会报错sign error</li>
+<li>查阅文档，<a target="_blank" rel="noopener" href="https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id=iYCeC9g08h5vuP9UqvPHKKSVrKFXGa1v&redirect_uri=https://alist.nn.ci/tool/baidu/callback&scope=basic,netdisk&qrcode=1">点击获取令牌</a></li>
+<li>其余设置全默认即可</li>
 </ul>
-<h1><span id="启动服务器">启动服务器</span></h1><p> 打开 <code>startdedicated.bat</code> 启动服务器，默认端口为26900，TCP协议。</p>
+<p>不出意外的话，通过默认本地端口5244可以访问到网盘文件列表</p>
+<h1><span id="三-rclone-映射本地">三、Rclone 映射本地</span></h1><p>安装依赖Winfsp：<a target="_blank" rel="noopener" href="https://winfsp.dev,下载安装版,选个位置安装完就不用管了.如果是免安装版需要自行添加环境变量/">https://winfsp.dev，下载安装版，选个位置安装完就不用管了。如果是免安装版需要自行添加环境变量</a><br>下载Rclone，和Alist一样要在命令行里调用exe程序。</p>
+<h3><span id="1-配置rclone">1、配置Rclone</span></h3><pre><code>.\rclone.exe config  # 进入rclone设置
+</code></pre>
+<pre><code>No remotes found, make a new one?
+n) New remote                 # 创建新配置
+s) Set configuration password     # 为配置设置密码
+q) Quit config                  # 退出配置
+
+n/s/q&gt; n   enter。  #这里选择n
+</code></pre>
+<pre><code>Enter name for new remote.
+
+name&gt; baidu  enter。  # 设定配置名（随意）。
+</code></pre>
+<pre><code>Option Storage.
+Type of storage to configure.
+Choose a number from below, or type in your own value.
+前面省略50种连接…….
+51 / Uptobox
+   \ (uptobox)
+52 / WebDAV
+   \ (webdav)
+53 / Yandex Disk
+   \ (yandex)
+54 / Zoho
+   \ (zoho)
+55 / premiumize.me
+   \ (premiumizeme)
+56 / seafile
+   \ (seafile)
+
+Storage&gt;52  enter。  #输入你做连接的服务器序号，这儿我们用webdav做连接，所以选择52，随版本更新序号会不一样，总之找webdav
+</code></pre>
+<pre><code>Option url.
+URL of http host to connect to.
+E.g. https://example.com.
+Enter a value.
+
+url&gt; http://127.0.0.1:5244/dav/baidu  enter
+# 设置远程地址url: http://your_alist_ip:port/dav/网盘名
+#这里在alist的地址和端口后加/dav，是alist官方端口挂载要求的
+</code></pre>
+<pre><code>Name of the WebDAV site/service/software you are using
+Choose a number from below, or type in your own value
+Option vendor.
+Name of the WebDAV site/service/software you are using.
+Choose a number from below, or type in your own value.
+Press Enter to leave empty.
+ 1 / Fastmail Files
+   \ (fastmail)
+ 2 / Nextcloud
+   \ (nextcloud)
+ 3 / Owncloud
+   \ (owncloud)
+ 4 / Sharepoint Online, authenticated by Microsoft account
+   \ (sharepoint)
+ 5 / Sharepoint with NTLM authentication, usually self-hosted or on-premises
+   \ (sharepoint-ntlm)
+ 6 / rclone WebDAV server to serve a remote over HTTP via the WebDAV protocol
+   \ (rclone)
+ 7 / Other site/service or software
+   \ (other)
+
+vendor&gt;7   enter。
+
+# 选7就可以了，1-6都不是我们使用的
+</code></pre>
+<pre><code>Option user.
+User name.
+In case NTLM authentication is used, the username should be in the format &#39;Domain\User&#39;.
+Enter a value. Press Enter to leave empty.
+
+user&gt; admin
+# 这里是你alist的用户名
+</code></pre>
+<pre><code>Option pass.
+Password.
+Choose an alternative below. Press Enter for the default (n).
+y) Yes, type in my own password   #是的，输入我自己的密码
+g) Generate random password     #生成随机密码
+n) No, leave this optional password blank (default)   # 否，将此可选密码留空（默认）
+
+y/g/n&gt;y   enter    #这里输入y
+
+Enter the password:
+password:       #这输入你的alist密码，密码是看不到的
+
+Confirm the password:
+password:       #再次输入你的alist密码
+
+enter
+</code></pre>
+<pre><code>Option bearer_token.
+Bearer token instead of user/pass (e.g. a Macaroon).
+Enter a value. Press Enter to leave empty.
+
+bearer_token&gt;   enter   # 这里是填写密钥的，如果没有可以留空
+#直接回车
+</code></pre>
+<pre><code>Edit advanced config?
+y) Yes
+n) No (default)
+
+y/n&gt;n   enter     #默认配置就可以了
+
+# 最后是总览，确认配置无误后，确认。
+</code></pre>
+<h3><span id="2-运行rclone">2、运行Rclone</span></h3><p>.\rclone.exe mount &lt;配置名&gt;: &lt;映射到本地路径&gt;</p>
+<pre><code>.\rclone.exe mount baidu: F:\
+# 将baidu配置映射到F盘
+</code></pre>
+<h1><span id="四-参考资料">四、参考资料</span></h1><ul>
+<li><a target="_blank" rel="noopener" href="https://forums.unraid.net/topic/153061-%E6%9C%80%E5%AE%8C%E6%95%B4rclone%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98%E5%88%B0%E6%9C%AC%E5%9C%B0%EF%BC%88alist%E7%AF%87%EF%BC%89%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">https://forums.unraid.net/topic/153061-%E6%9C%80%E5%AE%8C%E6%95%B4rclone%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98%E5%88%B0%E6%9C%AC%E5%9C%B0%EF%BC%88alist%E7%AF%87%EF%BC%89%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</a></li>
+</ul>
 
     </div>
     
