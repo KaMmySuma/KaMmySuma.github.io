@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>Windows搭建饥荒服务器 | 咪啪窝</title>
+        <title>adb方法 | 咪啪窝</title>
         <meta name="author" content="KaMmy" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,22 +147,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Windows搭建饥荒服务器</h1>
+        <h1>adb方法</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/11/14
+            2024/6/25
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            <a href="/categories/%E6%96%B9%E6%B3%95/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                教程
+                方法
             </a>
         </span>
         
@@ -174,17 +174,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="color: #00bcd4">服务器</a>
+                <a href="/tags/scrcpy/" style="color: #ff7d73">scrcpy</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%B8%B8%E6%88%8F/" style="color: #ffa2c4">游戏</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E9%A5%A5%E8%8D%92/" style="color: #ffa2c4">饥荒</a>
+                <a href="/tags/adb/" style="color: #ffa2c4">adb</a>
             </span>
             
         </span>
@@ -193,61 +188,29 @@
     
     <div class="content" v-pre>
         <blockquote>
-<p>一种基于Windows的饥荒服务器搭建教程</p>
+<p>备忘</p>
 </blockquote>
 <span id="more"></span>
 
 <!-- toc -->
 
 <ul>
-<li><a href="#%E9%83%A8%E7%BD%B2steamcmd">部署SteamCMD</a></li>
-<li><a href="#%E4%B8%8B%E8%BD%BD%E9%A5%A5%E8%8D%92%E6%9C%8D%E5%8A%A1%E5%99%A8">下载饥荒服务器</a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8-token">创建服务器 token</a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AD%98%E6%A1%A3">创建服务器存档</a></li>
-<li><a href="#%E5%A4%8D%E5%88%B6mod">复制mod</a></li>
-<li><a href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8">启动服务器</a></li>
-<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">常见问题</a></li>
-<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0">参考文章</a></li>
+<li><a href="#scrcpy%E6%8A%95%E5%B1%8F">scrcpy投屏</a></li>
 </ul>
 <!-- tocstop -->
 
-<h1><span id="部署steamcmd">部署SteamCMD</span></h1><p>下载 <a target="_blank" rel="noopener" href="https://developer.valvesoftware.com/wiki/SteamCMD">SteamCMD</a></p>
-<p>找到Windows版，下载后只有一个exe文件，把它放在你喜欢的位置运行，它会在当前目录自动部署。</p>
-<h1><span id="下载饥荒服务器">下载饥荒服务器</span></h1><p>创建bat脚本，复制以下内容保存并运行，它会启动steamcmd自动下载更新饥荒服务器</p>
-<pre><code class="bat">【你的SteamCMD文件夹目录】\steamcmd.exe +login anonymous +app_update 343050 validate +quit
-</code></pre>
-<p>注意修改上面的文件夹路径</p>
-<h1><span id="创建服务器-token">创建服务器 token</span></h1><p>登录 <a target="_blank" rel="noopener" href="https://accounts.klei.com/">Klei Accounts 网站</a></p>
-<p>找到饥荒，选择 <code>Game server</code> , 添加一个服务器，复制服务器token到 <code>cluster_token.txt</code> ，你可以从页面下载存档压缩包作为参考；</p>
-<p>将 <code>cluster_token.txt</code> 并放入你电脑的文档文件夹中： <code>\\Documents\Klei\DoNotStarveTogether\MyDediServer</code> </p>
-<p>注意 <code>MyDediServer</code> 是服务器默认的存档文件夹。</p>
-<h1><span id="创建服务器存档">创建服务器存档</span></h1><p>在你的电脑上打开饥荒，按你喜欢的配置创建多人游戏，并配置Mod和密码等内容，生成世界后关闭游戏，在电脑的文档文件夹下找到对应的存档 <code>\\Documents\Klei\DoNotStarveTogether\</code> ,将存档复制到服务器上的存档文件夹内  <code>\\Documents\Klei\DoNotStarveTogether\MyDediServer</code> </p>
-<h1><span id="复制mod">复制mod</span></h1><p>mod的设置在 <code>Master\modoverrides.lua</code> 文件内，打开它可以看到已开启的mod和各项设置。</p>
-<p>服务器的mod文件夹在SteamCMD的文件夹内：<code>SteamCMD\steamapps\common\Don&#39;t Starve Together Dedicated Server\mods</code></p>
-<p>你要做的是将指定的mod文件放进服务器的mod文件夹内</p>
-<p>你电脑上的mod文件夹在 <code>\steamapps\workshop\</code> 内 , 查看你的mod的设置，将对应文件夹复制到服务器上， 并添加 <code>workshop-</code> 前缀;<br>例如 <code>362175979</code> 文件夹在转移到服务器后应该重命名为 <code>workshop-362175979</code></p>
-<h1><span id="启动服务器">启动服务器</span></h1><p>创建bat脚本，复制以下内容保存并运行：</p>
-<pre><code class="bat">【你的SteamCMD文件夹目录】\steamcmd.exe +login anonymous +app_update 343050 validate +quit
-cd /D &quot;【你的SteamCMD文件夹目录】\steamapps\common\Don&#39;t Starve Together Dedicated Server\bin64&quot;
-start dontstarve_dedicated_server_nullrenderer_x64 -console -cluster MyDediServer -shard Master
-start dontstarve_dedicated_server_nullrenderer_x64 -console -cluster MyDediServer -shard Caves
-</code></pre>
-<p>注意修改你的文件路径，不出意外的话，服务器应该正常启动了。</p>
-<p><code>\MyDediServer\Master\server.ini</code> 和 <code>\MyDediServer\Master\server.ini</code> 文件内 <code>server_port</code> 分别记录了主世界和洞穴的端口，一般默认为<code>10999</code>和<code>10998</code>，游戏为<code>UDP协议</code>，注意防火墙设置，在专用网络属性下一般不需要额外配置端口。</p>
-<p>客机加入游戏直接输入控制台指令：</p>
-<pre><code class="bash">c_connect(&quot;地址&quot;,端口,&quot;密码&quot;)
-</code></pre>
-<h1><span id="常见问题">常见问题</span></h1><ol>
-<li>搭建frp内网穿透，地下连接失败：<ul>
-<li>配置：代理6000端口映射10999地表，代理6001端口映射10998地下。游戏地表底下部署正常，地表连接正常，但是地下连接失败。</li>
-<li>原因：我们访问代理6000端口正常地表游戏没错，游戏告诉服务端玩家在地下，进而加载地下端口10998，结果加载的不是本地10998端口，而是代理10998端口，代理10998端口是空端口。</li>
-<li>解决：修改本地洞穴端口与代理端口一致，例如都改为10998————代理10998端口映射本地10998地下</li>
+<p>adb工具包下载：<a target="_blank" rel="noopener" href="https://developer.android.com/tools/releases/platform-tools?hl=zh-cn">https://developer.android.com/tools/releases/platform-tools?hl=zh-cn</a></p>
+<h1><span id="scrcpy投屏">scrcpy投屏</span></h1><ol>
+<li>下载scrcpy，项目地址：<a target="_blank" rel="noopener" href="https://github.com/Genymobile/scrcpy">https://github.com/Genymobile/scrcpy</a></li>
+<li>添加整个文件夹到环境变量，文件夹内包含了scrcpy和adb工具</li>
+<li><code>adb --version</code> 如果能正确显示版本号，则进入下一步</li>
+<li>连接adb，可用数据线。这里记录无线调试，开发者选项开启adb调试和无线调试，进入无线调试子菜单，选择使用配对码进行配对，可以看到ip地址和端口号，以及配对码。电脑输入：<code>adb pair &lt;ip&gt;:&lt;port&gt;</code>，进一步输入配对码即可。<ul>
+<li>回到上级菜单，观察port，这里的port与连接的port可能不一样，使用这里的port：<code>adb connect ip:port</code>连接设备</li>
 </ul>
 </li>
+<li><code>adb devices</code> 显示设备列表</li>
+<li>开始scrcpy投屏————直接输入<code>scrcpy</code>即可</li>
 </ol>
-<h1><span id="参考文章">参考文章</span></h1><ul>
-<li>Dedicated Server Quick Setup Guide - Windows：<a target="_blank" rel="noopener" href="https://forums.kleientertainment.com/forums/topic/64212-dedicated-server-quick-setup-guide-windows/">https://forums.kleientertainment.com/forums/topic/64212-dedicated-server-quick-setup-guide-windows/</a></li>
-</ul>
 
     </div>
     
