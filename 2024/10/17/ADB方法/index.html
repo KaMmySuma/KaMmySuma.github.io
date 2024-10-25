@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>Clash使用Parser添加自定义规则并防止更新覆盖 | 咪啪窝</title>
+        <title>adb方法 | 咪啪窝</title>
         <meta name="author" content="KaMmy" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,22 +147,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Clash使用Parser添加自定义规则并防止更新覆盖</h1>
+        <h1>adb方法</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/3/19
+            2024/10/17
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            <a href="/categories/%E6%96%B9%E6%B3%95/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                教程
+                方法
             </a>
         </span>
         
@@ -174,7 +174,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Clash/" style="color: #00a596">Clash</a>
+                <a href="/tags/scrcpy/" style="color: #03a9f4">scrcpy</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/adb/" style="color: #ff7d73">adb</a>
             </span>
             
         </span>
@@ -183,54 +188,46 @@
     
     <div class="content" v-pre>
         <blockquote>
-<p>Clash内置规则会代理steam下载服务器，导致下载速度缓慢，而手动添加的规则会被更新代理后覆盖，受不了了去网上搜集相关资料总结了一个简单的方法。</p>
+<p>备忘</p>
 </blockquote>
 <span id="more"></span>
 
 <!-- toc -->
 
 <ul>
-<li><a href="#%E6%96%B9%E6%B3%95">方法</a></li>
-<li><a href="#%E8%A1%A5%E5%85%85">补充</a></li>
+<li><a href="#scrcpy%E6%8A%95%E5%B1%8F">scrcpy投屏</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8python%E6%89%A7%E8%A1%8C%E6%8C%87%E4%BB%A4">使用Python执行指令</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4">常用指令</a></li>
 </ul>
 <!-- tocstop -->
 
-<h1><span id="方法">方法</span></h1><p>在配置文件页面右键，选择<code>Parsers</code> - <code>Edit Parsers</code></p>
-<p><img src="https://img.chkaja.com/59760537ee24ab0d.png"></p>
-<p>粘贴以下格式文本保存即可：</p>
-<pre><code class="yaml">parsers: # array
-  - url: xxx # 你的机场订阅
-    yaml:
-      prepend-rules: # 代表在原规则前面追加规则
-        # 格式按照：规则,域名,策略
-        - DOMAIN-SUFFIX,store.steampowered.com,🔰国外流量
-        - DOMAIN-SUFFIX,steamserver.net,DIRECT
-        - DOMAIN-KEYWORD,steamstatic,🔰国外流量
-        - DOMAIN-SUFFIX,bilibili.com,DIRECT
-        - DOMAIN-SUFFIX,bilivideo.com,DIRECT
+<p>adb工具包下载：<a target="_blank" rel="noopener" href="https://developer.android.com/tools/releases/platform-tools?hl=zh-cn">https://developer.android.com/tools/releases/platform-tools?hl=zh-cn</a></p>
+<p>教程文档：<a target="_blank" rel="noopener" href="https://mazhuang.org/awesome-adb/">https://mazhuang.org/awesome-adb/</a></p>
+<h1><span id="scrcpy投屏">scrcpy投屏</span></h1><ol>
+<li>下载scrcpy，项目地址：<a target="_blank" rel="noopener" href="https://github.com/Genymobile/scrcpy">https://github.com/Genymobile/scrcpy</a></li>
+<li>添加整个文件夹到环境变量，文件夹内包含了scrcpy和adb工具</li>
+<li><code>adb --version</code> 如果能正确显示版本号，则进入下一步</li>
+<li>连接adb，可用数据线。这里记录无线调试，开发者选项开启adb调试和无线调试，进入无线调试子菜单，选择使用配对码进行配对，可以看到ip地址和端口号，以及配对码。电脑输入：<code>adb pair &lt;ip&gt;:&lt;port&gt;</code>，进一步输入配对码即可。<ul>
+<li>回到上级菜单，观察port，这里的port与连接的port可能不一样，使用这里的port：<code>adb connect ip:port</code>连接设备</li>
+</ul>
+</li>
+<li><code>adb devices</code> 显示设备列表</li>
+<li>开始scrcpy投屏————直接输入<code>scrcpy</code>即可</li>
+</ol>
+<h1><span id="使用python执行指令">使用Python执行指令</span></h1><pre><code class="Python"># 点击指定坐标
+os.system(f&#39;adb shell input tap &#123;x&#125; &#123;y&#125;&#39;)  # 返回命令的退出状态，而不返回命令的输出。
+os.popen(f&#39;adb shell input tap &#123;x&#125; &#123;y&#125;&#39;)  # 用于打开一个管道以读取或写入命令的输出，能输出处理命令结果。
 </code></pre>
-<h1><span id="补充">补充</span></h1><ul>
-<li><p>为什么这种方法能够防止覆盖呢？原因是Parser功能是配置文件进行预处理，因此，每一次更新都会执行一次Parser，因此自定义规则会永远存在，只要你不删除Parser。</p>
-</li>
-<li><p>一般情况我们使用DIRECT，GLOBAL，RULE，REJECT。<br>DIRECT表示不走代理，即不通过代理节点直接连接。<br>GLOBAL则是走全局代理节点。<br>REJECT则表示禁止连接，使用REJECT后，将会屏蔽对应网站。</p>
-</li>
-<li><p>目前Clash支持的规则类型如下:</p>
-<ul>
-<li>DOMAIN-SUFFIX：域名后缀匹配</li>
-<li>DOMAIN：域名匹配</li>
-<li>DOMAIN-KEYWORD：域名关键字匹配</li>
-<li>IP-CIDR：IP段匹配</li>
-<li>SRC-IP-CIDR：源IP段匹配</li>
-<li>GEOIP：GEOIP数据库（国家代码）匹配</li>
-<li>DST-PORT：目标端口匹配</li>
-<li>SRC-PORT：源端口匹配</li>
-<li>PROCESS-NAME：源进程名匹配</li>
-<li>RULE-SET：Rule Provider规则匹配</li>
-<li>MATCH：全匹配</li>
+<h1><span id="常用指令">常用指令</span></h1><ul>
+<li>adb devices 显示设备列表</li>
+<li>adb shell getevent 获取点击事件输出坐标（十六进制）</li>
+<li>adb shell input tap 123 456 点击指定坐标</li>
+<li>adb shell input text “001” 模拟输入001</li>
+<li>adb shell input keyevent 3 模拟home按键</li>
+<li>adb shell input swipe 250 250 300 300 100 模拟滑动，从(250,250)滑动到(300,300)，时间100ms（可不填）</li>
+<li>adb shell screencap -p &#x2F;sdcard&#x2F;screenshot.png 截图储存根目录</li>
+<li>adb pull &#x2F;sdcard&#x2F;screenshot.png 文件导出到电脑，默认当前工作目录同名，可在再添加电脑文件路径参数</li>
 </ul>
-</li>
-</ul>
-<p>更多知识参考ClashWiki: <a target="_blank" rel="noopener" href="https://clash.wiki/">https://clash.wiki/</a></p>
 
     </div>
     

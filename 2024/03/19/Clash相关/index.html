@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>adb方法 | 咪啪窝</title>
+        <title>Clash相关 | 咪啪窝</title>
         <meta name="author" content="KaMmy" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -147,22 +147,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>adb方法</h1>
+        <h1>Clash相关</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/6/25
+            2024/3/19
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%96%B9%E6%B3%95/">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                方法
+                教程
             </a>
         </span>
         
@@ -174,12 +174,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/scrcpy/" style="color: #ff7d73">scrcpy</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/adb/" style="color: #ffa2c4">adb</a>
+                <a href="/tags/Clash/" style="color: #ffa2c4">Clash</a>
             </span>
             
         </span>
@@ -188,29 +183,72 @@
     
     <div class="content" v-pre>
         <blockquote>
-<p>备忘</p>
+<p>Clash内置规则会代理steam下载服务器，导致下载速度缓慢，而手动添加的规则会被更新代理后覆盖，受不了了去网上搜集相关资料总结了一个简单的方法。</p>
 </blockquote>
 <span id="more"></span>
 
 <!-- toc -->
 
 <ul>
-<li><a href="#scrcpy%E6%8A%95%E5%B1%8F">scrcpy投屏</a></li>
+<li><a href="#clash%E4%BD%BF%E7%94%A8parser%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99%E5%B9%B6%E9%98%B2%E6%AD%A2%E6%9B%B4%E6%96%B0%E8%A6%86%E7%9B%96">Clash使用Parser添加自定义规则并防止更新覆盖</a></li>
+<li><a href="#clash-nyanpasu-%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%84%E5%88%99">Clash Nyanpasu 添加自定义规则</a></li>
 </ul>
 <!-- tocstop -->
 
-<p>adb工具包下载：<a target="_blank" rel="noopener" href="https://developer.android.com/tools/releases/platform-tools?hl=zh-cn">https://developer.android.com/tools/releases/platform-tools?hl=zh-cn</a></p>
-<h1><span id="scrcpy投屏">scrcpy投屏</span></h1><ol>
-<li>下载scrcpy，项目地址：<a target="_blank" rel="noopener" href="https://github.com/Genymobile/scrcpy">https://github.com/Genymobile/scrcpy</a></li>
-<li>添加整个文件夹到环境变量，文件夹内包含了scrcpy和adb工具</li>
-<li><code>adb --version</code> 如果能正确显示版本号，则进入下一步</li>
-<li>连接adb，可用数据线。这里记录无线调试，开发者选项开启adb调试和无线调试，进入无线调试子菜单，选择使用配对码进行配对，可以看到ip地址和端口号，以及配对码。电脑输入：<code>adb pair &lt;ip&gt;:&lt;port&gt;</code>，进一步输入配对码即可。<ul>
-<li>回到上级菜单，观察port，这里的port与连接的port可能不一样，使用这里的port：<code>adb connect ip:port</code>连接设备</li>
+<h1><span id="clash使用parser添加自定义规则并防止更新覆盖">Clash使用Parser添加自定义规则并防止更新覆盖</span></h1><p>在配置文件页面右键，选择<code>Parsers</code> - <code>Edit Parsers</code></p>
+<p><img src="https://img.chkaja.com/59760537ee24ab0d.png"></p>
+<p>粘贴以下格式文本保存即可：</p>
+<pre><code class="yaml">parsers: # array
+  - url: xxx # 你的机场订阅
+    yaml:
+      prepend-rules: # 代表在原规则前面追加规则
+        # 格式按照：规则,域名,策略
+        - DOMAIN-SUFFIX,store.steampowered.com,🔰国外流量
+        - DOMAIN-SUFFIX,steamserver.net,DIRECT
+        - DOMAIN-KEYWORD,steamstatic,🔰国外流量
+        - DOMAIN-SUFFIX,bilibili.com,DIRECT
+        - DOMAIN-SUFFIX,bilivideo.com,DIRECT
+</code></pre>
+<ul>
+<li><p>为什么这种方法能够防止覆盖呢？原因是Parser功能是配置文件进行预处理，因此，每一次更新都会执行一次Parser，因此自定义规则会永远存在，只要你不删除Parser。</p>
+</li>
+<li><p>一般情况我们使用DIRECT，GLOBAL，RULE，REJECT。<br>DIRECT表示不走代理，即不通过代理节点直接连接。<br>GLOBAL则是走全局代理节点。<br>REJECT则表示禁止连接，使用REJECT后，将会屏蔽对应网站。</p>
+</li>
+<li><p>目前Clash支持的规则类型如下:</p>
+<ul>
+<li>DOMAIN-SUFFIX：域名后缀匹配</li>
+<li>DOMAIN：域名匹配</li>
+<li>DOMAIN-KEYWORD：域名关键字匹配</li>
+<li>IP-CIDR：IP段匹配</li>
+<li>SRC-IP-CIDR：源IP段匹配</li>
+<li>GEOIP：GEOIP数据库（国家代码）匹配</li>
+<li>DST-PORT：目标端口匹配</li>
+<li>SRC-PORT：源端口匹配</li>
+<li>PROCESS-NAME：源进程名匹配</li>
+<li>RULE-SET：Rule Provider规则匹配</li>
+<li>MATCH：全匹配</li>
 </ul>
 </li>
-<li><code>adb devices</code> 显示设备列表</li>
-<li>开始scrcpy投屏————直接输入<code>scrcpy</code>即可</li>
-</ol>
+</ul>
+<p>更多知识参考ClashWiki: <a target="_blank" rel="noopener" href="https://clash.wiki/">https://clash.wiki/</a></p>
+<h1><span id="clash-nyanpasu-添加自定义规则">Clash Nyanpasu 添加自定义规则</span></h1><p>clash for windows停止维护了，可以用Clash Nyanpasu，美观且内置汉化。</p>
+<p>文档：<a target="_blank" rel="noopener" href="https://nyanpasu.elaina.moe/zh-CN/">https://nyanpasu.elaina.moe/zh-CN/</a><br>仓库：<a target="_blank" rel="noopener" href="https://github.com/libnyanpasu/clash-nyanpasu">https://github.com/libnyanpasu/clash-nyanpasu</a></p>
+<p>喵帕斯的处理逻辑更容易理解，处理Profile链后处理全局链，不会被更新代理链接所覆盖。</p>
+<p>在以下页面添加代码：配置 → 全局链 → New Chain</p>
+<pre><code class="yaml"># Clash Nyanpasu Merge Template (YAML)
+# Documentation on https://nyanpasu.elaina.moe/
+# Set the default merge strategy to recursive merge. 
+# Enable the old mode with the override__ prefix. 
+# Use the filter__ prefix to filter lists (removing unwanted content). 
+# All prefixes should support accessing maps or lists with a.b.c syntax.
+append__rules:
+- &#39;DOMAIN-SUFFIX,store.steampowered.com,🔰国外流量&#39;
+- &#39;DOMAIN-SUFFIX,steamserver.net,DIRECT&#39;
+- &#39;DOMAIN-KEYWORD,steamstatic,🔰国外流量&#39;
+- &#39;DOMAIN-SUFFIX,bilibili.com,DIRECT&#39;
+- &#39;DOMAIN-SUFFIX,bilivideo.com,DIRECT&#39;
+</code></pre>
+<p>规则类型同上</p>
 
     </div>
     
