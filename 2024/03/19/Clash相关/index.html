@@ -174,7 +174,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Clash/" style="color: #ffa2c4">Clash</a>
+                <a href="/tags/Clash/" style="color: #00bcd4">Clash</a>
             </span>
             
         </span>
@@ -233,7 +233,7 @@
 <p>更多知识参考ClashWiki: <a target="_blank" rel="noopener" href="https://clash.wiki/">https://clash.wiki/</a></p>
 <h1><span id="clash-nyanpasu-添加自定义规则">Clash Nyanpasu 添加自定义规则</span></h1><p>clash for windows停止维护了，可以用Clash Nyanpasu，美观且内置汉化。</p>
 <p>文档：<a target="_blank" rel="noopener" href="https://nyanpasu.elaina.moe/zh-CN/">https://nyanpasu.elaina.moe/zh-CN/</a><br>仓库：<a target="_blank" rel="noopener" href="https://github.com/libnyanpasu/clash-nyanpasu">https://github.com/libnyanpasu/clash-nyanpasu</a></p>
-<p>喵帕斯的处理逻辑更容易理解，处理Profile链后处理全局链，不会被更新代理链接所覆盖。</p>
+<p>喵帕斯的处理逻辑更容易理解，处理Profile链后处理全局链，不会被更新代理链接所覆盖，规则类型同上。</p>
 <p>在以下页面添加代码：配置 → 全局链 → New Chain</p>
 <pre><code class="yaml"># Clash Nyanpasu Merge Template (YAML)
 # Documentation on https://nyanpasu.elaina.moe/
@@ -241,14 +241,19 @@
 # Enable the old mode with the override__ prefix. 
 # Use the filter__ prefix to filter lists (removing unwanted content). 
 # All prefixes should support accessing maps or lists with a.b.c syntax.
-append__rules:
+prepend__rules:
 - &#39;DOMAIN-SUFFIX,store.steampowered.com,🔰国外流量&#39;
 - &#39;DOMAIN-SUFFIX,steamserver.net,DIRECT&#39;
 - &#39;DOMAIN-KEYWORD,steamstatic,🔰国外流量&#39;
 - &#39;DOMAIN-SUFFIX,bilibili.com,DIRECT&#39;
 - &#39;DOMAIN-SUFFIX,bilivideo.com,DIRECT&#39;
 </code></pre>
-<p>规则类型同上</p>
+<p>常用合并规则：</p>
+<ul>
+<li>append__x.y.z - 将 x.y.z 字段的内容追加到原有配置的 x.y.z 字段列表末尾。当 x.y.z 不存在，或者不是一个数组时，将会被忽略并触发日记警告。</li>
+<li>prepend__x.y.z - 将 x.y.z 字段的内容追加到原有配置的 x.y.z 字段列表开头。当 x.y.z 不存在，或者不是一个数组时，将会被忽略并触发日记警告。</li>
+<li>override__x.y.z - 直接覆盖 x.y.z 字段的内容。当 x.y.z 不存在时，将会被忽略并触发日记警告。</li>
+</ul>
 
     </div>
     
