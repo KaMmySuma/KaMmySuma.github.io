@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>学习笔记-公安基础知识 | 咪啪窝</title>
+        <meta name="author" content="KaMmy" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>Now Loading...</h2>
+                        <p>加载过慢请开启魔法</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>咪啪窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;咪啪窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>学习笔记-公安基础知识</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            1899/11/30
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="color: #00bcd4">学习笔记</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <meta name="referrer" content="no-referrer">
+
+<blockquote>
+<p>菜就多练</p>
+</blockquote>
+<span id="more"></span>
+
+<ul>
+<li><p>快速办理：不简易，还认错，无异议。</p>
+<ul>
+<li>不使用简易程序</li>
+<li>自愿认错受罚</li>
+<li>事实清楚</li>
+</ul>
+</li>
+<li><p>申请法律援助：盲聋哑，精神病，</p>
+</li>
+<li><p>“三项纪律”：决不允许面对群众危难不勇为；2.决不允许酗酒滋事；3.决不允许进夜总会娱乐。</p>
+</li>
+<li><p>证据分类：</p>
+<ul>
+<li>根据来源不同分为<code>原始证据</code>和<code>传来证据</code><ul>
+<li>原始证据，是指直接来源于案件的证据材料，如犯罪嫌疑人、被告人对自己罪行的供认、证人证言、物证的原件等。<ul>
+<li>例如凶器刀属于原始证据</li>
+</ul>
+</li>
+<li>传来证据，是指来源于他人转述或传抄等间接途径的第二手证据材料</li>
+</ul>
+</li>
+<li>根据证据事实的表现形式分为<code>言词证据</code>和<code>实物证据</code><ul>
+<li>实物证据是指以实物形态存在的各种证据</li>
+</ul>
+</li>
+<li>以证据是否能够证明犯罪事实的存在或者犯罪行为系犯罪嫌疑人、被告人所为分为<code>有罪证据</code>和<code>无罪证据</code></li>
+<li>以证据与案件主要事实证明关系的不同分为<code>直接证据</code>和<code>间接证据</code>。<ul>
+<li>直接证据，是指能够单独直接说明案件主要事实的证据，如被害人指认犯罪分子的陈述、犯罪嫌疑人、被告人的供述和辩解等。<ul>
+<li>物证一般不能成为直接证据，但在少数特定的情况下，也可以成为直接证据，如某人随身携带枪支、弹药、毒品等违禁品，这时上述物品以其所处的位置证明行为人实施了私藏枪支、弹药和非法持有毒品的行为，从而成为直接证据。</li>
+</ul>
+</li>
+<li>间接证据，是指不能单独、直接证明刑事案件主要事实，需要与其他证据相结合才能证明的证明。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>求助类警情：</p>
+<ul>
+<li>自杀</li>
+<li>走失</li>
+<li>自然灾害</li>
+<li>公共设施险情</li>
+</ul>
+</li>
+<li><p>公安历史：</p>
+<ul>
+<li>中央特科：1927年11月，上海</li>
+<li>国家政治保卫局：1931年11月，江西瑞金</li>
+<li>陕甘宁边区人民警察：1938年5月，延安</li>
+<li>中共中央社会部：1939年2月，延安</li>
+<li>中央军委公安部：1949年7月</li>
+<li>中央人民政府公安部：1949年11月。</li>
+</ul>
+</li>
+<li><p>酒驾标准</p>
+<ul>
+<li>饮酒驾驶：酒精含量大于或者等于20mg&#x2F;100mL，小于80mg&#x2F;100mL</li>
+<li>醉酒驾驶：酒精含量大于或者等于80mg&#x2F;100mL</li>
+</ul>
+</li>
+<li><p>伤情鉴定</p>
+<ul>
+<li>一般重新鉴定一次（上级公安或者指定机构），</li>
+<li>谁主张，谁垫付，结果决定归属<ul>
+<li>如果重新鉴定维持原结果，费用由主张方承担；如果推翻则对方承担。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 咪啪窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;KaMmy
+        </div>
+        <div>
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">
+                别来无恙呀，最近咪啪窝被拜访了<span id="busuanzi_value_site_pv"></span>次；
+            </span>
+            <span id="busuanzi_container_page_pv">
+                这篇文章被阅读了<span id="busuanzi_value_page_pv"></span>次~
+              </span>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="KaMmySuma/giscus"
+    data-repo-id="R_kgDOJp-YWg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOJp-YWs4CW34h"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+        
+    </body>
+</html>
